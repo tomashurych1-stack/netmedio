@@ -33,10 +33,12 @@ export const Route = createRootRoute({
       { name: "description", content: "Specialisté na online marketing. PPC, SEO, webové stránky a komplexní řešení." },
       { name: "author", content: "Netmedio" },
       { property: "og:title", content: "Netmedio – Digitální marketing" },
-      { property: "og:description", content: "Specialisté na online marketing. PPC, SEO, webové stránky." },
+      { property: "og:description", content: "Specialisté na online marketing. PPC, SEO, webové stránky a komplexní řešení." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Netmedio – Digitální marketing" },
+      { name: "twitter:description", content: "Specialisté na online marketing. PPC, SEO, webové stránky a komplexní řešení." },
     ],
     links: [
       {
