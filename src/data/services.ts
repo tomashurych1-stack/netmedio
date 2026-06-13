@@ -43,14 +43,15 @@ export const services: Service[] = [
   {
     slug: "vykonnostni-reklama",
     icon: Megaphone,
-    title: "Výkonnostní reklama — kampaně, které měřitelně zvyšují obrat",
-    shortTitle: "Výkonnostní reklama",
-    metaTitle: "Výkonnostní reklama — Google Ads, Sklik, Meta Ads | Netmedio",
+    title: "Výkonnostní reklama (PPC) — kampaně, které měřitelně zvyšují obrat",
+    shortTitle: "Výkonnostní reklama (PPC)",
+    metaTitle: "PPC reklama — Google Ads, Sklik, Heureka, Zboží.cz, Meta Ads | Netmedio",
     metaDescription:
-      "Správa reklamních kampaní zaměřených na růst poptávek, objednávek a obratu. Google Ads, Sklik, Meta Ads, Performance Max, Zboží.cz. Google Partner od 2010.",
+      "Správa PPC kampaní a srovnávačů zboží: Google Ads, Sklik, Meta Ads, Performance Max, Heureka, Zboží.cz, Glami. Google Partner od 2010.",
     category: "Výkonnostní marketing",
     benefit:
-      "Více poptávek, objednávek a vyšší obrat z placené reklamy — bez plýtvání rozpočtem.",
+      "Více poptávek, objednávek a vyšší obrat z PPC reklamy a srovnávačů zboží — bez plýtvání rozpočtem.",
+
     audience:
       "E-shopy, B2B firmy a poskytovatelé služeb, které chtějí měřitelný obchodní dopad z placené reklamy.",
     heroIntro:
@@ -74,7 +75,7 @@ export const services: Service[] = [
       },
     ],
     approach: [
-      { title: "1. Audit kanálů a měření", desc: "Projdeme Google Ads, Sklik, Meta Ads, Merchant Center, Zboží.cz a tracking. Jeden výstup, jeden plán." },
+      { title: "1. Audit kanálů a měření", desc: "Projdeme Google Ads, Sklik, Meta Ads, Merchant Center, Heureka.cz, Zboží.cz a tracking. Jeden výstup, jeden plán." },
       { title: "2. Strategie a struktura", desc: "Navrhneme strukturu kampaní podle marže a fáze nákupu, stanovíme cíle ROAS / CPA a rozdělíme role kanálů." },
       { title: "3. Měření a server-side tracking", desc: "Nasadíme GA4, GTM (klient + server-side), Enhanced Conversions a offline konverze z CRM." },
       { title: "4. Spuštění a optimalizace", desc: "Týdenní cyklus: úpravy bid strategy, A/B testy kreativ a feedu, eliminace ztrátových segmentů." },
@@ -84,25 +85,34 @@ export const services: Service[] = [
       "Audit účtů (Google Ads, Sklik, Meta Ads) a měření",
       "Strategie a struktura kampaní: Search, Performance Max, Shopping, Demand Gen, Meta",
       "Správa Google Ads, Sklik a Meta Ads",
-      "Google Merchant Center a Zboží.cz feed management",
-      "YouTube Ads a remarketingové sekvence napříč kanály",
+      "Správa srovnávačů zboží: Heureka.cz, Zboží.cz, Glami",
+      "Google Merchant Center a XML feed management (bidding, kategorie, pravidla)",
+      "YouTube Ads, TikTok Ads a remarketingové sekvence napříč kanály",
       "Server-side tracking přes Google Tag Manager",
       "Enhanced Conversions a offline konverze z CRM",
       "A/B testy reklamních textů, kreativ a landing pages",
       "Měsíční Looker Studio report a strategická konzultace",
     ],
+
     tools: [
+      "PPC reklama",
       "Google Ads",
       "Sklik",
-      "Meta Ads",
-      "Google Merchant Center",
+      "Meta Ads (Facebook & Instagram)",
       "Performance Max",
-      "YouTube Ads",
+      "Google Shopping",
+      "Google Merchant Center",
+      "Heureka.cz",
       "Zboží.cz",
+      "Glami",
+      "YouTube Ads",
+      "TikTok Ads",
+      "Microsoft Ads (Bing)",
       "Remarketing",
       "Google Tag Manager (server-side)",
       "Looker Studio",
     ],
+
     outcomes: [
       { kpi: "ROAS u e-shopů", value: "500–1200 %" },
       { kpi: "Snížení CPA u leadů", value: "−30 až −60 %" },
