@@ -9,6 +9,9 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground mt-1">
             Digital growth partner od roku 2010. © {new Date().getFullYear()} Netmedio.
           </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            Netmedio založil Ing. Tomáš Hurych v roce 2010.
+          </p>
         </div>
         <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
           <a href="#sluzby" className="hover:text-foreground transition-colors">Služby</a>
