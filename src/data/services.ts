@@ -37,7 +37,7 @@ export type Service = {
 };
 
 const CONSULT_NOTE =
-  "Konkrétní cenu vždy potvrdíme až po krátké konzultaci a auditu. Nikdy nepřeprodáváme media spend — fakturujeme transparentně oddělenou správu a útratu v reklamních systémech.";
+  "Každou zakázku naceníme individuálně po krátkém nezávazném hovoru. Žádné skryté poplatky — platíte jen za skutečně odvedenou práci. Rozsah vždy přizpůsobíme velikosti vašeho projektu a rozpočtu.";
 
 export const services: Service[] = [
   {
@@ -52,7 +52,7 @@ export const services: Service[] = [
     benefit:
       "Více poptávek, objednávek a vyšší obrat z placené reklamy — bez plýtvání rozpočtem.",
     audience:
-      "E-shopy, B2B firmy a poskytovatelé služeb s rozpočtem od 30 000 Kč měsíčně, kteří chtějí měřitelný obchodní dopad.",
+      "E-shopy, B2B firmy a poskytovatelé služeb, které chtějí měřitelný obchodní dopad z placené reklamy.",
     heroIntro:
       "Spravujeme výkonnostní kampaně od roku 2010 jako certifikovaný Google Partner. Vedeme Google Ads, Sklik a Meta Ads pod jednou střechou, s jednotnou strategií, atribucí a reportingem — tak, aby každá utracená koruna měla měřitelný dopad na obrat.",
     problems: [
@@ -110,9 +110,9 @@ export const services: Service[] = [
       { kpi: "Pokrytí konverzí (server-side)", value: "+15 až +35 %" },
     ],
     pricing: [
-      { tier: "Audit a strategie", range: "od 24 000 Kč jednorázově", note: "Detailní audit kanálů, měření a doporučená struktura." },
-      { tier: "Správa — paušál", range: "od 15 000 Kč / měsíc", note: "Pro účty s media spendem do 100 000 Kč. Transparentní reporting." },
-      { tier: "Správa — procentuální", range: "10–15 % z media spendu", note: "Pro účty nad 100 000 Kč / měsíc. Cena škáluje s objemem práce." },
+      { tier: "Audit a strategie", range: "od 7 900 Kč jednorázově", note: "Detailní audit kanálů, měření a doporučená struktura kampaní." },
+      { tier: "Správa — paušál", range: "od 7 900 Kč / měsíc", note: "Transparentní měsíční správa s pravidelným reportingem." },
+      { tier: "Správa — procentuální", range: "10–15 % z media spendu", note: "Pro větší účty nad 100 000 Kč / měsíc. Cena škáluje s objemem práce." },
     ],
     faq: [
       { q: "Za jak dlouho uvidíme první výsledky?", a: "U Search kampaní s jasnou poptávkou typicky během 1–2 týdnů. Performance Max a Smart Bidding potřebují 4–8 týdnů na zaučení algoritmu." },
@@ -138,7 +138,7 @@ export const services: Service[] = [
     benefit:
       "Web, který se rychle načítá, dobře měří a převádí návštěvníky na poptávky a objednávky.",
     audience:
-      "Firmy, které potřebují web jako reálný akviziční kanál — ne jen digitální vizitku.",
+      "Firmy, které potřebují web jako reálný akviziční kanál — ať už jde o první web nebo výměnu zastaralého řešení.",
     heroIntro:
       "Stavíme weby, které vydrží roky a hlavně přinášejí výsledky. Důraz na rychlost, SEO základ, čisté měření, UX a konverzní optimalizaci — od landing pages přes firemní weby až po komplexní řešení na Cloudflare.",
     problems: [
@@ -183,9 +183,9 @@ export const services: Service[] = [
       { kpi: "Čas na vytvoření landing page", value: "1 den vs. 2 týdny" },
     ],
     pricing: [
-      { tier: "Landing page", range: "od 45 000 Kč", note: "Jednostránka pro PPC kampaň. Včetně designu, vývoje a měření." },
-      { tier: "Firemní web", range: "od 120 000 Kč", note: "5–15 stránek, šablonový systém, redakce obsahu, SEO základ." },
-      { tier: "Web na míru", range: "individuální nabídka", note: "Komplexní weby s integracemi (CRM, ERP, rezervace, fakturace)." },
+      { tier: "Landing page", range: "od 24 900 Kč", note: "Jednostránka pro kampaň nebo produkt. Včetně designu, vývoje a měření." },
+      { tier: "Firemní web", range: "od 49 900 Kč", note: "5–15 stránek, šablonový systém, redakce obsahu, SEO základ." },
+      { tier: "Web na míru", range: "individuální nabídka", note: "Komplexní weby s integracemi (CRM, ERP, rezervace, fakturace). Rozsah podle potřeby." },
     ],
     faq: [
       { q: "Na čem stavíte weby?", a: "Podle požadavků klienta. Pro firmy s častou redakcí obsahu WordPress. Pro rychlé moderní weby Lovable / TanStack Start na Cloudflare. Pro landing pages kombinace s headless CMS." },
@@ -210,7 +210,7 @@ export const services: Service[] = [
     benefit:
       "Stabilní příliv organické návštěvnosti a obsah, který přivádí relevantní klienty po měsících i letech.",
     audience:
-      "Firmy, které chtějí snížit závislost na placené reklamě a stavět dlouhodobý akviziční kanál.",
+      "Firmy, které chtějí snížit závislost na placené reklamě a postavit si vlastní akviziční kanál — i s menším rozpočtem.",
     heroIntro:
       "SEO není o klíčových slovech, ale o tom, jestli vás zákazník najde dřív než konkurenci. Spojujeme technické SEO, obsahovou strategii a AI assisted content do jednoho systému, který přivádí kvalifikované návštěvníky napříč fází nákupu.",
     problems: [
@@ -256,9 +256,9 @@ export const services: Service[] = [
       { kpi: "Konverzní poměr z organiky", value: "+25 až +80 %" },
     ],
     pricing: [
-      { tier: "SEO audit", range: "od 22 000 Kč jednorázově", note: "Technický + obsahový audit a roadmapa priorit." },
-      { tier: "SEO + obsah — paušál", range: "od 18 000 Kč / měsíc", note: "Technické úpravy, 2–4 články měsíčně, reporting." },
-      { tier: "Pillar content projekt", range: "od 35 000 Kč / projekt", note: "Strategická pillar stránka + 4–6 podpůrných článků s interním linkingem." },
+      { tier: "SEO audit", range: "od 5 900 Kč jednorázově", note: "Technický + obsahový audit a jasná roadmapa priorit." },
+      { tier: "SEO + obsah — paušál", range: "od 6 900 Kč / měsíc", note: "Technické úpravy, obsah, reporting — měsíční spolupráce podle rozsahu." },
+      { tier: "Obsahový projekt", range: "od 15 000 Kč / projekt", note: "Strategická pillar stránka + podpůrné články s interním linkingem." },
     ],
     faq: [
       { q: "Za jak dlouho SEO přinese výsledky?", a: "První posuny v Search Console vidíme za 4–8 týdnů. Reálný dopad na návštěvnost a konverze za 3–6 měsíců. SEO je dlouhodobá investice s exponenciálním efektem." },
@@ -284,7 +284,7 @@ export const services: Service[] = [
     benefit:
       "Opakované objednávky, vyšší LTV zákazníků a leady, které dozrávají bez zásahu obchodu.",
     audience:
-      "E-shopy, B2B firmy a SaaS, kteří chtějí systematicky pracovat s databází kontaktů a zvyšovat hodnotu zákazníka.",
+      "E-shopy, B2B firmy a SaaS, které chtějí systematicky pracovat s databází kontaktů a zvyšovat hodnotu zákazníka.",
     heroIntro:
       "E-mail marketing není o newsletteru jednou za měsíc. Stavíme segmentaci, automatizační scénáře a napojení na CRM tak, aby každý kontakt dostal relevantní zprávu ve správný čas — od welcome série přes lead nurturing po retenční kampaně.",
     problems: [
@@ -329,9 +329,9 @@ export const services: Service[] = [
       { kpi: "Open rate kampaní", value: "Stabilně 35–55 %" },
     ],
     pricing: [
-      { tier: "Audit a strategie", range: "od 18 000 Kč jednorázově", note: "Audit databáze, segmentace, doručitelnosti a roadmapa." },
-      { tier: "Setup automatizací", range: "od 28 000 Kč / scénář", note: "Welcome, abandoned cart, post-purchase nebo nurturing — kompletní setup." },
-      { tier: "Průběžná správa", range: "od 12 000 Kč / měsíc", note: "Pravidelné newslettery, údržba automatizací, reporting." },
+      { tier: "Audit a strategie", range: "od 4 900 Kč jednorázově", note: "Audit databáze, segmentace, doručitelnosti a plán na míru." },
+      { tier: "Setup automatizací", range: "od 9 900 Kč / scénář", note: "Welcome série, abandoned cart, post-purchase nebo nurturing — kompletní nastavení." },
+      { tier: "Průběžná správa", range: "od 5 900 Kč / měsíc", note: "Pravidelné newslettery, údržba automatizací, reporting. Rozsah podle objemu." },
     ],
     faq: [
       { q: "Jakou platformu doporučujete?", a: "Pro e-shopy nejčastěji Klaviyo nebo Ecomail (kvůli integraci se Shoptetem a Shopify). Pro B2B HubSpot nebo Mailchimp. Volba vždy závisí na CRM a objemu kontaktů." },
@@ -403,9 +403,9 @@ export const services: Service[] = [
       { kpi: "Náklady na reporting", value: "−80 % vs. ruční" },
     ],
     pricing: [
-      { tier: "Audit a návrh", range: "od 28 000 Kč jednorázově", note: "Mapa procesů, návrh automatizace a odhad nákladů na nástroje." },
-      { tier: "Implementace workflow", range: "od 35 000 Kč / workflow", note: "Závisí na složitosti, počtu integrací a AI vrstvě." },
-      { tier: "Měsíční údržba", range: "od 8 000 Kč / měsíc", note: "Monitoring, alerting, drobné úpravy a rozšíření workflow." },
+      { tier: "Audit a návrh", range: "od 9 900 Kč jednorázově", note: "Mapa procesů, návrh automatizace a odhad nákladů na nástroje." },
+      { tier: "Implementace workflow", range: "od 15 000 Kč / workflow", note: "Závisí na složitosti a počtu integrací. Začínáme s jedním, rozšiřujeme postupně." },
+      { tier: "Měsíční údržba", range: "od 3 900 Kč / měsíc", note: "Monitoring, alerting, drobné úpravy a rozšíření workflow." },
     ],
     faq: [
       { q: "V čem stavíte automatizace?", a: "Pro většinu klientů Make nebo n8n. Pro jednoduché propojení 2–3 nástrojů stačí Zapier. Pro náročné případy stavíme přímo nad API klienta." },
@@ -431,7 +431,7 @@ export const services: Service[] = [
     benefit:
       "Přesná data, ze kterých poznáte, co reálně přináší obchod — a kde plýtváte rozpočtem.",
     audience:
-      "Firmy s rostoucími marketingovými rozpočty, které potřebují důvěryhodnou datovou základnu pro rozhodování.",
+      "Firmy, které potřebují důvěryhodná data pro rozhodování — od základního měření až po pokročilou analytiku.",
     heroIntro:
       "Bez správně postaveného měření je každá optimalizace jen tipování. Stavíme GA4, GTM, server-side tracking a Looker Studio reporting tak, abyste viděli reálnou cestu zákazníka od první návštěvy až k platbě — napříč kanály a zařízeními.",
     problems: [
@@ -476,10 +476,10 @@ export const services: Service[] = [
       { kpi: "Přesnost atribuce napříč kanály", value: "Jednotný zdroj pravdy" },
     ],
     pricing: [
-      { tier: "Audit měření", range: "od 18 000 Kč jednorázově", note: "Detailní audit GA4, GTM a měření konverzí + akční plán." },
-      { tier: "Implementace GA4 + GTM", range: "od 45 000 Kč jednorázově", note: "Měření přes klientský GTM, eventy, konverze, publika." },
-      { tier: "Server-side tracking", range: "od 35 000 Kč + provoz", note: "Implementace na Cloudflare nebo GCP. Provoz 500–2 500 Kč / měsíc." },
-      { tier: "Looker Studio dashboard", range: "od 18 000 Kč / dashboard", note: "Včetně datových konektorů a sjednocení zdrojů." },
+      { tier: "Audit měření", range: "od 4 900 Kč jednorázově", note: "Detailní audit GA4, GTM a měření konverzí + akční plán." },
+      { tier: "Implementace GA4 + GTM", range: "od 9 900 Kč jednorázově", note: "Měření přes klientský GTM, eventy, konverze, publika." },
+      { tier: "Server-side tracking", range: "od 15 000 Kč + provoz", note: "Implementace na Cloudflare nebo GCP. Provoz 500–2 500 Kč / měsíc." },
+      { tier: "Looker Studio dashboard", range: "od 5 900 Kč / dashboard", note: "Včetně datových konektorů a sjednocení zdrojů." },
     ],
     faq: [
       { q: "Co je server-side tracking a kdy ho potřebujeme?", a: "Server-side tracking přenáší měření z prohlížeče na váš server. Doporučujeme pro každého klienta s media spendem nad 50 000 Kč měsíčně." },
