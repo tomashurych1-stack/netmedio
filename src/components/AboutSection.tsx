@@ -1,4 +1,5 @@
 import tomasPhoto from "@/assets/tomas-hurych.jpg.asset.json";
+import { Award, Calendar } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -30,18 +31,29 @@ export default function AboutSection() {
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/40 to-transparent blur-sm" />
               <img
                 src={tomasPhoto.url}
-                alt="Ing. Tomáš Hurych – Founder Netmedio"
+                alt="Ing. Tomáš Hurych – zakladatel Netmedio, Google Partner, digitální marketing"
                 className="relative w-44 h-44 rounded-full object-cover border-2 border-primary/40 shadow-xl"
                 loading="lazy"
               />
             </div>
             <p className="text-lg font-semibold">Ing. Tomáš Hurych</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Founder & Digital Marketing Consultant
+              Zakladatel Netmedio
             </p>
-            <div className="mt-4 text-xs text-primary border border-primary/30 rounded-full px-3 py-1">
-              Netmedio
+
+            <div className="mt-5 flex flex-wrap gap-2 justify-center">
+              <span className="inline-flex items-center gap-1.5 text-xs text-primary border border-primary/30 rounded-full px-3 py-1">
+                <Award className="w-3 h-3" /> Google Partner
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground border border-border rounded-full px-3 py-1">
+                <Calendar className="w-3 h-3" /> 15+ let zkušeností
+              </span>
             </div>
+
+            <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
+              Od roku 2010 pomáhá firmám růst pomocí výkonnostního marketingu, webů,
+              analytiky a automatizace.
+            </p>
           </div>
         </div>
       </div>

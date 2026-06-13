@@ -1,4 +1,16 @@
-import { Award, Quote } from "lucide-react";
+import melnik from "@/assets/logo-nemocnice-melnik.png.asset.json";
+import mediestetik from "@/assets/logo-mediestetik.png.asset.json";
+import centernet from "@/assets/logo-centernet.webp.asset.json";
+import parentes from "@/assets/logo-parentes.png.asset.json";
+import blomus from "@/assets/logo-blomus.png.asset.json";
+
+const clients = [
+  { name: "Nemocnice Mělník", logo: melnik.url },
+  { name: "Mediestetik", logo: mediestetik.url },
+  { name: "CenterNet", logo: centernet.url },
+  { name: "Parentes", logo: parentes.url },
+  { name: "Blomus", logo: blomus.url },
+];
 
 export default function ReferencesSection() {
   return (
@@ -6,49 +18,31 @@ export default function ReferencesSection() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Reference</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Důvěřují nám firmy napříč obory.
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
+            Vybraní klienti
           </h2>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-4">
-          <div className="rounded-2xl border border-border bg-card p-8 flex flex-col justify-between">
-            <div>
-              <Award className="w-6 h-6 text-primary mb-4" />
-              <p className="text-lg font-semibold">Google Partner</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                Certifikovaná agentura pro Google Ads a Google Analytics 4.
-              </p>
-            </div>
-            <div className="mt-8 inline-flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              Status: aktivní
-            </div>
-          </div>
-
-          <div className="lg:col-span-2 rounded-2xl border border-border bg-card p-8">
-            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-6">
-              Vybraní klienti
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden border border-border">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-card aspect-[3/2] flex items-center justify-center text-muted-foreground/40 text-xs"
-                >
-                  LOGO
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 rounded-2xl border border-dashed border-border bg-card/40 p-10 text-center">
-          <Quote className="w-6 h-6 text-primary mx-auto mb-4" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Připravujeme sekci s referencemi od dlouhodobých klientů — testimonialy budou
-            doplněny v nejbližší době.
+          <p className="text-muted-foreground text-lg">
+            Firmy, kterým dlouhodobě pomáháme s marketingem, weby, analytikou a automatizací.
           </p>
+        </div>
+
+        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-border rounded-xl overflow-hidden border border-border">
+            {clients.map((c) => (
+              <div
+                key={c.name}
+                className="bg-card aspect-[3/2] flex items-center justify-center p-6 group"
+                title={c.name}
+              >
+                <img
+                  src={c.logo}
+                  alt={`${c.name} – klient Netmedio`}
+                  loading="lazy"
+                  className="max-h-12 md:max-h-14 w-auto object-contain opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
