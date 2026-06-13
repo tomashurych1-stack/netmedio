@@ -2,23 +2,27 @@ import melnik from "@/assets/logo-nemocnice-melnik.png.asset.json";
 import mediestetik from "@/assets/logo-mediestetik.png.asset.json";
 import centernet from "@/assets/logo-centernet-new.png.asset.json";
 import parentes from "@/assets/logo-parentes.png.asset.json";
-import blomus from "@/assets/logo-blomus-new.jpg.asset.json";
+import blomusDark from "@/assets/logo-blomus-dark.png.asset.json";
+import blomusLight from "@/assets/logo-blomus-light.png.asset.json";
 import dekorstudio from "@/assets/logo-dekorstudio.png.asset.json";
 
 type Client = {
   name: string;
+  /** Default logo (used in light theme). */
   logo: string;
-  /** Logo already has a dark background — wrap in light container so it stays readable in both themes */
-  darkBg?: boolean;
+  /** Optional override used in dark theme. */
+  logoDark?: string;
+  /** Per-logo max height tweak to balance optical weight. */
+  scale?: string;
 };
 
 const clients: Client[] = [
-  { name: "Nemocnice Mělník", logo: melnik.url },
-  { name: "Mediestetik", logo: mediestetik.url },
-  { name: "CenterNet", logo: centernet.url },
-  { name: "Dekorstudio", logo: dekorstudio.url },
-  { name: "Parentes", logo: parentes.url },
-  { name: "Blomus", logo: blomus.url, darkBg: true },
+  { name: "Nemocnice Mělník", logo: melnik.url, scale: "max-h-9 md:max-h-10" },
+  { name: "Mediestetik", logo: mediestetik.url, scale: "max-h-10 md:max-h-11" },
+  { name: "CenterNet", logo: centernet.url, scale: "max-h-9 md:max-h-10" },
+  { name: "Dekorstudio", logo: dekorstudio.url, scale: "max-h-9 md:max-h-10" },
+  { name: "Parentes", logo: parentes.url, scale: "max-h-8 md:max-h-9" },
+  { name: "Blomus", logo: blomusDark.url, logoDark: blomusLight.url, scale: "max-h-7 md:max-h-8" },
 ];
 
 export default function ReferencesSection() {
@@ -40,24 +44,32 @@ export default function ReferencesSection() {
             {clients.map((c) => (
               <div
                 key={c.name}
-                className="bg-card aspect-[3/2] flex items-center justify-center p-5 group"
+                className="bg-card aspect-[3/2] flex items-center justify-center p-6 group"
                 title={c.name}
               >
-                {c.darkBg ? (
-                  <div className="bg-white rounded-md px-3 py-2 flex items-center justify-center w-full h-full max-h-[68px]">
+                {c.logoDark ? (
+                  <>
+                    {/* Light theme: dark logo */}
                     <img
                       src={c.logo}
                       alt={`${c.name} – klient Netmedio`}
                       loading="lazy"
-                      className="max-h-10 md:max-h-12 w-auto object-contain"
+                      className={`hidden ${c.scale ?? "max-h-10"} w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 [.light_&]:block`}
                     />
-                  </div>
+                    {/* Dark theme: light logo */}
+                    <img
+                      src={c.logoDark}
+                      alt={`${c.name} – klient Netmedio`}
+                      loading="lazy"
+                      className={`block ${c.scale ?? "max-h-10"} w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity duration-300 [.light_&]:hidden`}
+                    />
+                  </>
                 ) : (
                   <img
                     src={c.logo}
                     alt={`${c.name} – klient Netmedio`}
                     loading="lazy"
-                    className="max-h-10 md:max-h-12 w-auto object-contain opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                    className={`${c.scale ?? "max-h-10"} w-auto object-contain opacity-75 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300`}
                   />
                 )}
               </div>
