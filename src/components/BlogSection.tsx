@@ -1,34 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import aiWorkflow from "@/assets/blog-ai-workflow.jpg";
-import serverTracking from "@/assets/blog-server-tracking.jpg";
-import googleAds from "@/assets/blog-google-ads.jpg";
+import { Link } from "@tanstack/react-router";
+import { posts } from "@/data/posts";
 
-const posts = [
-  {
-    tag: "Automatizace",
-    title: "AI workflow pro malé a střední firmy",
-    excerpt:
-      "Praktický návod, jak nasadit automatizaci do denního provozu a ušetřit desítky hodin administrativy.",
-    date: "Nový článek",
-    image: aiWorkflow,
-  },
-  {
-    tag: "Analytika",
-    title: "Server-side tracking: Proč standardní GA4 nestačí",
-    excerpt:
-      "Ztrácíte data kvůli blokátorům reklam a konci cookies? Server-side měření je jediné řešení pro přesný marketing.",
-    date: "Nový článek",
-    image: serverTracking,
-  },
-  {
-    tag: "Google Ads",
-    title: "Jak škálovat Google Ads v roce 2024",
-    excerpt:
-      "Zapomeňte na staré struktury. Ukážeme vám, jak pracovat se signály a Performance Max kampaněmi pro maximální ROAS.",
-    date: "Nový článek",
-    image: googleAds,
-  },
-];
+const featured = posts.slice(0, 3);
 
 export default function BlogSection() {
   return (
@@ -41,15 +15,20 @@ export default function BlogSection() {
               Insights z praxe.
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md">
-            Pravidelné články o výkonnostním marketingu, webech a automatizaci.
-          </p>
+          <Link
+            to="/blog"
+            className="text-sm text-primary inline-flex items-center gap-1.5"
+          >
+            Všechny články <ArrowUpRight className="w-4 h-4" />
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">
-          {posts.map((p) => (
-            <article
-              key={p.title}
+          {featured.map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
               className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors flex flex-col"
             >
               <div className="aspect-[16/10] overflow-hidden border-b border-border">
@@ -64,8 +43,8 @@ export default function BlogSection() {
               </div>
               <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-3 text-xs text-muted-foreground">
-                  <span className="uppercase tracking-wider">{p.tag}</span>
-                  <span>{p.date}</span>
+                  <span className="uppercase tracking-wider">{p.category}</span>
+                  <span>{p.readingTime} min</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
                   {p.title}
@@ -76,7 +55,7 @@ export default function BlogSection() {
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
