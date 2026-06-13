@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/TrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import AboutSection from "@/components/AboutSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ReferencesSection from "@/components/ReferencesSection";
+import TestimonialsSection, { testimonials } from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
 import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
@@ -46,10 +49,61 @@ const localBusinessLd = {
   email: "tomas@netmedio.cz",
   telephone: "+420776691696",
   priceRange: "$$",
+  founder: { "@type": "Person", name: "Ing. Tomáš Hurych" },
+  foundingDate: "2010",
   address: {
     "@type": "PostalAddress",
     addressCountry: "CZ",
   },
+  areaServed: ["CZ", "EU"],
+};
+
+const reviewLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Netmedio",
+  url: SITE,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "4",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Inna S." },
+      publisher: { "@type": "Organization", name: "FWG Investments" },
+      reviewBody:
+        "Skvělá spolupráce. Vážím si hlavně flexibility, dobrých rad a komplexního přemýšlení nad projekty. Finance jsou rozděleny smysluplně a efektivně.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Veronika M." },
+      publisher: { "@type": "Organization", name: "Dekorstudio" },
+      reviewBody:
+        "Jsme velmi vděční a děkujeme Tomášovi za kvalitní spolupráci, která má výsledky. Vždy rychlé reakce, velká ochota a příjemná komunikace s lidským přístupem.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Marie M." },
+      publisher: { "@type": "Organization", name: "KMGHair" },
+      reviewBody:
+        "Tomáš je člověk na správném místě, který marketingu opravdu rozumí. Určitě chci dlouhodobou spolupráci — dobrého marketéra je dnes těžké najít.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Lucie P." },
+      publisher: { "@type": "Organization", name: "Verde" },
+      reviewBody:
+        "Doporučuji všem, kdo chtějí marketingového partnera, ne jen dodavatele. S Tomášem se opravdu táhne za jeden provaz.",
+    },
+  ],
 };
 
 const personLd = {
