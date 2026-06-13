@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import SectionLink from "@/components/SectionLink";
 
 const trust = [
   { value: "15+", label: "let zkušeností" },
