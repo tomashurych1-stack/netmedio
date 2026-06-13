@@ -1,63 +1,70 @@
-import { Target, ThumbsUp, Globe, Search, Mail, BarChart3 } from "lucide-react";
+import { LineChart, Code2, Workflow, BarChart3 } from "lucide-react";
 
 const services = [
   {
-    icon: Target,
-    title: "PPC reklamy",
-    desc: "Získejte snadno a rychle bezkonkurenční pozice ve vyhledávání Google nebo Seznam.",
+    icon: LineChart,
+    title: "Výkonnostní marketing",
+    desc: "Kampaně, které měřitelně zvyšují obrat a poptávky.",
+    items: ["Google Ads", "Sklik", "Meta Ads", "Remarketing", "Měření výkonu"],
   },
   {
-    icon: ThumbsUp,
-    title: "Facebook / Instagram",
-    desc: "Kvalitní cílení kampaní na sociálních sítích spolehlivě zvýší konverzní poměr a vaše zisky.",
+    icon: Code2,
+    title: "Tvorba webů",
+    desc: "Rychlé, čisté weby postavené pro konverze.",
+    items: ["Firemní weby", "Landing pages", "WordPress", "Loveable", "Cloudflare"],
   },
   {
-    icon: Globe,
-    title: "Webová prezentace",
-    desc: "Připravíme webové stránky optimalizované k okamžitému zvyšování prodeje a konverzí.",
-  },
-  {
-    icon: Search,
-    title: "SEO & PR kampaně",
-    desc: "Optimalizujeme vaše pozice ve výsledcích vyhledávání a podporujeme značku přes PR články.",
-  },
-  {
-    icon: Mail,
-    title: "Přímý marketing",
-    desc: "E-mailové kampaně, SMS kampaně a distribuce reklamních materiálů pro přímý kontakt se zákazníky.",
+    icon: Workflow,
+    title: "Automatizace",
+    desc: "Spojujeme nástroje a šetříme hodiny manuální práce.",
+    items: ["AI workflow", "Automatizace procesů", "Reporting", "Integrace nástrojů"],
   },
   {
     icon: BarChart3,
-    title: "Analytika & reporting",
-    desc: "Sledujeme výkon kampaní v reálném čase a poskytujeme přehledné reporty s konkrétními doporučeními.",
+    title: "Analytika a měření",
+    desc: "Data, na kterých můžete stavět rozhodnutí.",
+    items: ["GA4", "Google Tag Manager", "Server-side tracking", "Looker Studio"],
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="sluzby" className="section-padding bg-background">
+    <section id="sluzby" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-primary font-semibold uppercase tracking-widest text-sm mb-3">Naše služby</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
-            Nejlépe fungují vždy společně
+        <div className="max-w-3xl mb-16">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Služby</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+            Jeden partner pro celý digitální růst.
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Marketingový mix založený na datech. Kombinací kanálů dosahujeme maximálního efektu pro váš byznys.
+          <p className="mt-5 text-lg text-muted-foreground">
+            Performance marketing, weby, automatizace a analytika v jednom systému —
+            bez agenturní byrokracie.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-4">
           {services.map((s) => (
             <div
               key={s.title}
-              className="group rounded-2xl border border-border bg-card p-8 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+              className="group relative rounded-2xl border border-border bg-card p-8 hover:border-primary/40 transition-colors"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <s.icon className="w-7 h-7 text-primary" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-[var(--gold-soft)] flex items-center justify-center">
+                  <s.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold">{s.title}</h3>
               </div>
-              <h3 className="text-lg font-bold text-card-foreground mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+              <p className="text-muted-foreground mb-6">{s.desc}</p>
+              <ul className="flex flex-wrap gap-2">
+                {s.items.map((i) => (
+                  <li
+                    key={i}
+                    className="text-xs text-muted-foreground border border-border rounded-full px-3 py-1"
+                  >
+                    {i}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

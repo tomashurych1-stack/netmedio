@@ -1,77 +1,121 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/yourid";
 
 export default function ContactSection() {
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("ok");
+        form.reset();
+      } else {
+        setStatus("err");
+      }
+    } catch {
+      setStatus("err");
+    }
+  };
+
   return (
-    <section id="kontakt" className="section-padding bg-surface">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+    <section id="kontakt" className="section-padding bg-[var(--surface)]/40 border-y border-border">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
-          <p className="text-primary font-semibold uppercase tracking-widest text-sm mb-3">Kontakt</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
-            Máte nějaké dotazy?
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Kontakt</p>
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+            Pojďme probrat
+            <br />
+            váš projekt.
           </h2>
-          <p className="text-muted-foreground mb-8">
-            Za otázku přeci nic nedáte. Napište nám a ozveme se vám do 24 hodin.
+          <p className="mt-6 text-lg text-muted-foreground max-w-md">
+            Nezávazná 30minutová konzultace. Odpovídáme do 24 hodin.
           </p>
 
-          <div className="space-y-5">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Mail className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">E-mail</p>
-                <a href="mailto:tomas@netmedio.cz" className="font-semibold text-foreground hover:text-primary transition-colors">
-                  tomas@netmedio.cz
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Phone className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Telefon</p>
-                <a href="tel:+420776691696" className="font-semibold text-foreground hover:text-primary transition-colors">
-                  +420 776 691 696
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Lokalita</p>
-                <p className="font-semibold text-foreground">Praha, Česká republika</p>
-              </div>
+          <div className="mt-12 space-y-4">
+            <a
+              href="mailto:tomas@netmedio.cz"
+              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+            >
+              <Mail className="w-5 h-5 text-primary" />
+              tomas@netmedio.cz
+            </a>
+            <a
+              href="tel:+420776691696"
+              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+            >
+              <Phone className="w-5 h-5 text-primary" />
+              +420 776 691 696
+            </a>
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <MapPin className="w-5 h-5 text-primary" />
+              Česká republika
             </div>
           </div>
         </div>
 
-        <form className="bg-card rounded-2xl border border-border p-8 shadow-sm space-y-5">
-          <div className="grid sm:grid-cols-2 gap-5">
+        <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-8 space-y-5">
+          <div>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground">Jméno</label>
             <input
-              type="text"
-              placeholder="Jméno"
-              className="rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
-            />
-            <input
-              type="email"
-              placeholder="E-mailová adresa"
-              className="rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+              required
+              name="name"
+              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors"
             />
           </div>
-          <textarea
-            rows={5}
-            placeholder="Zpráva"
-            className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
-          />
+          <div>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground">Email</label>
+            <input
+              required
+              type="email"
+              name="email"
+              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors"
+            />
+          </div>
+          <div>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground">Telefon</label>
+            <input
+              name="phone"
+              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors"
+            />
+          </div>
+          <div>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground">Zpráva</label>
+            <textarea
+              required
+              name="message"
+              rows={4}
+              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors resize-none"
+            />
+          </div>
+
           <button
             type="submit"
-            className="rounded-full bg-primary px-10 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground hover:opacity-90 transition-opacity"
+            disabled={status === "sending"}
+            className="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50"
           >
-            Odeslat
+            {status === "sending" ? "Odesílám…" : "Odeslat poptávku"}
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
+
+          {status === "ok" && (
+            <p className="text-sm text-emerald-400">Děkujeme, ozveme se do 24 hodin.</p>
+          )}
+          {status === "err" && (
+            <p className="text-sm text-destructive">
+              Něco se pokazilo. Napište nám prosím přímo na tomas@netmedio.cz.
+            </p>
+          )}
         </form>
       </div>
     </section>
