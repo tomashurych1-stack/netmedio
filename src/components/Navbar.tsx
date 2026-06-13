@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useTheme } from "@/hooks/use-theme";
+import SectionLink from "@/components/SectionLink";
 
 const links = [
-  { label: "Služby", href: "#sluzby" },
-  { label: "Proč Netmedio", href: "#proc-nas" },
-  { label: "O nás", href: "#o-nas" },
-  { label: "Případové studie", href: "#case-studies" },
-  { label: "Blog", href: "#blog" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Služby", section: "sluzby" },
+  { label: "Proč Netmedio", section: "proc-nas" },
+  { label: "O nás", section: "o-nas" },
+  { label: "Případové studie", section: "case-studies" },
+  { label: "Blog", section: "blog" },
+  { label: "FAQ", section: "faq" },
+  { label: "Kontakt", section: "kontakt" },
 ];
 
 export default function Navbar() {
@@ -33,19 +35,19 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 h-16">
-        <a href="#" className="text-lg font-semibold tracking-tight text-foreground">
+        <Link to="/" className="text-lg font-semibold tracking-tight text-foreground">
           NETMEDIO<span className="text-primary">.</span>
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <SectionLink
+              key={l.section}
+              section={l.section}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
-            </a>
+            </SectionLink>
           ))}
         </div>
 
@@ -58,12 +60,12 @@ export default function Navbar() {
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          <a
-            href="#kontakt"
+          <SectionLink
+            section="kontakt"
             className="hidden lg:inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
           >
             Konzultace
-          </a>
+          </SectionLink>
 
           <button
             onClick={() => setOpen(!open)}
@@ -78,22 +80,22 @@ export default function Navbar() {
       {open && (
         <div className="lg:hidden bg-background border-t border-border px-6 py-6 space-y-4">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <SectionLink
+              key={l.section}
+              section={l.section}
               onClick={() => setOpen(false)}
               className="block text-sm text-muted-foreground hover:text-foreground"
             >
               {l.label}
-            </a>
+            </SectionLink>
           ))}
-          <a
-            href="#kontakt"
+          <SectionLink
+            section="kontakt"
             onClick={() => setOpen(false)}
             className="block text-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
           >
             Nezávazná konzultace
-          </a>
+          </SectionLink>
         </div>
       )}
     </nav>
