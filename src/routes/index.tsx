@@ -8,7 +8,7 @@ import AboutSection from "@/components/AboutSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ReferencesSection from "@/components/ReferencesSection";
-import TestimonialsSection, { testimonials } from "@/components/TestimonialsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
 import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
@@ -148,7 +148,7 @@ const breadcrumbLd = {
   ],
 };
 
-const allLd = [organizationLd, localBusinessLd, personLd, ...serviceLd, faqLd, breadcrumbLd];
+const allLd = [organizationLd, localBusinessLd, personLd, reviewLd, ...serviceLd, faqLd, breadcrumbLd];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -191,11 +191,14 @@ function Index() {
       <Navbar />
       <main>
         <HeroSection />
+        <TrustBar />
         <ServicesSection />
         <WhyUsSection />
         <AboutSection />
+        <CertificationsSection />
         <CaseStudiesSection />
         <ReferencesSection />
+        <TestimonialsSection />
         <BlogSection />
         <FAQSection />
         <ContactSection />
