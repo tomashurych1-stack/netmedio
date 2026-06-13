@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Clock, User } from "lucide-react";
-import { getPostBySlug, posts, author } from "@/data/posts";
+import { getPostBySlug, posts, author, type Post } from "@/data/posts";
 
 const SITE = "https://netmedio.lovable.app";
 
@@ -88,7 +88,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function ArticlePage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: Post };
   const related = posts.filter((p) => post.related.includes(p.slug));
 
   return (
