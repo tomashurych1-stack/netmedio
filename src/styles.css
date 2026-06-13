@@ -40,7 +40,7 @@
 :root {
   --radius: 0.625rem;
 
-  /* Dark premium palette */
+  /* Dark premium palette (default) */
   --background: #0F172A;
   --foreground: #F5F5F5;
   --card: #1A2233;
@@ -68,6 +68,42 @@
 
   --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
+}
+
+.light {
+  --background: #FFFFFF;
+  --foreground: #1E293B;
+  --card: #FFFFFF;
+  --card-foreground: #1E293B;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E293B;
+  --primary: #0F766E; /* teal */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #1E293B;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #1E3A8A; /* navy */
+  --accent-foreground: #FFFFFF;
+  --border: rgba(15, 23, 42, 0.10);
+  --input: rgba(15, 23, 42, 0.14);
+  --ring: #0F766E;
+
+  --gold: #0F766E;
+  --gold-soft: rgba(15, 118, 110, 0.10);
+  --surface: #F8FAFC;
+  --surface-2: #F1F5F9;
+}
+
+html {
+  color-scheme: dark;
+}
+html.light {
+  color-scheme: light;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer base {
