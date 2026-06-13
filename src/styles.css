@@ -41,30 +41,30 @@
   --radius: 0.625rem;
 
   /* Dark premium palette */
-  --background: #0F1115;
+  --background: #0F172A;
   --foreground: #F5F5F5;
-  --card: #171A21;
+  --card: #1A2233;
   --card-foreground: #F5F5F5;
-  --popover: #171A21;
+  --popover: #1A2233;
   --popover-foreground: #F5F5F5;
   --primary: #C9A86A;
-  --primary-foreground: #0F1115;
-  --secondary: #171A21;
+  --primary-foreground: #0F172A;
+  --secondary: #1A2233;
   --secondary-foreground: #F5F5F5;
-  --muted: #1C2029;
+  --muted: #1F2937;
   --muted-foreground: #A0A0A0;
   --accent: #C9A86A;
-  --accent-foreground: #0F1115;
+  --accent-foreground: #0F172A;
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: #F5F5F5;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.10);
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.12);
   --ring: #C9A86A;
 
   --gold: #C9A86A;
   --gold-soft: rgba(201, 168, 106, 0.12);
-  --surface: #171A21;
-  --surface-2: #1C2029;
+  --surface: #1A2233;
+  --surface-2: #1F2937;
 
   --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
