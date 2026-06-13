@@ -161,6 +161,24 @@ body {
     background: var(--gold);
     color: var(--primary-foreground);
   }
+
+  /* Subtle, premium focus ring for keyboard users */
+  :where(a, button, [role="button"]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 9999px;
+  }
+
+  /* Cohesive primary CTA feedback */
+  a.bg-primary, button.bg-primary {
+    transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.2s ease;
+  }
+  a.bg-primary:hover, button.bg-primary:hover {
+    box-shadow: 0 8px 24px -10px color-mix(in oklab, var(--primary) 55%, transparent);
+  }
+  a.bg-primary:active, button.bg-primary:active {
+    transform: translateY(1px);
+  }
 }
 
 @layer components {

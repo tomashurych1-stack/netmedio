@@ -66,36 +66,40 @@ export default function ContactSection() {
 
         <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-8 space-y-5">
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground">Jméno</label>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Jméno</label>
             <input
               required
               name="name"
-              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors"
+              placeholder="Vaše jméno"
+              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground">Email</label>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Email</label>
             <input
               required
               type="email"
               name="email"
-              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors"
+              placeholder="vas@email.cz"
+              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground">Telefon</label>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Telefon</label>
             <input
               name="phone"
-              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors"
+              placeholder="+420"
+              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground">Zpráva</label>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Zpráva</label>
             <textarea
               required
               name="message"
               rows={4}
-              className="mt-2 w-full bg-transparent border-b border-border focus:border-primary outline-none py-2 text-foreground transition-colors resize-none"
+              placeholder="Stručně napište, s čím vám můžeme pomoci…"
+              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all resize-none"
             />
           </div>
 

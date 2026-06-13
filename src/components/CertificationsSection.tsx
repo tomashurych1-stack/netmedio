@@ -11,30 +11,28 @@ export default function CertificationsSection() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-4 items-stretch">
-          <div className="lg:col-span-5 rounded-2xl border border-border bg-card p-10 flex items-center justify-center">
+        <div className="rounded-2xl border border-border bg-card p-8 md:p-10 flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-10">
+          <div className="shrink-0 flex items-center justify-center">
             <img
               src={badge.url}
               alt="Google Partner – certifikovaný partner Google"
-              width={320}
-              height={320}
+              width={128}
+              height={128}
               loading="lazy"
-              className="w-56 h-56 object-contain"
+              className="w-24 h-24 md:w-28 md:h-28 object-contain"
             />
           </div>
-          <div className="lg:col-span-7 rounded-2xl border border-border bg-card p-10 flex flex-col justify-center">
-            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Google Partner</p>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+          <div className="flex-1 flex flex-col justify-center text-center md:text-left">
+            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Google Partner</p>
+            <h3 className="text-xl md:text-2xl font-semibold mb-3">
               Certifikovaný partner Google
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
               Certifikovaný partner Google pro správu reklamních kampaní, analytiku a měření výkonu.
+              Pravidelné certifikace Google Ads a Google Analytics, doporučené struktury kampaní
+              a server-side měření konverzí.
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Pravidelné certifikace Google Ads a Google Analytics. Pracujeme s nejnovějšími
-              nástroji, doporučenými strukturami kampaní a měřením konverzí na úrovni serveru.
-            </p>
-            <div className="mt-6 inline-flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground self-center md:self-start">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Status partnerství: aktivní
             </div>
