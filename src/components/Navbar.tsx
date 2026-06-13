@@ -49,20 +49,30 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#kontakt"
-          className="hidden lg:inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
-        >
-          Konzultace
-        </a>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={toggle}
+            aria-label="Přepnout téma"
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+          >
+            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-foreground"
-          aria-label="Menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          <a
+            href="#kontakt"
+            className="hidden lg:inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            Konzultace
+          </a>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-foreground"
+            aria-label="Menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
