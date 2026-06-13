@@ -1,3 +1,5 @@
+import SectionLink from "@/components/SectionLink";
+
 export default function Footer() {
   return (
     <footer className="border-t border-border">
@@ -14,10 +16,10 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-          <a href="#sluzby" className="hover:text-foreground transition-colors">Služby</a>
-          <a href="#case-studies" className="hover:text-foreground transition-colors">Případové studie</a>
-          <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-          <a href="#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
+          <SectionLink section="sluzby" className="hover:text-foreground transition-colors">Služby</SectionLink>
+          <SectionLink section="case-studies" className="hover:text-foreground transition-colors">Případové studie</SectionLink>
+          <SectionLink section="faq" className="hover:text-foreground transition-colors">FAQ</SectionLink>
+          <SectionLink section="kontakt" className="hover:text-foreground transition-colors">Kontakt</SectionLink>
         </div>
       </div>
     </footer>
