@@ -121,7 +121,7 @@ export const cases: CaseStudy[] = [
       "Feed je pořád nejvíc podceňovaná část e-commerce PPC. Hodina na titulcích vrátí víc než hodina na bid strategy.",
     ],
     headlineResult: "+182 % obrat z PPC za 6 měsíců",
-    relatedServices: ["google-ads", "analytika-mereni", "ppc-sprava"],
+    relatedServices: ["vykonnostni-reklama", "analytika-reporting", "tvorba-webu"],
     relatedCases: ["b2b-web-analytika", "automatizace-lead-generation"],
   },
 
@@ -221,7 +221,7 @@ export const cases: CaseStudy[] = [
       "Pro konzervativní cílovku funguje konkrétnost (specifikace, certifikace, reference), ne marketingové bullshity.",
     ],
     headlineResult: "5× více poptávek měsíčně a první mezinárodní zakázka přes web",
-    relatedServices: ["tvorba-webu", "analytika-mereni", "google-ads"],
+    relatedServices: ["tvorba-webu", "analytika-reporting", "vykonnostni-reklama"],
     relatedCases: ["google-ads-eshop-moda", "automatizace-lead-generation"],
   },
 
@@ -322,7 +322,7 @@ export const cases: CaseStudy[] = [
       "Společný dashboard pro marketing a sales eliminuje 90 % konfliktů mezi týmy.",
     ],
     headlineResult: "−70 % manuální práce a 3× vyšší konverze trial → platící zákazník",
-    relatedServices: ["marketingova-automatizace", "analytika-mereni", "konzultace"],
+    relatedServices: ["ai-automatizace", "analytika-reporting", "email-marketing"],
     relatedCases: ["b2b-web-analytika", "google-ads-eshop-moda"],
   },
 ];
