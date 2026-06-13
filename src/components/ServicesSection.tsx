@@ -38,7 +38,7 @@ export default function ServicesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
-          {homeServices.map((s) => (
+          {homeServices.slice(0, 4).map((s) => (
             <Link
               key={s.slug}
               to="/sluzby/$slug"
