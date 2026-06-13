@@ -43,14 +43,15 @@ export const services: Service[] = [
   {
     slug: "vykonnostni-reklama",
     icon: Megaphone,
-    title: "Výkonnostní reklama — kampaně, které měřitelně zvyšují obrat",
-    shortTitle: "Výkonnostní reklama",
-    metaTitle: "Výkonnostní reklama — Google Ads, Sklik, Meta Ads | Netmedio",
+    title: "Výkonnostní reklama (PPC) — kampaně, které měřitelně zvyšují obrat",
+    shortTitle: "Výkonnostní reklama (PPC)",
+    metaTitle: "PPC reklama — Google Ads, Sklik, Heureka, Zboží.cz, Meta Ads | Netmedio",
     metaDescription:
-      "Správa reklamních kampaní zaměřených na růst poptávek, objednávek a obratu. Google Ads, Sklik, Meta Ads, Performance Max, Zboží.cz. Google Partner od 2010.",
+      "Správa PPC kampaní a srovnávačů zboží: Google Ads, Sklik, Meta Ads, Performance Max, Heureka, Zboží.cz, Glami. Google Partner od 2010.",
     category: "Výkonnostní marketing",
     benefit:
-      "Více poptávek, objednávek a vyšší obrat z placené reklamy — bez plýtvání rozpočtem.",
+      "Více poptávek, objednávek a vyšší obrat z PPC reklamy a srovnávačů zboží — bez plýtvání rozpočtem.",
+
     audience:
       "E-shopy, B2B firmy a poskytovatelé služeb, které chtějí měřitelný obchodní dopad z placené reklamy.",
     heroIntro:
@@ -92,17 +93,24 @@ export const services: Service[] = [
       "Měsíční Looker Studio report a strategická konzultace",
     ],
     tools: [
+      "PPC reklama",
       "Google Ads",
       "Sklik",
-      "Meta Ads",
-      "Google Merchant Center",
+      "Meta Ads (Facebook & Instagram)",
       "Performance Max",
-      "YouTube Ads",
+      "Google Shopping",
+      "Google Merchant Center",
+      "Heureka.cz",
       "Zboží.cz",
+      "Glami",
+      "YouTube Ads",
+      "TikTok Ads",
+      "Microsoft Ads (Bing)",
       "Remarketing",
       "Google Tag Manager (server-side)",
       "Looker Studio",
     ],
+
     outcomes: [
       { kpi: "ROAS u e-shopů", value: "500–1200 %" },
       { kpi: "Snížení CPA u leadů", value: "−30 až −60 %" },
