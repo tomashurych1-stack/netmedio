@@ -52,7 +52,16 @@ export default function AboutSection() {
 
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
               Od roku 2010 pomáhá firmám růst pomocí výkonnostního marketingu, webů,
-              analytiky a automatizace.
+              analytiky a automatizace. Strategické vedení projektů zajišťuje{" "}
+              <a
+                href="https://tomashurych.cz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary underline-offset-4 hover:underline transition-colors"
+              >
+                Ing. Tomáš Hurych
+              </a>
+              .
             </p>
           </div>
         </div>
