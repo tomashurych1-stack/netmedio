@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { posts } from "@/data/posts";
+import { services } from "@/data/services";
+import { cases } from "@/data/cases";
 
 const BASE_URL = "https://netmedio.lovable.app";
 
@@ -10,11 +12,24 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/sluzby", changefreq: "monthly", priority: "0.9" },
+          { path: "/case-studies", changefreq: "monthly", priority: "0.9" },
           { path: "/blog", changefreq: "weekly", priority: "0.9" },
+          ...services.map((s) => ({
+            path: `/sluzby/${s.slug}`,
+            changefreq: "monthly",
+            priority: "0.8",
+          })),
+          ...cases.map((c) => ({
+            path: `/case-studies/${c.slug}`,
+            changefreq: "monthly",
+            priority: "0.8",
+            lastmod: c.date,
+          })),
           ...posts.map((p) => ({
             path: `/blog/${p.slug}`,
             changefreq: "monthly",
-            priority: "0.8",
+            priority: "0.7",
             lastmod: p.date,
           })),
         ];
