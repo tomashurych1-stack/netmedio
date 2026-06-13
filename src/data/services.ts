@@ -75,7 +75,7 @@ export const services: Service[] = [
       },
     ],
     approach: [
-      { title: "1. Audit kanálů a měření", desc: "Projdeme Google Ads, Sklik, Meta Ads, Merchant Center, Zboží.cz a tracking. Jeden výstup, jeden plán." },
+      { title: "1. Audit kanálů a měření", desc: "Projdeme Google Ads, Sklik, Meta Ads, Merchant Center, Heureka.cz, Zboží.cz a tracking. Jeden výstup, jeden plán." },
       { title: "2. Strategie a struktura", desc: "Navrhneme strukturu kampaní podle marže a fáze nákupu, stanovíme cíle ROAS / CPA a rozdělíme role kanálů." },
       { title: "3. Měření a server-side tracking", desc: "Nasadíme GA4, GTM (klient + server-side), Enhanced Conversions a offline konverze z CRM." },
       { title: "4. Spuštění a optimalizace", desc: "Týdenní cyklus: úpravy bid strategy, A/B testy kreativ a feedu, eliminace ztrátových segmentů." },
@@ -85,13 +85,15 @@ export const services: Service[] = [
       "Audit účtů (Google Ads, Sklik, Meta Ads) a měření",
       "Strategie a struktura kampaní: Search, Performance Max, Shopping, Demand Gen, Meta",
       "Správa Google Ads, Sklik a Meta Ads",
-      "Google Merchant Center a Zboží.cz feed management",
-      "YouTube Ads a remarketingové sekvence napříč kanály",
+      "Správa srovnávačů zboží: Heureka.cz, Zboží.cz, Glami",
+      "Google Merchant Center a XML feed management (bidding, kategorie, pravidla)",
+      "YouTube Ads, TikTok Ads a remarketingové sekvence napříč kanály",
       "Server-side tracking přes Google Tag Manager",
       "Enhanced Conversions a offline konverze z CRM",
       "A/B testy reklamních textů, kreativ a landing pages",
       "Měsíční Looker Studio report a strategická konzultace",
     ],
+
     tools: [
       "PPC reklama",
       "Google Ads",
