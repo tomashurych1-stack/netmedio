@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { services } from "@/data/services";
 
@@ -24,10 +23,6 @@ const homeServices = ordered.map((s) => ({
 }));
 
 export default function ServicesSection() {
-  const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? homeServices : homeServices.slice(0, 4);
-  const hiddenCount = homeServices.length - 4;
-
   return (
     <section id="sluzby" className="section-padding">
       <div className="max-w-7xl mx-auto">
@@ -43,7 +38,7 @@ export default function ServicesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
-          {visible.map((s) => (
+          {homeServices.map((s) => (
             <Link
               key={s.slug}
               to="/sluzby/$slug"
@@ -77,20 +72,7 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          {hiddenCount > 0 && (
-            <button
-              type="button"
-              onClick={() => setExpanded((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm text-foreground hover:border-primary/40 transition-colors"
-            >
-              {expanded ? (
-                <>Zobrazit méně <ChevronUp className="w-4 h-4" /></>
-              ) : (
-                <>Zobrazit více služeb ({hiddenCount}) <ChevronDown className="w-4 h-4" /></>
-              )}
-            </button>
-          )}
+        <div className="mt-10 flex items-center justify-center">
           <Link
             to="/sluzby"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm text-foreground hover:border-primary/40 transition-colors"
