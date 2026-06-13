@@ -1,36 +1,14 @@
-import { LineChart, Code2, Workflow, BarChart3, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { services } from "@/data/services";
 
-const services = [
-  {
-    slug: "google-ads",
-    icon: LineChart,
-    title: "Výkonnostní marketing",
-    desc: "Kampaně, které měřitelně zvyšují obrat a poptávky.",
-    items: ["Google Ads", "Sklik", "Meta Ads", "Remarketing", "Měření výkonu"],
-  },
-  {
-    slug: "tvorba-webu",
-    icon: Code2,
-    title: "Tvorba webů",
-    desc: "Rychlé, čisté weby postavené pro konverze.",
-    items: ["Firemní weby", "Landing pages", "WordPress", "Lovable", "Cloudflare"],
-  },
-  {
-    slug: "marketingova-automatizace",
-    icon: Workflow,
-    title: "Automatizace",
-    desc: "Spojujeme nástroje a šetříme hodiny manuální práce.",
-    items: ["AI workflow", "Automatizace procesů", "Reporting", "Integrace nástrojů"],
-  },
-  {
-    slug: "analytika-mereni",
-    icon: BarChart3,
-    title: "Analytika a měření",
-    desc: "Data, na kterých můžete stavět rozhodnutí.",
-    items: ["GA4", "Google Tag Manager", "Server-side tracking", "Looker Studio"],
-  },
-];
+const homeServices = services.map((s) => ({
+  slug: s.slug,
+  icon: s.icon,
+  title: s.shortTitle,
+  desc: s.benefit,
+  items: s.tools.slice(0, 5),
+}));
 
 export default function ServicesSection() {
   return (
@@ -39,18 +17,18 @@ export default function ServicesSection() {
         <div className="max-w-3xl mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Služby</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Jeden partner pro celý digitální růst.
+            Marketingové a technologické studio pro růst firem.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Performance marketing, weby, automatizace a analytika v jednom systému —
+            Výkonnostní reklama, weby, SEO, e-mailing, AI automatizace a analytika v jednom týmu —
             bez agenturní byrokracie.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
-          {services.map((s) => (
+          {homeServices.map((s) => (
             <Link
-              key={s.title}
+              key={s.slug}
               to="/sluzby/$slug"
               params={{ slug: s.slug }}
               className="group relative rounded-2xl border border-border bg-card p-8 hover:border-primary/40 transition-colors flex flex-col"
