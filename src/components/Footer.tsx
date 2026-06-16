@@ -9,7 +9,7 @@ export default function Footer() {
             NETMEDIO<span className="text-primary">.</span>
           </p>
           <p className="text-xs text-muted-foreground">
-            Digital growth partner od roku 2010 — Ing. Tomáš Hurych. © {new Date().getFullYear()}
+            Digital growth partner od roku 2010 — Tomáš Hurych. © {new Date().getFullYear()}
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">

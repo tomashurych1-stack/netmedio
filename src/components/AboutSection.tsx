@@ -31,12 +31,12 @@ export default function AboutSection() {
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/40 to-transparent blur-sm" />
               <img
                 src={tomasPhoto.url}
-                alt="Ing. Tomáš Hurych – zakladatel Netmedio, Google Partner, digitální marketing"
+                alt="Tomáš Hurych – zakladatel Netmedio, Google Partner, digitální marketing"
                 className="relative w-44 h-44 rounded-full object-cover border-2 border-primary/40 shadow-xl"
                 loading="lazy"
               />
             </div>
-            <p className="text-lg font-semibold">Ing. Tomáš Hurych</p>
+            <p className="text-lg font-semibold">Tomáš Hurych</p>
             <p className="text-sm text-muted-foreground mt-1">
               Zakladatel Netmedio
             </p>
@@ -59,7 +59,7 @@ export default function AboutSection() {
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary underline-offset-4 hover:underline transition-colors"
               >
-                Ing. Tomáš Hurych
+                Tomáš Hurych
               </a>
               .
             </p>
