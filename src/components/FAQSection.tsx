@@ -8,7 +8,7 @@ import {
 export const faqs = [
   {
     q: "Kolik stojí správa Google Ads?",
-    a: "Cena vychází z rozsahu kampaní a obratu, který přes ně teče. Měsíční fee začíná typicky od 12 000 Kč a vždy ji nastavujeme tak, aby se klientovi vrátila násobně.",
+    a: "Cena vychází z rozsahu kampaní a obratu, který přes ně teče. Měsíční fee začíná typicky od 7 900 Kč a vždy ji nastavujeme tak, aby se klientovi vrátila násobně.",
   },
   {
     q: "Jak rychle uvidím první výsledky z PPC?",
