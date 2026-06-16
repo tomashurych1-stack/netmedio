@@ -36,7 +36,7 @@ export default function AboutSection() {
                 loading="lazy"
               />
             </div>
-            <p className="text-lg font-semibold">Tomáš Hurych</p>
+            <p className="text-lg font-semibold">Ing. Tomáš Hurych</p>
             <p className="text-sm text-muted-foreground mt-1">
               Zakladatel Netmedio
             </p>
