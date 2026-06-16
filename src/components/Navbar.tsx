@@ -36,7 +36,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 h-16">
         <Link to="/" className="text-lg font-semibold tracking-tight text-foreground">
-          NETMEDIO<span className="text-primary">.</span>
+          NETMEDIO
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
