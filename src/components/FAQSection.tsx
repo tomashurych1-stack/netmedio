@@ -16,7 +16,7 @@ export const faqs = [
   },
   {
     q: "Děláte i tvorbu webů, nebo jen marketing?",
-    a: "Tvoříme firemní weby, landing pages a e-commerce řešení na WordPressu, Loveable i custom stacku s Cloudflare. Web i kampaně tak řeší jeden tým.",
+    a: "Tvoříme firemní weby, landing pages a e-commerce řešení na WordPressu i custom stacku s Cloudflare. Web i kampaně tak řeší jeden tým.",
   },
   {
     q: "Co je marketingová automatizace a komu se vyplatí?",
