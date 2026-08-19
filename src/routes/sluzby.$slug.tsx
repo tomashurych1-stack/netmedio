@@ -76,7 +76,8 @@ export const Route = createFileRoute("/sluzby/$slug")({
 });
 
 function ServiceDetail() {
-  const { service } = Route.useLoaderData() as { service: Service };
+  const { slug } = Route.useLoaderData() as { slug: string };
+  const service = getServiceBySlug(slug)!;
   const relatedServices = services.filter((s) => service.relatedServices.includes(s.slug));
   const relatedCases = cases.filter((c) => service.relatedCases.includes(c.slug));
   const relatedPosts = posts.filter((p) => service.relatedPosts.includes(p.slug));
