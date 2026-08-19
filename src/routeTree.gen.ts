@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SluzbyRouteImport } from './routes/sluzby'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport } from './routes/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -32,6 +33,12 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute =
+  NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport.update({
+    id: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta',
+    path: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
@@ -87,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -99,6 +107,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -113,6 +122,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/sitemap.xml'
     | '/sluzby'
     | '/blog/$slug'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/$slug'
@@ -154,6 +166,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/sitemap.xml'
     | '/sluzby'
     | '/blog/$slug'
@@ -169,6 +182,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
   YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
@@ -188,6 +202,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': {
+      id: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+      path: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+      fullPath: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+      preLoaderRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies': {
@@ -306,6 +327,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute:
+    NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SluzbyRoute: SluzbyRouteWithChildren,
   YearMonthDaySlugRoute: YearMonthDaySlugRoute,
