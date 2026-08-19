@@ -489,11 +489,13 @@ export const services: Service[] = [
       { kpi: "Přesnost atribuce napříč kanály", value: "Jednotný zdroj pravdy" },
     ],
     pricing: [
-      { tier: "Audit měření", range: "od 4 900 Kč jednorázově", note: "Detailní audit GA4, GTM a měření konverzí + akční plán." },
-      { tier: "Implementace GA4 + GTM", range: "od 9 900 Kč jednorázově", note: "Měření přes klientský GTM, eventy, konverze, publika." },
-      { tier: "Server-side tracking", range: "od 15 000 Kč + provoz", note: "Implementace na Cloudflare nebo GCP. Provoz 500–2 500 Kč / měsíc." },
-      { tier: "Looker Studio dashboard", range: "od 5 900 Kč / dashboard", note: "Včetně datových konektorů a sjednocení zdrojů." },
+      { tier: "Kontrola měření", range: "zdarma", note: "Základní kontrola současného nastavení GA4, GTM a měření konverzí. Řekneme vám, co funguje a co je potřeba upravit." },
+      { tier: "Nastavení GA4 + GTM", range: "od 3 900 Kč jednorázově", note: "Nastavení nebo oprava analytiky, důležitých událostí a měření poptávek či dalších konverzí." },
+      { tier: "Pokročilé měření", range: "od 4 900 Kč jednorázově", note: "Rozšířené měření pro e-shopy a složitější weby, včetně e-commerce, reklamních konverzí a dalších dat potřebných pro optimalizaci kampaní." },
+      { tier: "Reporting a dashboardy", range: "od 3 900 Kč", note: "Přehledný dashboard v Looker Studio s nejdůležitějšími výsledky marketingu a webu na jednom místě." },
     ],
+    pricingNote: "Finální cena závisí na rozsahu webu, počtu měřených konverzí a složitosti implementace. Server-side tracking řešíme v rámci pokročilého měření s individuálním naceněním."
+
     faq: [
       { q: "Co je server-side tracking a kdy ho potřebujeme?", a: "Server-side tracking přenáší měření z prohlížeče na váš server. Doporučujeme pro každého klienta s media spendem nad 50 000 Kč měsíčně." },
       { q: "Stačí jen GA4 bez GTM?", a: "Pro jednoduché firemní weby ano. Pro e-shopy, B2B s formuláři nebo víc kanály doporučujeme GTM kvůli udržovatelnosti a server-side trackingu." },
