@@ -1,11 +1,8 @@
 /**
  * Formspree konfigurace kontaktního formuláře.
  *
- * TODO (jediná věc, kterou je nutné dokončit před produkcí):
- * doplnit reálné Formspree form ID (např. "mabcwxyz") níže,
- * případně nastavit VITE_FORMSPREE_FORM_ID.
- * Dokud je ID prázdné, formulář se neodesílá a zobrazí uživateli
- * kontaktní e-mail místo falešného úspěchu.
+ * Produkční form ID: xbgrqrqb (https://formspree.io/f/xbgrqrqb).
+ * Lze přepsat přes VITE_FORMSPREE_FORM_ID.
  */
 const FORM_ID = (import.meta.env["VITE_FORMSPREE_FORM_ID"] as string | undefined) ?? "xbgrqrqb";
 
