@@ -20,7 +20,7 @@ export const Route = createFileRoute("/$year/$month/$day/$slug")({
       return { meta: [{ title: "Článek nenalezen | Netmedio" }, { name: "robots", content: "noindex" }] };
     }
     const { post } = loaderData;
-    const url = `${SITE}${post.path}/`;
+    const url = `${SITE}${post.path}`;
     const articleLd = {
       "@context": "https://schema.org",
       "@type": "Article",

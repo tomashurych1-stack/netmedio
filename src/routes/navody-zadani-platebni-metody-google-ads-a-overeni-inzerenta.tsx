@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const SITE = "https://www.netmedio.cz";
-const URL = `${SITE}/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta/`;
+const URL = `${SITE}/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta`;
 const TITLE = "Google Ads návody: platební metody a ověření inzerenta";
 const DESC =
   "Podrobný návod, jak přidat platební metodu do Google Ads, nastavit ji jako primární a jak projít dobrovolným ověřením inzerenta.";

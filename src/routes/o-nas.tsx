@@ -7,7 +7,7 @@ import CertificationsSection from "@/components/CertificationsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 const SITE = "https://www.netmedio.cz";
-const URL = `${SITE}/o-nas/`;
+const URL = `${SITE}/o-nas`;
 const TITLE = "O nás — Netmedio, marketingové a technologické studio";
 const DESC =
   "Netmedio je marketingové a technologické studio zaměřené na růst firem. Výkonnostní reklama, weby, SEO, e-mailing, AI automatizace a analytika. Strategické vedení: Ing. Tomáš Hurych.";
