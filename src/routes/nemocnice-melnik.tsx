@@ -4,7 +4,7 @@ import { getLegacyCase } from "@/data/legacy-cases";
 
 const SITE = "https://www.netmedio.cz";
 const item = getLegacyCase("nemocnice-melnik")!;
-const URL = `${SITE}/nemocnice-melnik/`;
+const URL = `${SITE}/nemocnice-melnik`;
 
 export const Route = createFileRoute("/nemocnice-melnik")({
   head: () => ({
