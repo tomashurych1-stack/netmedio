@@ -58,6 +58,8 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: {},
+    // Legacy WordPress URL jsou indexované s lomítkem na konci — nepřesměrováváme je.
+    trailingSlash: "preserve",
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,

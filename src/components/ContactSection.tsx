@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
-
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/yourid";
+import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
+import { trackEmailClick, trackLead, trackPhoneClick } from "@/lib/gtm";
 
 export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (status === "sending") return;
+    if (!isFormspreeConfigured) {
+      setStatus("err");
+      return;
+    }
     setStatus("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -18,6 +23,8 @@ export default function ContactSection() {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
+        // generate_lead se posílá až po skutečně úspěšné odpovědi Formspree.
+        trackLead("kontaktni_formular");
         setStatus("ok");
         form.reset();
       } else {
@@ -45,6 +52,7 @@ export default function ContactSection() {
           <div className="mt-12 space-y-4">
             <a
               href="mailto:tomas@netmedio.cz"
+              onClick={() => trackEmailClick("tomas@netmedio.cz")}
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
             >
               <Mail className="w-5 h-5 text-primary" />
@@ -52,6 +60,7 @@ export default function ContactSection() {
             </a>
             <a
               href="tel:+420776691696"
+              onClick={() => trackPhoneClick("+420776691696")}
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
             >
               <Phone className="w-5 h-5 text-primary" />

@@ -3,9 +3,35 @@ import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import { posts, categories } from "@/data/posts";
 import { legacyPosts } from "@/data/legacy-posts";
+import { OG_IMAGE_ARTICLE, imageMeta } from "@/lib/seo";
 
 
 const SITE = "https://www.netmedio.cz";
+
+const blogCollectionLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Blog Netmedio",
+  url: `${SITE}/blog`,
+  inLanguage: "cs-CZ",
+  isPartOf: { "@type": "WebSite", name: "Netmedio", url: SITE },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    numberOfItems: posts.length + legacyPosts.length,
+    itemListElement: [
+      ...posts.map((p) => ({ url: `${SITE}/blog/${p.slug}`, name: p.title, date: p.date })),
+      ...legacyPosts.map((p) => ({ url: `${SITE}${p.path}/`, name: p.title, date: p.date })),
+    ]
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: item.url,
+        name: item.name,
+      })),
+  },
+};
 
 export const Route = createFileRoute("/blog/")({
   component: BlogIndex,
@@ -25,8 +51,12 @@ export const Route = createFileRoute("/blog/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/blog` },
+      ...imageMeta(OG_IMAGE_ARTICLE),
     ],
     links: [{ rel: "canonical", href: `${SITE}/blog` }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(blogCollectionLd) },
+    ],
   }),
 });
 

@@ -1,8 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { services } from "@/data/services";
+import { OG_IMAGE, imageMeta } from "@/lib/seo";
 
 const SITE = "https://www.netmedio.cz";
+
+const servicesCollectionLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Služby Netmedio",
+  url: `${SITE}/sluzby`,
+  inLanguage: "cs-CZ",
+  isPartOf: { "@type": "WebSite", name: "Netmedio", url: SITE },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: services.length,
+    itemListElement: services.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE}/sluzby/${s.slug}`,
+      name: s.title,
+    })),
+  },
+};
 
 export const Route = createFileRoute("/sluzby/")({
   head: () => ({
@@ -21,8 +41,12 @@ export const Route = createFileRoute("/sluzby/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/sluzby` },
+      ...imageMeta(OG_IMAGE),
     ],
     links: [{ rel: "canonical", href: `${SITE}/sluzby` }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(servicesCollectionLd) },
+    ],
   }),
   component: ServicesIndex,
 });

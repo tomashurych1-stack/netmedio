@@ -6,6 +6,7 @@ import LegacyBlocks from "@/components/LegacyBlocks";
 import { getLegacyPost, legacyPosts, type LegacyPost } from "@/data/legacy-posts";
 import { author } from "@/data/posts";
 import { getServiceBySlug } from "@/data/services";
+import { OG_IMAGE_ARTICLE, imageMeta } from "@/lib/seo";
 
 const SITE = "https://www.netmedio.cz";
 
@@ -61,6 +62,7 @@ export const Route = createFileRoute("/$year/$month/$day/$slug")({
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: post.title },
         { name: "twitter:description", content: post.metaDescription },
+        ...imageMeta(OG_IMAGE_ARTICLE),
       ],
       links: [{ rel: "canonical", href: url }],
 
