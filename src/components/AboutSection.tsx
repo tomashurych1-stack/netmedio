@@ -33,8 +33,12 @@ export default function AboutSection() {
                 src={tomasPhoto}
                 alt="Tomáš Hurych – zakladatel Netmedio, Google Partner, digitální marketing"
                 className="relative w-44 h-44 rounded-full object-cover border-2 border-primary/40 shadow-xl"
+                width={176}
+                height={176}
+                decoding="async"
                 loading="lazy"
               />
+
             </div>
             <p className="text-lg font-semibold">Ing. Tomáš Hurych</p>
             <p className="text-sm text-muted-foreground mt-1">
