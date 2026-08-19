@@ -494,7 +494,7 @@ export const services: Service[] = [
       { tier: "Pokročilé měření", range: "od 4 900 Kč jednorázově", note: "Rozšířené měření pro e-shopy a složitější weby, včetně e-commerce, reklamních konverzí a dalších dat potřebných pro optimalizaci kampaní." },
       { tier: "Reporting a dashboardy", range: "od 3 900 Kč", note: "Přehledný dashboard v Looker Studio s nejdůležitějšími výsledky marketingu a webu na jednom místě." },
     ],
-    pricingNote: "Finální cena závisí na rozsahu webu, počtu měřených konverzí a složitosti implementace. Server-side tracking řešíme v rámci pokročilého měření s individuálním naceněním."
+    pricingNote: "Finální cena závisí na rozsahu webu, počtu měřených konverzí a složitosti implementace. Server-side tracking řešíme v rámci pokročilého měření s individuálním naceněním.",
 
     faq: [
       { q: "Co je server-side tracking a kdy ho potřebujeme?", a: "Server-side tracking přenáší měření z prohlížeče na váš server. Doporučujeme pro každého klienta s media spendem nad 50 000 Kč měsíčně." },
