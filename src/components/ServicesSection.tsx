@@ -72,12 +72,12 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-10 flex items-center justify-center">
+        <div className="mt-12 flex items-center justify-center">
           <Link
             to="/sluzby"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm text-foreground hover:border-primary/40 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
           >
-            Všechny služby <ArrowUpRight className="w-4 h-4" />
+            Zobrazit všechny služby <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
