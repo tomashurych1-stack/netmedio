@@ -3,6 +3,8 @@ import type {} from "@tanstack/react-start";
 import { posts } from "@/data/posts";
 import { services } from "@/data/services";
 import { cases } from "@/data/cases";
+import { legacyPosts } from "@/data/legacy-posts";
+import { legacyCases } from "@/data/legacy-cases";
 
 const BASE_URL = "https://www.netmedio.cz";
 
@@ -12,6 +14,7 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/o-nas/", changefreq: "monthly", priority: "0.8" },
           { path: "/sluzby", changefreq: "monthly", priority: "0.9" },
           { path: "/case-studies", changefreq: "monthly", priority: "0.9" },
           { path: "/blog", changefreq: "weekly", priority: "0.9" },
@@ -26,13 +29,30 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
             lastmod: c.date,
           })),
+          ...legacyCases.map((c) => ({
+            path: `${c.path}/`,
+            changefreq: "yearly",
+            priority: "0.7",
+          })),
           ...posts.map((p) => ({
             path: `/blog/${p.slug}`,
             changefreq: "monthly",
             priority: "0.7",
             lastmod: p.date,
           })),
+          ...legacyPosts.map((p) => ({
+            path: `${p.path}/`,
+            changefreq: "yearly",
+            priority: "0.6",
+            lastmod: p.date,
+          })),
+          {
+            path: "/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta/",
+            changefreq: "yearly",
+            priority: "0.6",
+          },
         ];
+
         const urls = entries
           .map((e) => {
             const lines = [
