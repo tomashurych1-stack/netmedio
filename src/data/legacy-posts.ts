@@ -471,74 +471,350 @@ const raw: Omit<LegacyPost, "year" | "month" | "day" | "slug">[] = [
   },
   {
     path: "/2022/08/01/jak-propagovat-restauraci",
-    title: "Jak propagovat restauraci? Řekneme vám, jak na to!",
-    metaTitle: "Jak propagovat restauraci — marketing pro gastro | Netmedio",
+    title: "Jak propagovat restauraci? Praktický návod, jak získat více hostů",
+    metaTitle: "Jak propagovat restauraci? 10 způsobů, jak získat více hostů | Netmedio",
     metaDescription:
-      "Praktický návod na propagaci restaurace: web, PPC reklamy a recenze, sociální sítě a e-mailing. Konkrétní tipy pro gastro marketing.",
+      "Jak efektivně propagovat restauraci? Podívejte se na praktické tipy pro Google, PPC reklamu, sociální sítě, recenze, web a e-mail marketing.",
     excerpt:
-      "Web, PPC, sociální sítě a e-mailing. Konkrétní návod, jak nastavit marketing restaurace tak, aby přiváděl hosty.",
+      "Web, Mapy Google, PPC, sociální sítě, recenze a e-mailing. Praktický návod, jak nastavit marketing restaurace tak, aby přiváděl hosty.",
     category: "Business Analysis",
     date: "2022-08-01",
     dateLabel: "1. srpna 2022",
-    readingTime: 7,
+    dateUpdated: "2026-08-19",
+    dateUpdatedLabel: "19. srpna 2026",
+    readingTime: 9,
     intro: [
-      "Štěstí přeje připraveným. Než začnete propagovat restauraci, připravte si důkladnou analýzu: silné a slabé stránky, srovnání s přímou i nepřímou konkurencí a hlavně konkrétní cílovou skupinu.",
-      "Jinak se komunikuje rychlé občerstvení, jinak tradiční pivnice a zcela jinak luxusní restaurace v centru Prahy.",
+      "Dobré jídlo a příjemné prostředí dnes samy o sobě nestačí. Potenciální hosté si restauraci často najdou ještě před návštěvou na Googlu, v Mapách Google nebo na sociálních sítích. Prohlédnou si fotografie, menu, ceny a recenze a teprve potom se rozhodnou, zda si rezervují stůl nebo navštíví jiný podnik.",
+      "Úspěšná propagace restaurace proto není o jednom reklamním kanálu. Nejlépe funguje kombinace kvalitního webu, lokálního SEO, PPC reklamy, sociálních sítí, recenzí a práce se stávajícími zákazníky.",
+      "Podívejme se, jak jednotlivé možnosti využít a kde má smysl začít.",
     ],
     sections: [
       {
-        id: "webove-stranky",
-        heading: "Webové stránky",
+        id: "cilova-skupina",
+        heading: "1. Nejdříve si ujasněte, koho chcete do restaurace přivést",
         blocks: [
           {
             type: "p",
-            text: "Web je internetová výloha vaší restaurace. Pokud se kolemjdoucím nabídka a prostředí nezalíbí, fyzicky vás nenavštíví. Samozřejmostí by měla být jasná navigace, výzva k rezervaci nebo odběru newsletteru a prostor pro limitované nabídky.",
+            text: "Než začnete investovat do reklamy, je potřeba vědět, koho chcete oslovit. Odpověď „každého v okolí, kdo má hlad“ nestačí.",
+          },
+          {
+            type: "p",
+            text: "Jinak budete propagovat rychlé občerstvení, jinak tradiční českou restauraci, kavárnu, pizzerii nebo fine dining podnik v centru Prahy.",
+          },
+          { type: "p", text: "Zamyslete se například nad tím:" },
+          {
+            type: "ul",
+            items: [
+              "kdo je váš typický zákazník,",
+              "odkud k vám hosté přijíždějí,",
+              "zda cílíte především na obědy, večeře nebo víkendy,",
+              "jaké jsou vaše hlavní konkurenční výhody,",
+              "které restaurace ve vašem okolí představují největší konkurenci,",
+              "proč by měl zákazník navštívit právě vás.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Teprve potom má smysl rozhodovat, do kterých marketingových kanálů investovat.",
           },
         ],
       },
       {
-        id: "ppc-a-recenze",
-        heading: "PPC reklamy a podpora recenzí",
+        id: "webove-stranky",
+        heading: "2. Webové stránky jsou výlohou vaší restaurace",
         blocks: [
+          { type: "p", text: "Web restaurace si můžete představit jako její internetovou výlohu." },
           {
             type: "p",
-            text: "Inzerujte tam, kde vás lidé hledají. Obecnou frázi „restaurace praha“ zadá do Googlu měsíčně přes 18 000 lidí. Platíte jen za návštěvníka, u kterého je vysoká pravděpodobnost, že se stane hostem.",
+            text: "Člověk vás najde na Googlu, otevře web a během několika sekund si vytváří první dojem. Pokud nenajde menu, fotografie, otevírací dobu nebo možnost rezervace, může jednoduše pokračovat ke konkurenci.",
           },
+          {
+            type: "p",
+            text: "Web restaurace by měl být především rychlý, přehledný a perfektně použitelný na mobilním telefonu.",
+          },
+          { type: "p", text: "Návštěvník by měl snadno najít:" },
           {
             type: "ul",
             items: [
-              "Cílení na okolí podniku, například do 1 km od restaurace.",
-              "Remarketing na hosty, kteří si už v minulosti rezervovali stůl.",
-              "Zdůraznění konkrétních výhod v textech reklam (rozvoz do 30 minut, denní menu).",
-              "Aktivní podpora recenzí na Google a Tripadvisoru.",
+              "jídelní a nápojový lístek,",
+              "ceny,",
+              "otevírací dobu,",
+              "adresu a mapu,",
+              "fotografie restaurace a jídel,",
+              "telefon,",
+              "možnost rezervace,",
+              "případně informace o rozvozu nebo speciálních akcích.",
             ],
+          },
+          {
+            type: "p",
+            text: "Důležitá je také rychlost načítání. Velká část návštěvníků hledá restauraci právě z mobilního telefonu a pomalý web může znamenat zbytečně ztraceného zákazníka.",
+          },
+          {
+            type: "service",
+            slug: "tvorba-webu",
+            text: "Připravujeme rychlé weby pro lokální podniky:",
+            label: "Tvorba webových stránek",
+          },
+        ],
+      },
+      {
+        id: "google-mapy",
+        heading: "3. Google a Mapy Google: buďte vidět ve chvíli, kdy má člověk hlad",
+        blocks: [
+          { type: "p", text: "Pro restaurace je lokální vyhledávání mimořádně důležité." },
+          { type: "p", text: "Lidé hledají například:" },
+          {
+            type: "ul",
+            items: [
+              "„restaurace Praha“",
+              "„italská restaurace Plzeň“",
+              "„restaurace v okolí“",
+              "„kam na oběd“",
+              "„nejlepší steak Praha“",
+            ],
+          },
+          {
+            type: "p",
+            text: "Velkou roli proto hraje nejen samotný web, ale také kvalitně vyplněný firemní profil na Googlu.",
+          },
+          {
+            type: "p",
+            text: "Měl by obsahovat aktuální otevírací dobu, fotografie, kontakty, odkaz na web, správnou kategorii podniku a především recenze.",
+          },
+          {
+            type: "p",
+            text: "Informace musí být průběžně aktualizované. Pokud například host dorazí podle údajů na Googlu a zjistí, že máte zavřeno, pravděpodobně si tím důvěru nezískáte.",
+          },
+        ],
+      },
+      {
+        id: "ppc-reklama",
+        heading: "4. PPC reklama: oslovte lidi, kteří restauraci právě hledají",
+        blocks: [
+          {
+            type: "p",
+            text: "Jednou z největších výhod PPC reklamy je možnost zobrazit nabídku právě ve chvíli, kdy potenciální host hledá restauraci.",
+          },
+          {
+            type: "p",
+            text: "Nemusíte oslovovat celé město. Kampaně lze geograficky zaměřit na konkrétní město nebo okolí restaurace a pracovat s vyhledávacími dotazy, které skutečně odpovídají vašemu podniku.",
+          },
+          { type: "p", text: "Restaurace může propagovat například:" },
+          {
+            type: "ul",
+            items: [
+              "polední menu,",
+              "rezervace na večeři,",
+              "víkendové menu,",
+              "rozvoz,",
+              "firemní večírky,",
+              "svatby a oslavy,",
+              "sezónní nabídky,",
+              "konkrétní typ kuchyně.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Důležité je nesledovat pouze počet kliknutí na reklamu. Měřit by se měly skutečné akce – například rezervace, telefonáty, odeslané formuláře nebo jiné relevantní konverze.",
+          },
+          {
+            type: "service",
+            slug: "vykonnostni-reklama",
+            text: "PPC kampaně pro lokální podniky řešíme v rámci služby:",
+            label: "Výkonnostní reklama (PPC)",
           },
         ],
       },
       {
         id: "socialni-site",
-        heading: "Facebook, Instagram a TikTok",
+        heading: "5. Facebook a Instagram: ukažte lidem, proč mají dostat chuť právě na vaše jídlo",
         blocks: [
+          { type: "p", text: "Gastronomie je mimořádně vizuální obor." },
           {
             type: "p",
-            text: "Na sociálních sítích inzerujete přímo tam, kde vaši potenciální hosté tráví nejvíc času. Cílit můžete podle věku, pohlaví, zájmů i podle stránek konkurence. Gastronomický marketing stojí na emoci — a k tomu jsou sociální sítě jako stvořené.",
+            text: "Dobrá fotografie jídla nebo krátké video z kuchyně dokáže vyvolat chuť mnohem lépe než dlouhý reklamní text.",
+          },
+          { type: "p", text: "Na Facebooku a Instagramu můžete představovat:" },
+          {
+            type: "ul",
+            items: [
+              "nové pokrmy,",
+              "polední menu,",
+              "sezónní nabídky,",
+              "zákulisí restaurace,",
+              "kuchaře a personál,",
+              "přípravu jídel,",
+              "speciální akce,",
+              "atmosféru podniku.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Placená reklama navíc umožňuje oslovovat uživatele ve vybrané lokalitě a znovu komunikovat s lidmi, kteří už navštívili váš web nebo s vaším podnikem dříve interagovali.",
+          },
+          {
+            type: "p",
+            text: "Sociální sítě proto nemusí být pouze místem pro získávání fanoušků. Mohou se stát skutečným zdrojem návštěv restaurace.",
           },
         ],
       },
       {
-        id: "emailing",
-        heading: "E-mailing",
+        id: "tiktok-videa",
+        heading: "6. TikTok a krátká videa",
+        blocks: [
+          { type: "p", text: "Krátká videa změnila způsob, jakým lidé objevují restaurace." },
+          {
+            type: "p",
+            text: "Nemusíte přitom vytvářet profesionální televizní reklamu. Často funguje autentické krátké video ukazující přípravu jídla, zajímavý pokrm, prostředí restaurace nebo práci kuchaře.",
+          },
+          {
+            type: "p",
+            text: "Stejný obsah lze často využít na TikToku, Instagram Reels i YouTube Shorts.",
+          },
+          {
+            type: "p",
+            text: "Důležitější než dokonalá produkce bývá dobrý nápad a schopnost během několika sekund zaujmout.",
+          },
+        ],
+      },
+      {
+        id: "recenze",
+        heading: "7. Recenze mohou rozhodnout mezi vámi a konkurencí",
+        blocks: [
+          { type: "p", text: "Představte si dvě restaurace vedle sebe." },
+          {
+            type: "p",
+            text: "Jedna má průměrné hodnocení 4,7 a stovky pozitivních recenzí. Druhá má 3,8 a pouze několik desítek hodnocení.",
+          },
+          { type: "p", text: "Kam pravděpodobně půjdete?" },
+          {
+            type: "p",
+            text: "Recenze jsou jedním z nejsilnějších prvků důvěry při rozhodování o návštěvě restaurace.",
+          },
+          {
+            type: "p",
+            text: "Proto má smysl zákazníky aktivně motivovat k hodnocení. Můžete je o něj požádat po návštěvě, prostřednictvím e-mailu, QR kódu nebo jiným vhodným způsobem.",
+          },
+          { type: "p", text: "Stejně důležité je na recenze odpovídat – pozitivní i negativní." },
+          {
+            type: "p",
+            text: "Negativní recenze nemusí být katastrofa. Profesionální a věcná reakce může naopak ukázat, že vám na zkušenosti hostů záleží.",
+          },
+        ],
+      },
+      {
+        id: "email-marketing",
+        heading: "8. E-mail marketing: přiveďte hosty znovu",
         blocks: [
           {
             type: "p",
-            text: "Nejlevnější a historicky nejkonverznější nástroj přímého marketingu. Komunikujte polední menu i limitované akce a nebojte se říct si o recenzi — třeba výměnou za slevu na další návštěvu.",
+            text: "Získat nového zákazníka bývá zpravidla náročnější než přimět spokojeného hosta, aby se vrátil.",
+          },
+          { type: "p", text: "Právě zde může pomoci e-mail marketing." },
+          { type: "p", text: "Restaurace může prostřednictvím e-mailu komunikovat například:" },
+          {
+            type: "ul",
+            items: [
+              "nové menu,",
+              "sezónní nabídky,",
+              "valentýnské nebo vánoční menu,",
+              "degustace,",
+              "brunch,",
+              "speciální akce,",
+              "novinky z restaurace.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Pokud už máte databázi zákazníků a pracujete s ní v souladu s příslušnými pravidly, může být e-mail velmi efektivním způsobem, jak připomenout restauraci lidem, kteří vás už znají.",
+          },
+          {
+            type: "service",
+            slug: "email-marketing",
+            text: "Nastavení kampaní i automatizací řešíme ve službě:",
+            label: "E-mail marketing",
+          },
+        ],
+      },
+      {
+        id: "mereni-vysledku",
+        heading: "9. Nezapomínejte na měření výsledků",
+        blocks: [
+          {
+            type: "p",
+            text: "Marketing restaurace by neměl fungovat stylem „spustili jsme reklamu a snad to funguje“.",
+          },
+          {
+            type: "p",
+            text: "Je potřeba vědět, odkud zákazníci přicházejí a co skutečně dělají.",
+          },
+          { type: "p", text: "Pomocí webové analytiky lze sledovat například:" },
+          {
+            type: "ul",
+            items: [
+              "návštěvnost webu,",
+              "zdroje návštěvnosti,",
+              "rezervace,",
+              "odeslané formuláře,",
+              "kliknutí na telefon,",
+              "interakce s důležitými prvky webu,",
+              "výkon jednotlivých reklamních kampaní.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Díky tomu můžete postupně přesouvat rozpočet do kanálů, které skutečně přinášejí výsledky.",
+          },
+          {
+            type: "service",
+            slug: "analytika-reporting",
+            text: "Měření a reporting nastavujeme ve službě:",
+            label: "Analytika a reporting",
+          },
+        ],
+      },
+      {
+        id: "shrnuti",
+        heading: "10. Jak tedy restauraci propagovat?",
+        blocks: [
+          {
+            type: "p",
+            text: "Neexistuje jeden marketingový kanál, který bude ideální pro každou restauraci.",
+          },
+          {
+            type: "p",
+            text: "Pro lokální podnik může být nejdůležitější kombinace Google Maps, kvalitních recenzí a PPC kampaně. Jinému podniku může výrazně pomáhat Instagram, videa nebo databáze stávajících hostů.",
+          },
+          {
+            type: "p",
+            text: "Základem je vědět, koho chcete oslovit, měřit výsledky a jednotlivé kanály vzájemně propojovat.",
+          },
+          {
+            type: "p",
+            text: "Největší chybou bývá dělat všechno najednou bez strategie a následně nevědět, která část marketingu skutečně funguje.",
+          },
+        ],
+      },
+      {
+        id: "vice-hostu",
+        heading: "Potřebujete získat více hostů?",
+        blocks: [
+          {
+            type: "p",
+            text: "V Netmedio pomáháme firmám s výkonnostním marketingem, tvorbou webových stránek, analytikou a automatizací.",
+          },
+          {
+            type: "p",
+            text: "Pokud řešíte propagaci restaurace nebo jiného lokálního podniku, můžeme se nejprve podívat na současný stav a navrhnout, kde dává největší smysl začít.",
           },
         ],
       },
     ],
-    relatedServices: ["vykonnostni-reklama", "tvorba-webu", "email-marketing"],
+    relatedServices: ["vykonnostni-reklama", "tvorba-webu", "email-marketing", "analytika-reporting"],
     relatedPosts: ["/2023/12/30/kolik-stoji-reklama-na-facebooku"],
   },
+
   {
     path: "/2021/06/10/stejny-produkt-ruzna-cena",
     title: "Stejný produkt, různá cena? Aneb jak jste potrestáni za věrnost",
