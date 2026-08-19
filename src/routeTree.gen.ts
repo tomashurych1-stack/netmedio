@@ -15,6 +15,7 @@ import { Route as ONasRouteImport } from './routes/o-nas'
 import { Route as NemocniceMelnikRouteImport } from './routes/nemocnice-melnik'
 import { Route as NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport } from './routes/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
 import { Route as MediestetikRouteImport } from './routes/mediestetik'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -55,6 +56,11 @@ const NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute =
 const MediestetikRoute = MediestetikRouteImport.update({
   id: '/mediestetik',
   path: '/mediestetik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/kontakt': typeof KontaktRoute
   '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/nemocnice-melnik': typeof NemocniceMelnikRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
   '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/nemocnice-melnik': typeof NemocniceMelnikRoute
@@ -146,6 +154,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/kontakt': typeof KontaktRoute
   '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/nemocnice-melnik': typeof NemocniceMelnikRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/kontakt'
     | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/nemocnice-melnik'
@@ -182,6 +192,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/kontakt'
     | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/nemocnice-melnik'
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/kontakt'
     | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/nemocnice-melnik'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  KontaktRoute: typeof KontaktRoute
   MediestetikRoute: typeof MediestetikRoute
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   NemocniceMelnikRoute: typeof NemocniceMelnikRoute
@@ -269,6 +282,13 @@ declare module '@tanstack/react-router' {
       path: '/mediestetik'
       fullPath: '/mediestetik'
       preLoaderRoute: typeof MediestetikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies': {
@@ -387,6 +407,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  KontaktRoute: KontaktRoute,
   MediestetikRoute: MediestetikRoute,
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute:
     NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute,
