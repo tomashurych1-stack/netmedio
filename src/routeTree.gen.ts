@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SluzbyRouteImport } from './routes/sluzby'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as NemocniceMelnikRouteImport } from './routes/nemocnice-melnik'
 import { Route as NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport } from './routes/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
 import { Route as MediestetikRouteImport } from './routes/mediestetik'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
@@ -32,6 +33,11 @@ const SluzbyRoute = SluzbyRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NemocniceMelnikRoute = NemocniceMelnikRouteImport.update({
+  id: '/nemocnice-melnik',
+  path: '/nemocnice-melnik',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute =
@@ -102,6 +108,7 @@ export interface FileRoutesByFullPath {
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  '/nemocnice-melnik': typeof NemocniceMelnikRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  '/nemocnice-melnik': typeof NemocniceMelnikRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  '/nemocnice-melnik': typeof NemocniceMelnikRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+    | '/nemocnice-melnik'
     | '/sitemap.xml'
     | '/sluzby'
     | '/blog/$slug'
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
     | '/'
     | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+    | '/nemocnice-melnik'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/$slug'
@@ -179,6 +190,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+    | '/nemocnice-melnik'
     | '/sitemap.xml'
     | '/sluzby'
     | '/blog/$slug'
@@ -196,6 +208,7 @@ export interface RootRouteChildren {
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
   MediestetikRoute: typeof MediestetikRoute
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  NemocniceMelnikRoute: typeof NemocniceMelnikRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
   YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
@@ -215,6 +228,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nemocnice-melnik': {
+      id: '/nemocnice-melnik'
+      path: '/nemocnice-melnik'
+      fullPath: '/nemocnice-melnik'
+      preLoaderRoute: typeof NemocniceMelnikRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': {
@@ -350,6 +370,7 @@ const rootRouteChildren: RootRouteChildren = {
   MediestetikRoute: MediestetikRoute,
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute:
     NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute,
+  NemocniceMelnikRoute: NemocniceMelnikRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SluzbyRoute: SluzbyRouteWithChildren,
   YearMonthDaySlugRoute: YearMonthDaySlugRoute,
