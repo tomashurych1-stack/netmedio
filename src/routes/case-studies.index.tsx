@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { cases } from "@/data/cases";
 
-const SITE = "https://netmedio.lovable.app";
+const SITE = "https://www.netmedio.cz";
 
 export const Route = createFileRoute("/case-studies/")({
   head: () => ({

@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import { posts, categories } from "@/data/posts";
 
-const SITE = "https://netmedio.lovable.app";
+const SITE = "https://www.netmedio.cz";
 
 export const Route = createFileRoute("/blog/")({
   component: BlogIndex,

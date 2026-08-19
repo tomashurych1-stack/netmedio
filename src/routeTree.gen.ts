@@ -11,15 +11,25 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SluzbyRouteImport } from './routes/sluzby'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReferenceRouteImport } from './routes/reference'
+import { Route as ONasRouteImport } from './routes/o-nas'
+import { Route as NemocniceMelnikRouteImport } from './routes/nemocnice-melnik'
+import { Route as NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport } from './routes/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+import { Route as MediestetikRouteImport } from './routes/mediestetik'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as SluzbyPpcReklamyRouteImport } from './routes/sluzby.ppc-reklamy'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
+import { Route as CategorySplatRouteImport } from './routes/category.$'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AuthorSplatRouteImport } from './routes/author.$'
+import { Route as YearMonthDaySlugRouteImport } from './routes/$year.$month.$day.$slug'
 
 const SluzbyRoute = SluzbyRouteImport.update({
   id: '/sluzby',
@@ -29,6 +39,37 @@ const SluzbyRoute = SluzbyRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenceRoute = ReferenceRouteImport.update({
+  id: '/reference',
+  path: '/reference',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ONasRoute = ONasRouteImport.update({
+  id: '/o-nas',
+  path: '/o-nas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NemocniceMelnikRoute = NemocniceMelnikRouteImport.update({
+  id: '/nemocnice-melnik',
+  path: '/nemocnice-melnik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute =
+  NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport.update({
+    id: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta',
+    path: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MediestetikRoute = MediestetikRouteImport.update({
+  id: '/mediestetik',
+  path: '/mediestetik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
@@ -61,10 +102,20 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
+const SluzbyPpcReklamyRoute = SluzbyPpcReklamyRouteImport.update({
+  id: '/ppc-reklamy',
+  path: '/ppc-reklamy',
+  getParentRoute: () => SluzbyRoute,
+} as any)
 const SluzbySlugRoute = SluzbySlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => SluzbyRoute,
+} as any)
+const CategorySplatRoute = CategorySplatRouteImport.update({
+  id: '/category/$',
+  path: '/category/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
   id: '/$slug',
@@ -76,43 +127,83 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const AuthorSplatRoute = AuthorSplatRouteImport.update({
+  id: '/author/$',
+  path: '/author/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YearMonthDaySlugRoute = YearMonthDaySlugRouteImport.update({
+  id: '/$year/$month/$day/$slug',
+  path: '/$year/$month/$day/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/kontakt': typeof KontaktRoute
+  '/mediestetik': typeof MediestetikRoute
+  '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  '/nemocnice-melnik': typeof NemocniceMelnikRoute
+  '/o-nas': typeof ONasRoute
+  '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
+  '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
+  '/$year/$month/$day/$slug': typeof YearMonthDaySlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/mediestetik': typeof MediestetikRoute
+  '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  '/nemocnice-melnik': typeof NemocniceMelnikRoute
+  '/o-nas': typeof ONasRoute
+  '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/sluzby': typeof SluzbyIndexRoute
+  '/$year/$month/$day/$slug': typeof YearMonthDaySlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/kontakt': typeof KontaktRoute
+  '/mediestetik': typeof MediestetikRoute
+  '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  '/nemocnice-melnik': typeof NemocniceMelnikRoute
+  '/o-nas': typeof ONasRoute
+  '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
+  '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
+  '/$year/$month/$day/$slug': typeof YearMonthDaySlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,45 +211,84 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/kontakt'
+    | '/mediestetik'
+    | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+    | '/nemocnice-melnik'
+    | '/o-nas'
+    | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
+    | '/author/$'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/category/$'
     | '/sluzby/$slug'
+    | '/sluzby/ppc-reklamy'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
+    | '/$year/$month/$day/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/kontakt'
+    | '/mediestetik'
+    | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+    | '/nemocnice-melnik'
+    | '/o-nas'
+    | '/reference'
     | '/sitemap.xml'
+    | '/author/$'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/category/$'
     | '/sluzby/$slug'
+    | '/sluzby/ppc-reklamy'
     | '/blog'
     | '/case-studies'
     | '/sluzby'
+    | '/$year/$month/$day/$slug'
   id:
     | '__root__'
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/kontakt'
+    | '/mediestetik'
+    | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+    | '/nemocnice-melnik'
+    | '/o-nas'
+    | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
+    | '/author/$'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/category/$'
     | '/sluzby/$slug'
+    | '/sluzby/ppc-reklamy'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
+    | '/$year/$month/$day/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  KontaktRoute: typeof KontaktRoute
+  MediestetikRoute: typeof MediestetikRoute
+  NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
+  NemocniceMelnikRoute: typeof NemocniceMelnikRoute
+  ONasRoute: typeof ONasRoute
+  ReferenceRoute: typeof ReferenceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
+  AuthorSplatRoute: typeof AuthorSplatRoute
+  CategorySplatRoute: typeof CategorySplatRoute
+  YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -175,6 +305,48 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reference': {
+      id: '/reference'
+      path: '/reference'
+      fullPath: '/reference'
+      preLoaderRoute: typeof ReferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-nas': {
+      id: '/o-nas'
+      path: '/o-nas'
+      fullPath: '/o-nas'
+      preLoaderRoute: typeof ONasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nemocnice-melnik': {
+      id: '/nemocnice-melnik'
+      path: '/nemocnice-melnik'
+      fullPath: '/nemocnice-melnik'
+      preLoaderRoute: typeof NemocniceMelnikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': {
+      id: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+      path: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+      fullPath: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+      preLoaderRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mediestetik': {
+      id: '/mediestetik'
+      path: '/mediestetik'
+      fullPath: '/mediestetik'
+      preLoaderRoute: typeof MediestetikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies': {
@@ -219,12 +391,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/sluzby/ppc-reklamy': {
+      id: '/sluzby/ppc-reklamy'
+      path: '/ppc-reklamy'
+      fullPath: '/sluzby/ppc-reklamy'
+      preLoaderRoute: typeof SluzbyPpcReklamyRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
     '/sluzby/$slug': {
       id: '/sluzby/$slug'
       path: '/$slug'
       fullPath: '/sluzby/$slug'
       preLoaderRoute: typeof SluzbySlugRouteImport
       parentRoute: typeof SluzbyRoute
+    }
+    '/category/$': {
+      id: '/category/$'
+      path: '/category/$'
+      fullPath: '/category/$'
+      preLoaderRoute: typeof CategorySplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/case-studies/$slug': {
       id: '/case-studies/$slug'
@@ -239,6 +425,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
+    }
+    '/author/$': {
+      id: '/author/$'
+      path: '/author/$'
+      fullPath: '/author/$'
+      preLoaderRoute: typeof AuthorSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$year/$month/$day/$slug': {
+      id: '/$year/$month/$day/$slug'
+      path: '/$year/$month/$day/$slug'
+      fullPath: '/$year/$month/$day/$slug'
+      preLoaderRoute: typeof YearMonthDaySlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -271,11 +471,13 @@ const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
 
 interface SluzbyRouteChildren {
   SluzbySlugRoute: typeof SluzbySlugRoute
+  SluzbyPpcReklamyRoute: typeof SluzbyPpcReklamyRoute
   SluzbyIndexRoute: typeof SluzbyIndexRoute
 }
 
 const SluzbyRouteChildren: SluzbyRouteChildren = {
   SluzbySlugRoute: SluzbySlugRoute,
+  SluzbyPpcReklamyRoute: SluzbyPpcReklamyRoute,
   SluzbyIndexRoute: SluzbyIndexRoute,
 }
 
@@ -286,8 +488,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  KontaktRoute: KontaktRoute,
+  MediestetikRoute: MediestetikRoute,
+  NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute:
+    NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute,
+  NemocniceMelnikRoute: NemocniceMelnikRoute,
+  ONasRoute: ONasRoute,
+  ReferenceRoute: ReferenceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SluzbyRoute: SluzbyRouteWithChildren,
+  AuthorSplatRoute: AuthorSplatRoute,
+  CategorySplatRoute: CategorySplatRoute,
+  YearMonthDaySlugRoute: YearMonthDaySlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

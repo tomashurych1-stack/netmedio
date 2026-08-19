@@ -4,7 +4,7 @@ import { getServiceBySlug, services, pricingNote, type Service } from "@/data/se
 import { cases } from "@/data/cases";
 import { posts } from "@/data/posts";
 
-const SITE = "https://netmedio.lovable.app";
+const SITE = "https://www.netmedio.cz";
 
 export const Route = createFileRoute("/sluzby/$slug")({
   loader: ({ params }) => {
