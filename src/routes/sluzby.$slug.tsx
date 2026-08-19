@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
-import { getServiceBySlug, services, pricingNote, type Service } from "@/data/services";
+import { getServiceBySlug, services, pricingNote } from "@/data/services";
 import { cases } from "@/data/cases";
 import { posts } from "@/data/posts";
 
