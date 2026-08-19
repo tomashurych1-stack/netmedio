@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { services } from "@/data/services";
 
-const SITE = "https://netmedio.lovable.app";
+const SITE = "https://www.netmedio.cz";
 
 export const Route = createFileRoute("/sluzby/")({
   head: () => ({

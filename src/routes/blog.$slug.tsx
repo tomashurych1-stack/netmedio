@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Clock, User } from "lucide-react";
 import { getPostBySlug, posts, author, type Post } from "@/data/posts";
 
-const SITE = "https://netmedio.lovable.app";
+const SITE = "https://www.netmedio.cz";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {

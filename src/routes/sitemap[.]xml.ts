@@ -4,7 +4,7 @@ import { posts } from "@/data/posts";
 import { services } from "@/data/services";
 import { cases } from "@/data/cases";
 
-const BASE_URL = "https://netmedio.lovable.app";
+const BASE_URL = "https://www.netmedio.cz";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

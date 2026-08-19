@@ -28,6 +28,7 @@ import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
 import { Route as CategorySplatRouteImport } from './routes/category.$'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AuthorSplatRouteImport } from './routes/author.$'
 import { Route as YearMonthDaySlugRouteImport } from './routes/$year.$month.$day.$slug'
 
 const SluzbyRoute = SluzbyRouteImport.update({
@@ -126,6 +127,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const AuthorSplatRoute = AuthorSplatRouteImport.update({
+  id: '/author/$',
+  path: '/author/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const YearMonthDaySlugRoute = YearMonthDaySlugRouteImport.update({
   id: '/$year/$month/$day/$slug',
   path: '/$year/$month/$day/$slug',
@@ -144,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
+  '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
@@ -163,6 +170,7 @@ export interface FileRoutesByTo {
   '/o-nas': typeof ONasRoute
   '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
@@ -186,6 +194,7 @@ export interface FileRoutesById {
   '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
+  '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
@@ -210,6 +219,7 @@ export interface FileRouteTypes {
     | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
+    | '/author/$'
     | '/blog/$slug'
     | '/case-studies/$slug'
     | '/category/$'
@@ -229,6 +239,7 @@ export interface FileRouteTypes {
     | '/o-nas'
     | '/reference'
     | '/sitemap.xml'
+    | '/author/$'
     | '/blog/$slug'
     | '/case-studies/$slug'
     | '/category/$'
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
+    | '/author/$'
     | '/blog/$slug'
     | '/case-studies/$slug'
     | '/category/$'
@@ -274,6 +286,7 @@ export interface RootRouteChildren {
   ReferenceRoute: typeof ReferenceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
+  AuthorSplatRoute: typeof AuthorSplatRoute
   CategorySplatRoute: typeof CategorySplatRoute
   YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
 }
@@ -413,6 +426,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/author/$': {
+      id: '/author/$'
+      path: '/author/$'
+      fullPath: '/author/$'
+      preLoaderRoute: typeof AuthorSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$year/$month/$day/$slug': {
       id: '/$year/$month/$day/$slug'
       path: '/$year/$month/$day/$slug'
@@ -477,6 +497,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReferenceRoute: ReferenceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SluzbyRoute: SluzbyRouteWithChildren,
+  AuthorSplatRoute: AuthorSplatRoute,
   CategorySplatRoute: CategorySplatRoute,
   YearMonthDaySlugRoute: YearMonthDaySlugRoute,
 }

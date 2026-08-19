@@ -14,7 +14,7 @@ import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-const SITE = "https://netmedio.lovable.app";
+const SITE = "https://www.netmedio.cz";
 
 const organizationLd = {
   "@context": "https://schema.org",
