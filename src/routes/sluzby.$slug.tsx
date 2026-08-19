@@ -10,7 +10,7 @@ export const Route = createFileRoute("/sluzby/$slug")({
   loader: ({ params }) => {
     const service = getServiceBySlug(params.slug);
     if (!service) throw notFound();
-    return { service };
+    return { slug: params.slug };
   },
   notFoundComponent: () => (
     <div className="section-padding">
