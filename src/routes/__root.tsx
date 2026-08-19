@@ -101,6 +101,7 @@ function RootComponent() {
     <>
       <HashScrollHandler />
       <Outlet />
+      <WhatsAppButton />
     </>
   );
 }
