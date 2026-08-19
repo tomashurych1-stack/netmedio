@@ -7,7 +7,10 @@
 export type LegacyBlock =
   | { type: "p"; text: string }
   | { type: "ul"; items: string[] }
-  | { type: "ol"; items: string[] };
+  | { type: "ol"; items: string[] }
+  | { type: "h3"; text: string }
+  | { type: "service"; slug: string; text: string; label: string };
+
 
 export type LegacySection = {
   id: string;
