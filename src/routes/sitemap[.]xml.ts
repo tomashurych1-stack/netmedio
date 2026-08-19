@@ -41,11 +41,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             lastmod: p.date,
           })),
           ...legacyPosts.map((p) => ({
-            path: p.path,
+            path: `${p.path}/`,
             changefreq: "yearly",
             priority: "0.6",
-            lastmod: p.date,
+            lastmod: p.dateUpdated ?? p.date,
           })),
+
           {
             path: "/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta",
             changefreq: "yearly",

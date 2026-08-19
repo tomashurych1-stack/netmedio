@@ -20,17 +20,18 @@ export const Route = createFileRoute("/$year/$month/$day/$slug")({
       return { meta: [{ title: "Článek nenalezen | Netmedio" }, { name: "robots", content: "noindex" }] };
     }
     const { post } = loaderData;
-    const url = `${SITE}${post.path}`;
+    const url = `${SITE}${post.path}/`;
     const articleLd = {
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       headline: post.title,
       description: post.metaDescription,
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: post.dateUpdated ?? post.date,
+      inLanguage: "cs-CZ",
       author: { "@type": "Person", name: author.name, jobTitle: "Digital Marketing Consultant" },
       publisher: { "@type": "Organization", name: "Netmedio", url: SITE },
-      mainEntityOfPage: url,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
     };
     const breadcrumbLd = {
       "@context": "https://schema.org",
@@ -45,17 +46,24 @@ export const Route = createFileRoute("/$year/$month/$day/$slug")({
       meta: [
         { title: post.metaTitle },
         { name: "description", content: post.metaDescription },
+        { name: "robots", content: "index, follow" },
         { name: "author", content: author.name },
         { property: "article:published_time", content: post.date },
+        ...(post.dateUpdated
+          ? [{ property: "article:modified_time", content: post.dateUpdated }]
+          : []),
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.metaDescription },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        { property: "og:locale", content: "cs_CZ" },
+        { property: "og:site_name", content: "Netmedio" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: post.title },
         { name: "twitter:description", content: post.metaDescription },
       ],
       links: [{ rel: "canonical", href: url }],
+
       scripts: [articleLd, breadcrumbLd].map((ld) => ({
         type: "application/ld+json",
         children: JSON.stringify(ld),
@@ -137,6 +145,13 @@ function LegacyArticlePage() {
                   <span>{post.readingTime} min čtení</span>
                 </div>
                 <time dateTime={post.date}>{post.dateLabel}</time>
+                {post.dateUpdated && (
+                  <span>
+                    Aktualizováno{" "}
+                    <time dateTime={post.dateUpdated}>{post.dateUpdatedLabel}</time>
+                  </span>
+                )}
+
               </div>
             </div>
           </header>
