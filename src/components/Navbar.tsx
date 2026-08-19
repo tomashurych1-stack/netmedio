@@ -9,7 +9,7 @@ const links = [
   { label: "Proč Netmedio", section: "proc-nas" },
   { label: "O nás", section: "o-nas" },
   { label: "Případové studie", section: "case-studies" },
-  { label: "Blog", section: "blog" },
+  { label: "Blog", to: "/blog" },
   { label: "FAQ", section: "faq" },
   { label: "Kontakt", section: "kontakt" },
 ];
@@ -40,15 +40,25 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <SectionLink
-              key={l.section}
-              section={l.section}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {l.label}
-            </SectionLink>
-          ))}
+          {links.map((l) =>
+            "to" in l ? (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <SectionLink
+                key={l.section}
+                section={l.section}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </SectionLink>
+            ),
+          )}
         </div>
 
         <div className="flex items-center gap-2">
@@ -79,16 +89,27 @@ export default function Navbar() {
 
       {open && (
         <div className="lg:hidden bg-background border-t border-border px-6 py-6 space-y-4">
-          {links.map((l) => (
-            <SectionLink
-              key={l.section}
-              section={l.section}
-              onClick={() => setOpen(false)}
-              className="block text-sm text-muted-foreground hover:text-foreground"
-            >
-              {l.label}
-            </SectionLink>
-          ))}
+          {links.map((l) =>
+            "to" in l ? (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <SectionLink
+                key={l.section}
+                section={l.section}
+                onClick={() => setOpen(false)}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {l.label}
+              </SectionLink>
+            ),
+          )}
           <SectionLink
             section="kontakt"
             onClick={() => setOpen(false)}
