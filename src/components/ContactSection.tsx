@@ -52,6 +52,7 @@ export default function ContactSection() {
           <div className="mt-12 space-y-4">
             <a
               href="mailto:tomas@netmedio.cz"
+              onClick={() => trackEmailClick("tomas@netmedio.cz")}
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
             >
               <Mail className="w-5 h-5 text-primary" />
@@ -59,6 +60,7 @@ export default function ContactSection() {
             </a>
             <a
               href="tel:+420776691696"
+              onClick={() => trackPhoneClick("+420776691696")}
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
             >
               <Phone className="w-5 h-5 text-primary" />
