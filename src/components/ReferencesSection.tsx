@@ -1,10 +1,10 @@
-import melnik from "@/assets/logo-nemocnice-melnik.png.asset.json";
-import mediestetik from "@/assets/logo-mediestetik.png.asset.json";
-import centernet from "@/assets/logo-centernet-new.png.asset.json";
-import parentes from "@/assets/logo-parentes.png.asset.json";
-import blomusDark from "@/assets/logo-blomus-dark.png.asset.json";
-import blomusLight from "@/assets/logo-blomus-light.png.asset.json";
-import dekorstudio from "@/assets/logo-dekorstudio.png.asset.json";
+import melnik from "@/assets/logo-nemocnice-melnik.png";
+import mediestetik from "@/assets/logo-mediestetik.png";
+import centernet from "@/assets/logo-centernet-new.png";
+import parentes from "@/assets/logo-parentes.png";
+import blomusDark from "@/assets/logo-blomus-dark.png";
+import blomusLight from "@/assets/logo-blomus-light.png";
+import dekorstudio from "@/assets/logo-dekorstudio.png";
 
 type Client = {
   name: string;
@@ -17,12 +17,12 @@ type Client = {
 };
 
 const clients: Client[] = [
-  { name: "Nemocnice Mělník", logo: melnik.url, scale: "max-h-9 md:max-h-10" },
-  { name: "Mediestetik", logo: mediestetik.url, scale: "max-h-10 md:max-h-11" },
-  { name: "CenterNet", logo: centernet.url, scale: "max-h-9 md:max-h-10" },
-  { name: "Dekorstudio", logo: dekorstudio.url, scale: "max-h-9 md:max-h-10" },
-  { name: "Parentes", logo: parentes.url, scale: "max-h-8 md:max-h-9" },
-  { name: "Blomus", logo: blomusDark.url, logoDark: blomusLight.url, scale: "max-h-7 md:max-h-8" },
+  { name: "Nemocnice Mělník", logo: melnik, scale: "max-h-9 md:max-h-10" },
+  { name: "Mediestetik", logo: mediestetik, scale: "max-h-10 md:max-h-11" },
+  { name: "CenterNet", logo: centernet, scale: "max-h-9 md:max-h-10" },
+  { name: "Dekorstudio", logo: dekorstudio, scale: "max-h-9 md:max-h-10" },
+  { name: "Parentes", logo: parentes, scale: "max-h-8 md:max-h-9" },
+  { name: "Blomus", logo: blomusDark, logoDark: blomusLight, scale: "max-h-7 md:max-h-8" },
 ];
 
 export default function ReferencesSection() {
