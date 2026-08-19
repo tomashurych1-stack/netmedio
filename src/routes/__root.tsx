@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import HashScrollHandler from "@/components/HashScrollHandler";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 import appCss from "../styles.css?url";
 
