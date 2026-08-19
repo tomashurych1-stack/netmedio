@@ -7,7 +7,7 @@
  * Dokud je ID prázdné, formulář se neodesílá a zobrazí uživateli
  * kontaktní e-mail místo falešného úspěchu.
  */
-const FORM_ID = (import.meta.env["VITE_FORMSPREE_FORM_ID"] as string | undefined) ?? "";
+const FORM_ID = (import.meta.env["VITE_FORMSPREE_FORM_ID"] as string | undefined) ?? "xbgrqrqb";
 
 export const FORMSPREE_FORM_ID = FORM_ID.trim();
 
