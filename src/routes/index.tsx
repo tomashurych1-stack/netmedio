@@ -13,6 +13,7 @@ import BlogSection from "@/components/BlogSection";
 import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { OG_IMAGE, imageMeta } from "@/lib/seo";
 
 const SITE = "https://www.netmedio.cz";
 
@@ -176,6 +177,7 @@ export const Route = createFileRoute("/")({
         content:
           "Výkonnostní marketing, weby, automatizace a měření. Google Partner. Vede Ing. Tomáš Hurych.",
       },
+      ...imageMeta(OG_IMAGE),
     ],
     links: [{ rel: "canonical", href: SITE }],
     scripts: allLd.map((ld) => ({

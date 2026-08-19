@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { getCaseBySlug, cases, type CaseStudy } from "@/data/cases";
 import { services } from "@/data/services";
+import { OG_IMAGE, imageMeta } from "@/lib/seo";
 
 const SITE = "https://www.netmedio.cz";
 
@@ -54,6 +55,9 @@ export const Route = createFileRoute("/case-studies/$slug")({
         { property: "og:description", content: study.metaDescription },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        { name: "twitter:title", content: study.title },
+        { name: "twitter:description", content: study.metaDescription },
+        ...imageMeta(OG_IMAGE),
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [breadcrumbLd, articleLd].map((ld) => ({
