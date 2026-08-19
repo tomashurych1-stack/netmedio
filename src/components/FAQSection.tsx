@@ -16,7 +16,7 @@ export const faqs = [
   },
   {
     q: "Děláte i tvorbu webů, nebo jen marketing?",
-    a: "Tvoříme firemní weby, landing pages a e-commerce řešení na WordPressu i custom stacku s Cloudflare. Web i kampaně tak řeší jeden tým.",
+    a: "Ano. Tvoříme moderní firemní weby, landing pages a e-commerce řešení – od WordPressu až po rychlé weby postavené na moderním cloudovém stacku. Využíváme také AI při návrhu a vývoji, díky čemuž dokážeme weby vytvářet rychleji a efektivněji. Web, analytiku i kampaně tak řešíte na jednom místě.",
   },
   {
     q: "Co je marketingová automatizace a komu se vyplatí?",
