@@ -181,6 +181,39 @@ function BlogIndex() {
           </div>
         </div>
       </section>
+
+      {/* Archiv — články migrované z původního webu */}
+      <section className="section-padding pt-4">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Archiv</p>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+            Starší články z archivu Netmedio
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {legacyPosts.map((p) => (
+              <Link
+                key={p.path}
+                to="/$year/$month/$day/$slug"
+                params={{ year: p.year, month: p.month, day: p.day, slug: p.slug }}
+                className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-colors"
+              >
+                <div className="flex items-center justify-between mb-2 text-xs text-muted-foreground">
+                  <span className="uppercase tracking-wider">{p.category}</span>
+                  <time dateTime={p.date}>{p.dateLabel}</time>
+                </div>
+                <h3 className="text-base font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{p.excerpt}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary">
+                  Číst článek <ArrowUpRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
