@@ -32,6 +32,10 @@ export type LegacyPost = {
   category: string;
   date: string;
   dateLabel: string;
+  /** Datum skutečné aktualizace obsahu, pokud proběhla */
+  dateUpdated?: string;
+  dateUpdatedLabel?: string;
+
   readingTime: number;
   intro: string[];
   sections: LegacySection[];
