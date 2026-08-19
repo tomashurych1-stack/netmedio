@@ -65,11 +65,11 @@ function ServicesIndex() {
           </nav>
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Služby</p>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight max-w-4xl">
-            Marketing a technologie pro růst vašeho byznysu.
+            Jeden partner pro celý digitální růst.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-            Výkonnostní marketing, weby, automatizace a analytika v jednom týmu — propojené
-            jedním měřením a jednou strategií.
+            Výkonnostní reklama, weby, SEO, e-mailing, AI automatizace a analytika v jednom týmu —
+            bez agenturní byrokracie.
           </p>
         </div>
       </header>

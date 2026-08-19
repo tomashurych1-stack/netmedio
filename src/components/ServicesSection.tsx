@@ -29,7 +29,7 @@ export default function ServicesSection() {
         <div className="max-w-3xl mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Služby</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Marketingové a technologické studio pro růst firem.
+            Marketing a technologie pro růst vašeho byznysu.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
             Výkonnostní reklama, weby, SEO, e-mailing, AI automatizace a analytika v jednom týmu —
