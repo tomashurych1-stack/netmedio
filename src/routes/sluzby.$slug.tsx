@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
-import { getServiceBySlug, services, pricingNote, type Service } from "@/data/services";
+import { getServiceBySlug, services, pricingNote } from "@/data/services";
 import { cases } from "@/data/cases";
 import { posts } from "@/data/posts";
 
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/sluzby/$slug")({
   loader: ({ params }) => {
     const service = getServiceBySlug(params.slug);
     if (!service) throw notFound();
-    return { service };
+    return { slug: params.slug };
   },
   notFoundComponent: () => (
     <div className="section-padding">
@@ -22,7 +22,8 @@ export const Route = createFileRoute("/sluzby/$slug")({
   ),
   head: ({ loaderData, params }) => {
     if (!loaderData) return {};
-    const { service } = loaderData;
+    const service = getServiceBySlug(loaderData.slug);
+    if (!service) return {};
     const url = `${SITE}/sluzby/${params.slug}`;
     const breadcrumbLd = {
       "@context": "https://schema.org",
@@ -75,7 +76,8 @@ export const Route = createFileRoute("/sluzby/$slug")({
 });
 
 function ServiceDetail() {
-  const { service } = Route.useLoaderData() as { service: Service };
+  const { slug } = Route.useLoaderData() as { slug: string };
+  const service = getServiceBySlug(slug)!;
   const relatedServices = services.filter((s) => service.relatedServices.includes(s.slug));
   const relatedCases = cases.filter((c) => service.relatedCases.includes(c.slug));
   const relatedPosts = posts.filter((p) => service.relatedPosts.includes(p.slug));
@@ -241,7 +243,7 @@ function ServiceDetail() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground mt-4 max-w-2xl">{pricingNote}</p>
+          <p className="text-xs text-muted-foreground mt-4 max-w-2xl">{service.pricingNote ?? pricingNote}</p>
         </div>
       </section>
 
