@@ -342,9 +342,9 @@ export const services: Service[] = [
       { kpi: "Open rate kampaní", value: "Stabilně 35–55 %" },
     ],
     pricing: [
-      { tier: "Audit a strategie", range: "od 4 900 Kč jednorázově", note: "Audit databáze, segmentace, doručitelnosti a plán na míru." },
-      { tier: "Setup automatizací", range: "od 9 900 Kč / scénář", note: "Welcome série, abandoned cart, post-purchase nebo nurturing — kompletní nastavení." },
-      { tier: "Průběžná správa", range: "od 5 900 Kč / měsíc", note: "Pravidelné newslettery, údržba automatizací, reporting. Rozsah podle objemu." },
+      { tier: "Konzultace a strategie", range: "zdarma", note: "Krátce projdeme současný stav, databázi, možnosti automatizace a doporučíme vhodný další postup." },
+      { tier: "Nastavení e-mailingu", range: "od 4 900 Kč jednorázově", note: "Nastavení nástroje, šablony a základní automatizace. Rozsáhlejší automatizace a e-shopové scénáře naceníme individuálně." },
+      { tier: "Průběžná správa", range: "od 3 900 Kč / měsíc", note: "Pravidelné newslettery, optimalizace kampaní, údržba automatizací a reporting. Rozsah přizpůsobíme velikosti databáze a četnosti rozesílek." },
     ],
     faq: [
       { q: "Jakou platformu doporučujete?", a: "Pro e-shopy nejčastěji Klaviyo nebo Ecomail (kvůli integraci se Shoptetem a Shopify). Pro B2B HubSpot nebo Mailchimp. Volba vždy závisí na CRM a objemu kontaktů." },
