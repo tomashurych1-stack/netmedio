@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SluzbyRouteImport } from './routes/sluzby'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport } from './routes/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
+import { Route as MediestetikRouteImport } from './routes/mediestetik'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -39,6 +40,11 @@ const NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute =
     path: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MediestetikRoute = MediestetikRouteImport.update({
+  id: '/mediestetik',
+  path: '/mediestetik',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
@@ -107,6 +114,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/mediestetik': typeof MediestetikRoute
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/sitemap.xml'
     | '/sluzby'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/case-studies'
+    | '/mediestetik'
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/sitemap.xml'
     | '/sluzby'
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  MediestetikRoute: typeof MediestetikRoute
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
@@ -209,6 +222,13 @@ declare module '@tanstack/react-router' {
       path: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
       fullPath: '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
       preLoaderRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mediestetik': {
+      id: '/mediestetik'
+      path: '/mediestetik'
+      fullPath: '/mediestetik'
+      preLoaderRoute: typeof MediestetikRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies': {
@@ -327,6 +347,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  MediestetikRoute: MediestetikRoute,
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute:
     NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
