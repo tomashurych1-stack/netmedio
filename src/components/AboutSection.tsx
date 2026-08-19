@@ -1,4 +1,4 @@
-import tomasPhoto from "@/assets/tomas-hurych.jpg.asset.json";
+import tomasPhoto from "@/assets/tomas-hurych.jpg";
 import { Award, Calendar } from "lucide-react";
 
 export default function AboutSection() {
@@ -30,7 +30,7 @@ export default function AboutSection() {
             <div className="relative mb-6">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/40 to-transparent blur-sm" />
               <img
-                src={tomasPhoto.url}
+                src={tomasPhoto}
                 alt="Tomáš Hurych – zakladatel Netmedio, Google Partner, digitální marketing"
                 className="relative w-44 h-44 rounded-full object-cover border-2 border-primary/40 shadow-xl"
                 loading="lazy"
