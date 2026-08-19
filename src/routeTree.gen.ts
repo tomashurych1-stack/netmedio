@@ -23,6 +23,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as SluzbyPpcReklamyRouteImport } from './routes/sluzby.ppc-reklamy'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -99,6 +100,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
+const SluzbyPpcReklamyRoute = SluzbyPpcReklamyRouteImport.update({
+  id: '/ppc-reklamy',
+  path: '/ppc-reklamy',
+  getParentRoute: () => SluzbyRoute,
+} as any)
 const SluzbySlugRoute = SluzbySlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -135,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
@@ -152,6 +159,7 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/sluzby': typeof SluzbyIndexRoute
@@ -173,6 +181,7 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
@@ -195,6 +204,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/case-studies/$slug'
     | '/sluzby/$slug'
+    | '/sluzby/ppc-reklamy'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
@@ -212,6 +222,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/case-studies/$slug'
     | '/sluzby/$slug'
+    | '/sluzby/ppc-reklamy'
     | '/blog'
     | '/case-studies'
     | '/sluzby'
@@ -232,6 +243,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/case-studies/$slug'
     | '/sluzby/$slug'
+    | '/sluzby/ppc-reklamy'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
@@ -353,6 +365,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/sluzby/ppc-reklamy': {
+      id: '/sluzby/ppc-reklamy'
+      path: '/ppc-reklamy'
+      fullPath: '/sluzby/ppc-reklamy'
+      preLoaderRoute: typeof SluzbyPpcReklamyRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
     '/sluzby/$slug': {
       id: '/sluzby/$slug'
       path: '/$slug'
@@ -412,11 +431,13 @@ const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
 
 interface SluzbyRouteChildren {
   SluzbySlugRoute: typeof SluzbySlugRoute
+  SluzbyPpcReklamyRoute: typeof SluzbyPpcReklamyRoute
   SluzbyIndexRoute: typeof SluzbyIndexRoute
 }
 
 const SluzbyRouteChildren: SluzbyRouteChildren = {
   SluzbySlugRoute: SluzbySlugRoute,
+  SluzbyPpcReklamyRoute: SluzbyPpcReklamyRoute,
   SluzbyIndexRoute: SluzbyIndexRoute,
 }
 
