@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SluzbyRouteImport } from './routes/sluzby'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReferenceRouteImport } from './routes/reference'
 import { Route as ONasRouteImport } from './routes/o-nas'
 import { Route as NemocniceMelnikRouteImport } from './routes/nemocnice-melnik'
 import { Route as NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRouteImport } from './routes/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
@@ -35,6 +36,11 @@ const SluzbyRoute = SluzbyRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenceRoute = ReferenceRouteImport.update({
+  id: '/reference',
+  path: '/reference',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ONasRoute = ONasRouteImport.update({
@@ -123,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/nemocnice-melnik': typeof NemocniceMelnikRoute
   '/o-nas': typeof ONasRoute
+  '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -140,6 +147,7 @@ export interface FileRoutesByTo {
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/nemocnice-melnik': typeof NemocniceMelnikRoute
   '/o-nas': typeof ONasRoute
+  '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta': typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   '/nemocnice-melnik': typeof NemocniceMelnikRoute
   '/o-nas': typeof ONasRoute
+  '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/nemocnice-melnik'
     | '/o-nas'
+    | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
     | '/blog/$slug'
@@ -197,6 +207,7 @@ export interface FileRouteTypes {
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/nemocnice-melnik'
     | '/o-nas'
+    | '/reference'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/$slug'
@@ -215,6 +226,7 @@ export interface FileRouteTypes {
     | '/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta'
     | '/nemocnice-melnik'
     | '/o-nas'
+    | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
     | '/blog/$slug'
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute: typeof NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute
   NemocniceMelnikRoute: typeof NemocniceMelnikRoute
   ONasRoute: typeof ONasRoute
+  ReferenceRoute: typeof ReferenceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
   YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
@@ -254,6 +267,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reference': {
+      id: '/reference'
+      path: '/reference'
+      fullPath: '/reference'
+      preLoaderRoute: typeof ReferenceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-nas': {
@@ -413,6 +433,7 @@ const rootRouteChildren: RootRouteChildren = {
     NavodyZadaniPlatebniMetodyGoogleAdsAOvereniInzerentaRoute,
   NemocniceMelnikRoute: NemocniceMelnikRoute,
   ONasRoute: ONasRoute,
+  ReferenceRoute: ReferenceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SluzbyRoute: SluzbyRouteWithChildren,
   YearMonthDaySlugRoute: YearMonthDaySlugRoute,
