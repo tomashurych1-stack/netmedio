@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
-
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/yourid";
+import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
+import { trackEmailClick, trackLead, trackPhoneClick } from "@/lib/gtm";
 
 export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (status === "sending") return;
+    if (!isFormspreeConfigured) {
+      setStatus("err");
+      return;
+    }
     setStatus("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -18,6 +23,8 @@ export default function ContactSection() {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
+        // generate_lead se posílá až po skutečně úspěšné odpovědi Formspree.
+        trackLead("kontaktni_formular");
         setStatus("ok");
         form.reset();
       } else {
