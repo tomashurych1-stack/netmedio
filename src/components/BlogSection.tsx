@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { posts } from "@/data/posts";
 
