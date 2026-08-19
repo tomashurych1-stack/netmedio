@@ -5,7 +5,7 @@ import { useTheme } from "@/hooks/use-theme";
 import SectionLink from "@/components/SectionLink";
 
 const links = [
-  { label: "Služby", section: "sluzby" },
+  { label: "Služby", to: "/sluzby" },
   { label: "Proč Netmedio", section: "proc-nas" },
   { label: "O nás", section: "o-nas" },
   { label: "Případové studie", section: "case-studies" },
