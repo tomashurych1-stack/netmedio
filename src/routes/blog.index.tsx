@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import { posts, categories } from "@/data/posts";
+import { legacyPosts } from "@/data/legacy-posts";
+
 
 const SITE = "https://www.netmedio.cz";
 
