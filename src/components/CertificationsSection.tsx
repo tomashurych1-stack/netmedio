@@ -1,4 +1,4 @@
-import badge from "@/assets/google-partner-badge.png.asset.json";
+import badge from "@/assets/google-partner-badge.png";
 
 export default function CertificationsSection() {
   return (
@@ -14,7 +14,7 @@ export default function CertificationsSection() {
         <div className="rounded-2xl border border-border bg-card p-8 md:p-10 flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-10">
           <div className="shrink-0 flex items-center justify-center">
             <img
-              src={badge.url}
+              src={badge}
               alt="Google Partner – certifikovaný partner Google"
               width={128}
               height={128}
