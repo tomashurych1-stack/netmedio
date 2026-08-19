@@ -145,6 +145,13 @@ function LegacyArticlePage() {
                   <span>{post.readingTime} min čtení</span>
                 </div>
                 <time dateTime={post.date}>{post.dateLabel}</time>
+                {post.dateUpdated && (
+                  <span>
+                    Aktualizováno{" "}
+                    <time dateTime={post.dateUpdated}>{post.dateUpdatedLabel}</time>
+                  </span>
+                )}
+
               </div>
             </div>
           </header>
