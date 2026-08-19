@@ -241,7 +241,7 @@ function ServiceDetail() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground mt-4 max-w-2xl">{pricingNote}</p>
+          <p className="text-xs text-muted-foreground mt-4 max-w-2xl">{service.pricingNote ?? pricingNote}</p>
         </div>
       </section>
 
