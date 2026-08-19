@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { posts } from "@/data/posts";
 
@@ -8,19 +8,11 @@ export default function BlogSection() {
   return (
     <section id="blog" className="section-padding bg-[var(--surface)]/40 border-y border-border">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Blog</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Insights z praxe.
-            </h2>
-          </div>
-          <Link
-            to="/blog"
-            className="text-sm text-primary inline-flex items-center gap-1.5"
-          >
-            Všechny články <ArrowUpRight className="w-4 h-4" />
-          </Link>
+        <div className="mb-16">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Blog</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+            Insights z praxe.
+          </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">
@@ -57,6 +49,16 @@ export default function BlogSection() {
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            Zobrazit všechny články
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
