@@ -30,6 +30,7 @@ export type Service = {
   tools: string[];
   outcomes: { kpi: string; value: string }[];
   pricing: Pricing[];
+  pricingNote?: string;
   faq: FaqItem[];
   relatedServices: string[];
   relatedCases: string[];
