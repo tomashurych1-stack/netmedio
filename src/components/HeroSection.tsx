@@ -46,12 +46,6 @@ export default function HeroSection() {
             Nezávazná konzultace
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </SectionLink>
-          <SectionLink
-            section="case-studies"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-6 py-3 text-sm font-medium text-foreground hover:bg-card transition-colors"
-          >
-            Případové studie
-          </SectionLink>
         </div>
 
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
