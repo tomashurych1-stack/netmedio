@@ -22,7 +22,8 @@ export const Route = createFileRoute("/sluzby/$slug")({
   ),
   head: ({ loaderData, params }) => {
     if (!loaderData) return {};
-    const { service } = loaderData;
+    const service = getServiceBySlug(loaderData.slug);
+    if (!service) return {};
     const url = `${SITE}/sluzby/${params.slug}`;
     const breadcrumbLd = {
       "@context": "https://schema.org",
