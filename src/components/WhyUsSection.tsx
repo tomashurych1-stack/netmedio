@@ -1,11 +1,11 @@
-import { Clock, Handshake, MessageSquare, Target, Award, Infinity as InfinityIcon } from "lucide-react";
+import { Clock, Handshake, MessageSquare, Target, Layers, Infinity as InfinityIcon } from "lucide-react";
 
 const points = [
   { icon: Clock, title: "15+ let zkušeností", desc: "Marketingu se věnujeme od roku 2010, ne od včerejška." },
   { icon: Handshake, title: "Osobní přístup", desc: "Jeden konzultant, jeden tým — žádné předávání mezi juniory." },
   { icon: MessageSquare, title: "Transparentní komunikace", desc: "Víte přesně, kam jdou peníze a co která aktivita přinesla." },
   { icon: Target, title: "Zaměření na výsledky", desc: "Měříme dopad na obrat, ne počet zobrazení." },
-  { icon: Award, title: "Google Partner", desc: "Certifikace v Google Ads a Analytics 4." },
+  { icon: Layers, title: "Web + marketing + data", desc: "Propojujeme tvorbu webů, výkonnostní marketing a analytiku, aby jednotlivé části digitálního marketingu fungovaly společně." },
   { icon: InfinityIcon, title: "Dlouhodobá spolupráce", desc: "Klienti s námi rostou roky — ne kampaň, ale partnerství." },
 ];
 
