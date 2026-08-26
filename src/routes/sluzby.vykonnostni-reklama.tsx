@@ -524,9 +524,9 @@ function PpcMicrosite() {
             Pokud zjistíme, že kampaně brzdí web, měření nebo technický problém, nemusíme končit
             doporučením „předejte to vývojáři".{" "}
             <Link to="/sluzby/tvorba-webu" className="text-primary hover:underline">Weby</Link>,{" "}
-            <Link to="/sluzby/analytika-reporting" className="text-primary hover:underline">analytiku</Link>{" "}
+            <Link to="/sluzby/$slug" params={{ slug: "analytika-reporting" }} className="text-primary hover:underline">analytiku</Link>{" "}
             i{" "}
-            <Link to="/sluzby/ai-automatizace" className="text-primary hover:underline">automatizace</Link>{" "}
+            <Link to="/sluzby/$slug" params={{ slug: "ai-automatizace" }} className="text-primary hover:underline">automatizace</Link>{" "}
             řešíme přímo — vlastním týmem, bez čekání na třetí stranu.
           </p>
         </div>
@@ -822,22 +822,23 @@ function PpcMicrosite() {
               {
                 title: "Tvorba webů",
                 desc: "Weby a landing pages připravené pro marketing a konverze.",
-                href: "/sluzby/tvorba-webu",
+                slug: "tvorba-webu",
               },
               {
                 title: "Analytika a reporting",
                 desc: "Přesná data pro rozhodování a optimalizaci.",
-                href: "/sluzby/analytika-reporting",
+                slug: "analytika-reporting",
               },
               {
                 title: "AI automatizace",
                 desc: "Automatizace procesů, leadů a práce s daty.",
-                href: "/sluzby/ai-automatizace",
+                slug: "ai-automatizace",
               },
             ].map((s) => (
               <Link
                 key={s.title}
-                to={s.href}
+                to="/sluzby/$slug"
+                params={{ slug: s.slug }}
                 className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-colors"
               >
                 <div className="flex items-center justify-between mb-3">
