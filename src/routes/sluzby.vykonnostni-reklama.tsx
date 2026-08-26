@@ -51,7 +51,7 @@ const channels = [
     title: "Měření & analytika",
     chips: ["GA4", "Google Tag Manager", "Consent Mode", "Enhanced Conversions", "Server-side tracking"],
     desc: "Bez kvalitních dat nelze kampaně správně optimalizovat. Proto řešíme také technickou stránku měření.",
-    href: "/sluzby/analytika-reporting",
+    slug: "analytika-reporting",
   },
 ];
 
@@ -432,7 +432,7 @@ function PpcMicrosite() {
                 <>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold">{ch.title}</h3>
-                    {ch.href && (
+                    {ch.slug && (
                       <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                     )}
                   </div>
@@ -444,17 +444,18 @@ function PpcMicrosite() {
                     ))}
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{ch.desc}</p>
-                  {ch.href && (
+                  {ch.slug && (
                     <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary/90 group-hover:text-primary">
                       Více o analytice <ArrowUpRight className="w-4 h-4" />
                     </span>
                   )}
                 </>
               );
-              return ch.href ? (
+              return ch.slug ? (
                 <Link
                   key={ch.title}
-                  to={ch.href}
+                  to="/sluzby/$slug"
+                  params={{ slug: ch.slug }}
                   className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-colors"
                 >
                   {inner}
