@@ -160,7 +160,7 @@ const process = [
   },
 ];
 
-
+const faq = [
   {
     q: "Kolik stojí firemní web?",
     a: "Jednodušší web nebo landing page od 20 000 Kč, kompletní firemní web od 30 000 Kč. Přesnou cenu potvrdíme po úvodní konzultaci podle rozsahu, obsahu a integrací.",
@@ -394,7 +394,7 @@ function WebDevMicrosite() {
         </div>
       </section>
 
-      
+      {/* Ceník */}
       <section id="cenik" className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Ceník</p>
@@ -428,21 +428,155 @@ function WebDevMicrosite() {
       {/* WordPress vs moderní web */}
       <section className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Kvalita</p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
-            Na čem poznáme dobrý web
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Technologie</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+            WordPress, nebo moderní web?
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {qualitySignals.map((q) => (
-              <div key={q.title} className="rounded-2xl border border-border bg-card p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <q.icon className="w-5 h-5 text-primary" />
-                  <h3 className="text-lg font-semibold">{q.title}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{q.desc}</p>
+          <p className="text-muted-foreground max-w-3xl mb-10">
+            Obojí umíme a obojí dává smysl — vždy podle toho, co váš byznys skutečně potřebuje.
+          </p>
+          <div className="rounded-2xl border border-border overflow-hidden">
+            <div className="grid md:grid-cols-[180px_1fr_1fr] bg-card border-b border-border">
+              <div className="p-5 hidden md:block" />
+              <div className="p-5 md:border-l border-border">
+                <div className="flex items-center gap-2 font-semibold"><Server className="w-4 h-4 text-primary" /> WordPress</div>
+              </div>
+              <div className="p-5 md:border-l border-border">
+                <div className="flex items-center gap-2 font-semibold"><Code2 className="w-4 h-4 text-primary" /> Moderní web (React / Cloud)</div>
+              </div>
+            </div>
+            {comparison.map((row) => (
+              <div key={row.label} className="grid md:grid-cols-[180px_1fr_1fr] border-b border-border last:border-b-0">
+                <div className="p-5 text-xs uppercase tracking-wider text-muted-foreground bg-card/50">{row.label}</div>
+                <div className="p-5 text-sm text-muted-foreground leading-relaxed md:border-l border-border">{row.wp}</div>
+                <div className="p-5 text-sm text-muted-foreground leading-relaxed md:border-l border-border">{row.modern}</div>
               </div>
             ))}
           </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            Na úvodní konzultaci doporučíme technologii, která sedí vašemu rozpočtu, týmu i plánům do budoucna.
+          </p>
+        </div>
+      </section>
+
+      {/* AI-assisted development */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto rounded-2xl border border-primary/30 bg-card p-8 md:p-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Bot className="w-6 h-6 text-primary" />
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">AI-assisted development</p>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+            Stavíme rychleji díky AI — kvalitu hlídá člověk
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            AI používáme při návrhu struktury, psaní kódu, tvorbě textů i testování. Zkracuje to
+            dodací lhůty a snižuje náklady, aniž by utrpěla kvalita. Každý výstup prochází
+            seniorskou kontrolou — design, kód i obsah finálně schvaluje člověk s 15+ lety praxe.
+          </p>
+          <ul className="grid sm:grid-cols-3 gap-3 text-sm">
+            {["Rychlejší dodání", "Nižší náklady na vývoj", "Finální lidská kontrola"].map((i) => (
+              <li key={i} className="flex items-start gap-2">
+                <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span className="text-foreground/90">{i}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Co dostanete */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Co dostanete</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+            Kompletní realizace na klíč
+          </h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {deliverables.map((item) => (
+              <li key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-sm">
+                <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span className="text-foreground/90">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Proces */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Proces</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+            Jak probíhá spolupráce
+          </h2>
+          <ol className="space-y-3">
+            {process.map((step) => (
+              <li key={step.title} className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Doba realizace */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Doba realizace</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+            Reálné termíny bez slibů
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <p className="text-2xl font-semibold text-primary mb-2">2–3 týdny</p>
+              <p className="text-sm font-medium mb-1">Landing page</p>
+              <p className="text-sm text-muted-foreground">Jednoúčelová stránka pro kampaň nebo produkt.</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <p className="text-2xl font-semibold text-primary mb-2">4–8 týdnů</p>
+              <p className="text-sm font-medium mb-1">Firemní web</p>
+              <p className="text-sm text-muted-foreground">Kompletní prezentace včetně obsahu, SEO a měření.</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <p className="text-2xl font-semibold text-primary mb-2">Dle rozsahu</p>
+              <p className="text-sm font-medium mb-1">Řešení na míru</p>
+              <p className="text-sm text-muted-foreground">Integrace, e-commerce nebo specifické funkce.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO / AI readiness */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Sparkles className="w-6 h-6 text-primary" />
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">SEO &amp; AI readiness</p>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+            Připravené pro Google i AI vyhledávače
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            Každý web dodáváme s technickým SEO základem: správná struktura nadpisů, meta data,
+            kanonické URL, sitemap, robots.txt a strukturovaná data schema.org. Díky tomu je web
+            čitelný nejen pro Google, ale i pro AI vyhledávače a asistenty (ChatGPT, Perplexity,
+            Google AI Overviews), které čím dál víc ovlivňují, jak zákazníci firmy nacházejí.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-3 text-sm">
+            {[
+              "Technické SEO a Core Web Vitals v základu",
+              "Strukturovaná data (Organization, Service, FAQ)",
+              "Čistá HTML struktura čitelná pro AI crawlery",
+              "Připraveno pro měření a další rozvoj obsahu",
+            ].map((i) => (
+              <li key={i} className="flex items-start gap-2">
+                <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span className="text-foreground/90">{i}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
