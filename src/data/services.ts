@@ -268,9 +268,9 @@ export const services: Service[] = [
       { kpi: "Konverzní poměr z organiky", value: "+25 až +80 %" },
     ],
     pricing: [
-      { tier: "SEO audit", range: "od 5 900 Kč jednorázově", note: "Technický + obsahový audit a jasná roadmapa priorit." },
-      { tier: "SEO + obsah — paušál", range: "od 6 900 Kč / měsíc", note: "Technické úpravy, obsah, reporting — měsíční spolupráce podle rozsahu." },
-      { tier: "Obsahový projekt", range: "od 15 000 Kč / projekt", note: "Strategická pillar stránka + podpůrné články s interním linkingem." },
+      { tier: "SEO audit", range: "od 4 900 Kč", note: "Technický + obsahový audit a jasná roadmapa priorit." },
+      { tier: "Pravidelné SEO", range: "od 4 900 Kč / měsíc", note: "Technické úpravy, obsahová strategie, tvorba obsahu a reporting — měsíční spolupráce podle rozsahu." },
+      { tier: "Rozsáhlejší SEO / obsahový projekt", range: "individuálně", note: "Strategická pillar stránka + podpůrné články s interním linkingem. Naceníme podle rozsahu." },
     ],
     faq: [
       { q: "Za jak dlouho SEO přinese výsledky?", a: "První posuny v Search Console vidíme za 4–8 týdnů. Reálný dopad na návštěvnost a konverze za 3–6 měsíců. SEO je dlouhodobá investice s exponenciálním efektem." },
@@ -409,16 +409,17 @@ export const services: Service[] = [
       "HubSpot / Pipedrive",
     ],
     outcomes: [
-      { kpi: "Úspora času týmu", value: "−40 až −70 % manuální práce" },
+      { kpi: "Úspora času týmu", value: "Výrazně méně rutinní ruční práce" },
       { kpi: "Reakční čas na lead", value: "Z hodin na sekundy" },
-      { kpi: "Pokrytí kvalifikace AI", value: "60–90 % leadů" },
-      { kpi: "Náklady na reporting", value: "−80 % vs. ruční" },
+      { kpi: "Kvalifikace leadů", value: "AI předkvalifikuje příchozí poptávky" },
+      { kpi: "Reporting", value: "Automaticky místo ruční přípravy" },
     ],
     pricing: [
-      { tier: "Audit a návrh", range: "od 9 900 Kč jednorázově", note: "Mapa procesů, návrh automatizace a odhad nákladů na nástroje." },
-      { tier: "Implementace workflow", range: "od 15 000 Kč / workflow", note: "Závisí na složitosti a počtu integrací. Začínáme s jedním, rozšiřujeme postupně." },
-      { tier: "Měsíční údržba", range: "od 3 900 Kč / měsíc", note: "Monitoring, alerting, drobné úpravy a rozšíření workflow." },
+      { tier: "AI audit a návrh řešení", range: "od 9 900 Kč", note: "Analýza procesu, návrh vhodného workflow, technické řešení a doporučení dalšího postupu." },
+      { tier: "Implementace automatizace", range: "od 15 000 Kč", note: "Realizace konkrétního workflow, propojení nástrojů, nastavení logiky, testování a nasazení." },
+      { tier: "Další rozvoj", range: "individuálně", note: "Úpravy, monitoring, rozšiřování automatizací a další workflow podle potřeby." },
     ],
+    pricingNote: "Cena implementace závisí především na složitosti workflow, počtu integrací a použitých systémech.",
     faq: [
       { q: "V čem stavíte automatizace?", a: "Pro většinu klientů Make nebo n8n. Pro jednoduché propojení 2–3 nástrojů stačí Zapier. Pro náročné případy stavíme přímo nad API klienta." },
       { q: "Co když nepoužíváme CRM?", a: "Doporučíme jednoduché řešení (Pipedrive, HubSpot Free, Airtable) a postavíme automatizaci tak, aby CRM bylo místem pravdy." },

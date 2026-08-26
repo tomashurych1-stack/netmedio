@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { getServiceBySlug, services, pricingNote } from "@/data/services";
 import { cases } from "@/data/cases";
 import { posts } from "@/data/posts";
@@ -109,33 +109,46 @@ function ServiceDetail() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
             {service.heroIntro}
           </p>
-          <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mb-10">
             <div className="rounded-2xl border border-border bg-card p-5">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Hlavní přínos</p>
-              <p className="text-foreground">{service.benefit}</p>
+              <p className="text-sm text-foreground/90 leading-relaxed">{service.benefit}</p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-5">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Pro koho</p>
-              <p className="text-foreground">{service.audience}</p>
+              <p className="text-sm text-foreground/90 leading-relaxed">{service.audience}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
               to="/"
               hash="kontakt"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Nezávazná konzultace <ArrowRight className="w-4 h-4" />
+              Nezávazná konzultace
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <a
               href="#cenik"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40 transition-colors"
             >
               Ceník služby
             </a>
           </div>
         </div>
       </header>
+
+      {/* Trust bar */}
+      <section aria-label="Důvěra a zkušenosti" className="section-padding pt-0 pb-0">
+        <div className="max-w-5xl mx-auto">
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 rounded-2xl border border-border bg-card px-6 py-5 text-sm text-muted-foreground">
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">15+ let zkušeností</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">100+ projektů</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">Google Partner</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">Klienti v ČR i EU</span></li>
+          </ul>
+        </div>
+      </section>
 
       {/* Problems */}
       <section id="problemy" className="section-padding">
@@ -222,7 +235,7 @@ function ServiceDetail() {
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-4">
-            Rozsahy odpovídají typickým výsledkům našich klientů. Konkrétní KPI vždy potvrdíme po auditu.
+            Konkrétní KPI a cíle vždy definujeme na začátku spolupráce podle vaší situace a dostupných dat.
           </p>
         </div>
       </section>
@@ -235,8 +248,8 @@ function ServiceDetail() {
             Transparentní ceny
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
-            {service.pricing.map((p) => (
-              <div key={p.tier} className="rounded-2xl border border-border bg-card p-6 flex flex-col">
+            {service.pricing.map((p, i) => (
+              <div key={p.tier} className={`rounded-2xl border bg-card p-6 flex flex-col ${i === 1 ? "border-primary/40" : "border-border"}`}>
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">{p.tier}</p>
                 <p className="text-2xl font-semibold text-primary mb-3">{p.range}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.note}</p>
@@ -271,9 +284,9 @@ function ServiceDetail() {
       {/* Related services */}
       {relatedServices.length > 0 && (
         <section className="section-padding pt-0">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Související služby</p>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Související služby</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
               Často kombinujeme s
             </h2>
             <div className="grid md:grid-cols-3 gap-4">
@@ -304,9 +317,9 @@ function ServiceDetail() {
       {/* Related cases */}
       {relatedCases.length > 0 && (
         <section className="section-padding pt-0">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Související případové studie</p>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Výsledky v praxi</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
               Jak to dopadlo v praxi
             </h2>
             <div className="grid md:grid-cols-3 gap-4">
@@ -315,16 +328,31 @@ function ServiceDetail() {
                   key={c.slug}
                   to="/case-studies/$slug"
                   params={{ slug: c.slug }}
-                  className="group rounded-2xl border border-border bg-card p-6 flex flex-col hover:border-primary/40 transition-colors"
+                  className="group rounded-2xl border border-border bg-card p-8 flex flex-col hover:border-primary/40 transition-colors"
                 >
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                    {c.industry}
-                  </span>
-                  <h3 className="text-base font-semibold mb-3 group-hover:text-primary transition-colors">
-                    {c.shortTitle}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4 flex-1">{c.summary}</p>
-                  <p className="text-base font-semibold text-primary">{c.headlineResult}</p>
+                  <div className="flex items-center justify-between mb-8">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {c.industry}
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </div>
+                  <div className="space-y-5 flex-1">
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Výchozí situace</p>
+                      <p className="text-sm">{c.initialSituation[0]}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Co jsme změnili</p>
+                      <p className="text-sm">{c.solution.map((s) => s.heading.replace(/^\d+\.\s*/, "")).join(", ")}</p>
+                    </div>
+                  </div>
+                  <div className="mt-8 pt-6 border-t border-border">
+                    <p className="text-xs text-muted-foreground mb-1">Výsledek</p>
+                    <p className="text-xl font-semibold text-primary">{c.headlineResult}</p>
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm text-primary/90 group-hover:text-primary">
+                      Detail případové studie <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -335,24 +363,43 @@ function ServiceDetail() {
       {/* Related posts */}
       {relatedPosts.length > 0 && (
         <section className="section-padding pt-0">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Z blogu</p>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Z blogu</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
               Pokračujte ve čtení
             </h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               {relatedPosts.map((p) => (
                 <Link
                   key={p.slug}
                   to="/blog/$slug"
                   params={{ slug: p.slug }}
-                  className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-colors"
+                  className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors flex flex-col"
                 >
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground">{p.category}</span>
-                  <h3 className="text-base font-semibold mt-2 mb-2 group-hover:text-primary transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-3">{p.excerpt}</p>
+                  <div className="aspect-[16/8] overflow-hidden border-b border-border">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      width={1280}
+                      height={640}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center justify-between mb-2 text-xs text-muted-foreground">
+                      <span className="uppercase tracking-wider">{p.category}</span>
+                      <span>{p.readingTime} min</span>
+                    </div>
+                    <h3 className="text-base font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground flex-1">{p.excerpt}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary/90 group-hover:text-primary">
+                      Číst článek <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -363,6 +410,7 @@ function ServiceDetail() {
       {/* Final CTA */}
       <section className="section-padding pt-0">
         <div className="max-w-5xl mx-auto rounded-2xl border border-primary/30 bg-card p-10 text-center">
+          <service.icon className="w-8 h-8 text-primary mx-auto mb-4" />
           <h2 className="text-2xl md:text-3xl font-semibold mb-3">
             Pojďme se k tomu pobavit
           </h2>
@@ -373,21 +421,16 @@ function ServiceDetail() {
             <Link
               to="/"
               hash="kontakt"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Nezávazná konzultace <ArrowRight className="w-4 h-4" />
+              Nezávazná konzultace
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
               to="/sluzby"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40 transition-colors"
             >
               Všechny služby
-            </Link>
-            <Link
-              to="/case-studies"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40"
-            >
-              Případové studie
             </Link>
           </div>
         </div>
