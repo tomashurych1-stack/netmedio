@@ -9,9 +9,6 @@ import {
   FileText,
   Building2,
   Sparkles,
-  Gauge,
-  Search,
-  BarChart3,
   Bot,
   Code2,
   Server,
@@ -163,29 +160,6 @@ const process = [
   },
 ];
 
-const qualitySignals = [
-  {
-    icon: Gauge,
-    title: "Rychlost",
-    desc: "Web se načítá do 2–3 sekund i na mobilu. Rychlost ovlivňuje konverze, SEO i cenu reklamy.",
-  },
-  {
-    icon: Search,
-    title: "Najdou vás",
-    desc: "Čistá struktura, správné nadpisy, meta data a rychlé načítání — základ pro Google i AI vyhledávače.",
-  },
-  {
-    icon: BarChart3,
-    title: "Měřitelnost",
-    desc: "Každý formulář, telefonát i kliknutí se měří. Víte, co web přináší a co zlepšit.",
-  },
-  {
-    icon: LayoutGrid,
-    title: "Jasná nabídka",
-    desc: "Návštěvník do pár sekund ví, co nabízíte, proč zrovna vy a jak vás kontaktovat.",
-  },
-];
-
 const faq = [
   {
     q: "Kolik stojí firemní web?",
@@ -329,7 +303,7 @@ function WebDevMicrosite() {
         <div className="max-w-5xl mx-auto">
           <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 rounded-2xl border border-border bg-card px-6 py-5 text-sm text-muted-foreground">
             <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">15+ let zkušeností</span></li>
-            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">100+ realizovaných projektů</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">Web + marketing + analytika</span></li>
             <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">Google Partner</span></li>
             <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">SEO a analytika v ceně</span></li>
           </ul>
@@ -420,6 +394,37 @@ function WebDevMicrosite() {
         </div>
       </section>
 
+      {/* Ceník */}
+      <section id="cenik" className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Ceník</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+            Transparentní ceny
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Jednodušší web / Landing page</p>
+              <p className="text-2xl font-semibold text-primary mb-3">od 20 000 Kč</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Ideální pro kampaně, microsite nebo menší projekty. Včetně designu, vývoje a měření.</p>
+            </div>
+            <div className="rounded-2xl border border-primary/40 bg-card p-6 flex flex-col">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Firemní web</p>
+              <p className="text-2xl font-semibold text-primary mb-3">od 30 000 Kč</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Kompletní profesionální prezentace s měřením, SEO základem a školením.</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Rozsáhlejší řešení</p>
+              <p className="text-2xl font-semibold text-primary mb-3">individuální nabídka</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Specifické funkce, integrace (CRM, rezervace) nebo e-commerce. Rozsah podle potřeby.</p>
+            </div>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4 max-w-2xl">
+            Finální cena vždy závisí na rozsahu, obsahu a integracích. Po úvodní konzultaci dostanete
+            konkrétní nabídku s pevnou cenou a termínem.
+          </p>
+        </div>
+      </section>
+
       {/* WordPress vs moderní web */}
       <section className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
@@ -470,7 +475,7 @@ function WebDevMicrosite() {
             seniorskou kontrolou — design, kód i obsah finálně schvaluje člověk s 15+ lety praxe.
           </p>
           <ul className="grid sm:grid-cols-3 gap-3 text-sm">
-            {["Rychlejší dodání", "Nižší náklady na vývoj", "Seniorská kontrola kvality"].map((i) => (
+            {["Rychlejší dodání", "Nižší náklady na vývoj", "Finální lidská kontrola"].map((i) => (
               <li key={i} className="flex items-start gap-2">
                 <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <span className="text-foreground/90">{i}</span>
@@ -572,58 +577,6 @@ function WebDevMicrosite() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* Na čem poznáme dobrý web */}
-      <section className="section-padding pt-0">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Kvalita</p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
-            Na čem poznáme dobrý web
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {qualitySignals.map((q) => (
-              <div key={q.title} className="rounded-2xl border border-border bg-card p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <q.icon className="w-5 h-5 text-primary" />
-                  <h3 className="text-lg font-semibold">{q.title}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{q.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ceník */}
-      <section id="cenik" className="section-padding pt-0">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Ceník</p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
-            Transparentní ceny
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Jednodušší web / Landing page</p>
-              <p className="text-2xl font-semibold text-primary mb-3">od 20 000 Kč</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">Ideální pro kampaně, microsite nebo menší projekty. Včetně designu, vývoje a měření.</p>
-            </div>
-            <div className="rounded-2xl border border-primary/40 bg-card p-6 flex flex-col">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Firemní web</p>
-              <p className="text-2xl font-semibold text-primary mb-3">od 30 000 Kč</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">Kompletní profesionální prezentace s měřením, SEO základem a školením.</p>
-            </div>
-            <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Rozsáhlejší řešení</p>
-              <p className="text-2xl font-semibold text-primary mb-3">individuální nabídka</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">Specifické funkce, integrace (CRM, rezervace) nebo e-commerce. Rozsah podle potřeby.</p>
-            </div>
-          </div>
-          <p className="text-xs text-muted-foreground mt-4 max-w-2xl">
-            Finální cena vždy závisí na rozsahu, obsahu a integracích. Po úvodní konzultaci dostanete
-            konkrétní nabídku s pevnou cenou a termínem.
-          </p>
         </div>
       </section>
 
