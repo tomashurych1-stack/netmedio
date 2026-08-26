@@ -190,15 +190,14 @@ export const services: Service[] = [
       "Google Tag Manager",
     ],
     outcomes: [
-      { kpi: "Zlepšení Core Web Vitals", value: "Z červené do zelené" },
-      { kpi: "Růst organické návštěvnosti", value: "+30 až +120 % / 6 měsíců" },
-      { kpi: "Konverzní poměr formulářů", value: "+40 až +150 %" },
-      { kpi: "Čas na vytvoření landing page", value: "1 den vs. 2 týdny" },
+      { kpi: "Technická kvalita a rychlost", value: "Core Web Vitals v zelených číslech" },
+      { kpi: "Připravenost pro marketing", value: "SEO a analytika v základu" },
+      { kpi: "Flexibilita", value: "Snadná budoucí rozšiřitelnost" },
     ],
     pricing: [
-      { tier: "Landing page", range: "od 24 900 Kč", note: "Jednostránka pro kampaň nebo produkt. Včetně designu, vývoje a měření." },
-      { tier: "Firemní web", range: "od 49 900 Kč", note: "5–15 stránek, šablonový systém, redakce obsahu, SEO základ." },
-      { tier: "Web na míru", range: "individuální nabídka", note: "Komplexní weby s integracemi (CRM, ERP, rezervace, fakturace). Rozsah podle potřeby." },
+      { tier: "Jednodušší web / Landing page", range: "od 20 000 Kč", note: "Ideální pro kampaně, microsite nebo menší projekty." },
+      { tier: "Firemní web", range: "od 30 000 Kč", note: "Kompletní profesionální prezentace s měřením a SEO." },
+      { tier: "Rozsáhlejší řešení", range: "individuální nabídka", note: "Specifické funkce, integrace nebo e-commerce." },
     ],
     faq: [
       { q: "Na čem stavíte weby?", a: "Podle požadavků klienta. Pro firmy s častou redakcí obsahu WordPress. Pro rychlé moderní weby Lovable / TanStack Start na Cloudflare. Pro landing pages kombinace s headless CMS." },

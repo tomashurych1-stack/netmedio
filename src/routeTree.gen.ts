@@ -29,6 +29,7 @@ import { Route as CategorySplatRouteImport } from './routes/category.$'
 import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
 import { Route as SluzbyPpcReklamyRouteImport } from './routes/sluzby.ppc-reklamy'
+import { Route as SluzbyTvorbaWebuRouteImport } from './routes/sluzby.tvorba-webu'
 import { Route as YearMonthDaySlugRouteImport } from './routes/$year.$month.$day.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -132,6 +133,11 @@ const SluzbyPpcReklamyRoute = SluzbyPpcReklamyRouteImport.update({
   path: '/ppc-reklamy',
   getParentRoute: () => SluzbyRoute,
 } as any)
+const SluzbyTvorbaWebuRoute = SluzbyTvorbaWebuRouteImport.update({
+  id: '/tvorba-webu',
+  path: '/tvorba-webu',
+  getParentRoute: () => SluzbyRoute,
+} as any)
 const YearMonthDaySlugRoute = YearMonthDaySlugRouteImport.update({
   id: '/$year/$month/$day/$slug',
   path: '/$year/$month/$day/$slug',
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
+  '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
@@ -176,6 +183,7 @@ export interface FileRoutesByTo {
   '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
+  '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/sluzby': typeof SluzbyIndexRoute
@@ -200,6 +208,7 @@ export interface FileRoutesById {
   '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
+  '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
@@ -225,6 +234,7 @@ export interface FileRouteTypes {
     | '/category/$'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
+    | '/sluzby/tvorba-webu'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
@@ -245,6 +255,7 @@ export interface FileRouteTypes {
     | '/category/$'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
+    | '/sluzby/tvorba-webu'
     | '/blog'
     | '/case-studies'
     | '/sluzby'
@@ -268,6 +279,7 @@ export interface FileRouteTypes {
     | '/category/$'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
+    | '/sluzby/tvorba-webu'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
@@ -433,6 +445,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SluzbyPpcReklamyRouteImport
       parentRoute: typeof SluzbyRoute
     }
+    '/sluzby/tvorba-webu': {
+      id: '/sluzby/tvorba-webu'
+      path: '/tvorba-webu'
+      fullPath: '/sluzby/tvorba-webu'
+      preLoaderRoute: typeof SluzbyTvorbaWebuRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
     '/$year/$month/$day/$slug': {
       id: '/$year/$month/$day/$slug'
       path: '/$year/$month/$day/$slug'
@@ -472,12 +491,14 @@ const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
 interface SluzbyRouteChildren {
   SluzbySlugRoute: typeof SluzbySlugRoute
   SluzbyPpcReklamyRoute: typeof SluzbyPpcReklamyRoute
+  SluzbyTvorbaWebuRoute: typeof SluzbyTvorbaWebuRoute
   SluzbyIndexRoute: typeof SluzbyIndexRoute
 }
 
 const SluzbyRouteChildren: SluzbyRouteChildren = {
   SluzbySlugRoute: SluzbySlugRoute,
   SluzbyPpcReklamyRoute: SluzbyPpcReklamyRoute,
+  SluzbyTvorbaWebuRoute: SluzbyTvorbaWebuRoute,
   SluzbyIndexRoute: SluzbyIndexRoute,
 }
 
