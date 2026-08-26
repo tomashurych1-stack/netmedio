@@ -121,12 +121,12 @@ export const services: Service[] = [
       { kpi: "Pokrytí konverzí (server-side)", value: "+15 až +35 %" },
     ],
     pricing: [
-      { tier: "Úvodní analýza a konzultace", range: "ZDARMA", note: "Krátce projdeme vaše současné kampaně, cíle a možnosti dalšího růstu." },
-      { tier: "Správa PPC kampaní", range: "od 3 900 Kč / měsíc", note: "Pravidelná optimalizace kampaní, kontrola výkonu a reporting." },
-      { tier: "Větší projekty", range: "individuální cena", note: "Pro rozsáhlejší účty, více reklamních systémů a vyšší reklamní rozpočty." },
+      { tier: "Jeden reklamní systém", range: "od 5 000 Kč / měsíc", note: "Například Google Ads nebo Sklik. Pravidelná optimalizace, kontrola výkonu a základní reporting." },
+      { tier: "Více reklamních systémů", range: "od 8 000 Kč / měsíc", note: "Například Google Ads + Sklik nebo kombinace s Meta Ads. Společná strategie a vyhodnocování napříč kanály." },
+      { tier: "Komplexní výkonnostní marketing", range: "individuální nabídka", note: "Pro větší účty, e-commerce a projekty kombinující více reklamních systémů, feedy, analytiku nebo technické řešení." },
     ],
     pricingNote:
-      "Každou spolupráci naceňujeme individuálně podle rozsahu projektu a reklamního rozpočtu. Úvodní analýza a konzultace je zdarma. Detailní samostatný audit může být placený a naceňuje se individuálně.",
+      "Konkrétní cena závisí na rozsahu kampaní, počtu reklamních systémů, velikosti účtu a požadovaném rozsahu práce. Úvodní konzultace a základní posouzení současného stavu je zdarma.",
     faq: [
       { q: "Za jak dlouho uvidíme první výsledky?", a: "U Search kampaní s jasnou poptávkou typicky během 1–2 týdnů. Performance Max a Smart Bidding potřebují 4–8 týdnů na zaučení algoritmu." },
       { q: "Sklik dnes ještě dává smysl?", a: "Pro většinu e-shopů ano — Zboží.cz a regionální poptávka jsou stále silné. Pro mladší cílovku v B2B často ne. Vyhodnocujeme z dat klienta." },
