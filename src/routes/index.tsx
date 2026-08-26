@@ -5,7 +5,6 @@ import TrustBar from "@/components/TrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import AboutSection from "@/components/AboutSection";
-import CertificationsSection from "@/components/CertificationsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ReferencesSection from "@/components/ReferencesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -197,7 +196,6 @@ function Index() {
         <ServicesSection />
         <WhyUsSection />
         <AboutSection />
-        <CertificationsSection />
         <CaseStudiesSection />
         <ReferencesSection />
         <TestimonialsSection />
