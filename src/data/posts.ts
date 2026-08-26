@@ -3,6 +3,7 @@ import adsVsSklik from "@/assets/blog-ads-vs-sklik.jpg";
 import ppcAgency from "@/assets/blog-ppc-agency.jpg";
 import serverTracking from "@/assets/blog-server-tracking.jpg";
 import aiWorkflow from "@/assets/blog-ai-workflow.jpg";
+import cenaWebu from "@/assets/blog-cena-webu.jpg";
 
 export type Section = { id: string; heading: string; paragraphs: string[] };
 export type FaqItem = { q: string; a: string };
@@ -32,6 +33,27 @@ const AUTHOR = {
 export const author = AUTHOR;
 
 export const posts: Post[] = [
+  {
+    // Plný obsah tohoto článku renderuje dedikovaná route src/routes/blog.cena-tvorby-webu.tsx
+    // (statická route má přednost před dynamickou /blog/$slug). Tento záznam slouží pro výpisy,
+    // homepage, související články a sitemapu.
+    slug: "cena-tvorby-webu",
+    title: "Kolik stojí tvorba webu? Co dostanete za 20, 30 nebo 50 tisíc Kč",
+    metaTitle: "Cena tvorby webu: Co dostanete za 20, 30 nebo 50 tisíc Kč?",
+    metaDescription:
+      "Kolik stojí profesionální web? Porovnáváme, co lze očekávat od webu za 20, 30 nebo 50 tisíc Kč, co cenu ovlivňuje a kdy se vyplatí řešení na míru.",
+    excerpt:
+      "Web za 20 000 Kč a web za 100 000 Kč mohou na první pohled vypadat podobně. Rozdíl je v práci na struktuře, obsahu, funkcích a měření. Podívejte se, co za jednotlivé rozpočty reálně dostanete.",
+    category: "Weby",
+    tag: "Weby",
+    date: "2026-08-26",
+    dateLabel: "26. srpna 2026",
+    readingTime: 15,
+    image: cenaWebu,
+    sections: [],
+    faq: [],
+    related: ["kolik-stoji-ppc-kampane-2026", "ai-automatizace-v-marketingu"],
+  },
   {
     slug: "kolik-stoji-ppc-kampane-2026",
     title: "Kolik stojí PPC kampaně v roce 2026",
