@@ -109,33 +109,46 @@ function ServiceDetail() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
             {service.heroIntro}
           </p>
-          <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mb-10">
             <div className="rounded-2xl border border-border bg-card p-5">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Hlavní přínos</p>
-              <p className="text-foreground">{service.benefit}</p>
+              <p className="text-sm text-foreground/90 leading-relaxed">{service.benefit}</p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-5">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Pro koho</p>
-              <p className="text-foreground">{service.audience}</p>
+              <p className="text-sm text-foreground/90 leading-relaxed">{service.audience}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
               to="/"
               hash="kontakt"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Nezávazná konzultace <ArrowRight className="w-4 h-4" />
+              Nezávazná konzultace
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <a
               href="#cenik"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-foreground hover:border-primary/40 transition-colors"
             >
               Ceník služby
             </a>
           </div>
         </div>
       </header>
+
+      {/* Trust bar */}
+      <section aria-label="Důvěra a zkušenosti" className="section-padding pt-0 pb-0">
+        <div className="max-w-5xl mx-auto">
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 rounded-2xl border border-border bg-card px-6 py-5 text-sm text-muted-foreground">
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">15+ let zkušeností</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">100+ projektů</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">Google Partner</span></li>
+            <li className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-primary" /><span className="text-foreground/90">Klienti v ČR i EU</span></li>
+          </ul>
+        </div>
+      </section>
 
       {/* Problems */}
       <section id="problemy" className="section-padding">
@@ -222,7 +235,7 @@ function ServiceDetail() {
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-4">
-            Rozsahy odpovídají typickým výsledkům našich klientů. Konkrétní KPI vždy potvrdíme po auditu.
+            Konkrétní KPI a cíle vždy definujeme na začátku spolupráce podle vaší situace a dostupných dat.
           </p>
         </div>
       </section>
@@ -235,8 +248,8 @@ function ServiceDetail() {
             Transparentní ceny
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
-            {service.pricing.map((p) => (
-              <div key={p.tier} className="rounded-2xl border border-border bg-card p-6 flex flex-col">
+            {service.pricing.map((p, i) => (
+              <div key={p.tier} className={`rounded-2xl border bg-card p-6 flex flex-col ${i === 1 ? "border-primary/40" : "border-border"}`}>
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">{p.tier}</p>
                 <p className="text-2xl font-semibold text-primary mb-3">{p.range}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.note}</p>
