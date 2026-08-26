@@ -1,10 +1,138 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check } from "lucide-react";
 import { getServiceBySlug, services, pricingNote } from "@/data/services";
 import { cases } from "@/data/cases";
 import { posts } from "@/data/posts";
 
 const SITE = "https://www.netmedio.cz";
+
+const aiAutomationAreas = [
+  {
+    title: "Leady a obchod",
+    items: [
+      "automatické zpracování nových poptávek",
+      "AI kvalifikace leadů",
+      "zápis poptávky do CRM",
+      "doplnění a strukturování informací",
+      "přiřazení leadu správnému obchodníkovi",
+      "automatické upozornění týmu",
+      "follow-up komunikace",
+      "rezervace schůzek",
+      "příprava návrhu odpovědi pomocí AI",
+    ],
+  },
+  {
+    title: "Marketing",
+    items: [
+      "propojení webových formulářů s dalšími systémy",
+      "automatizace e-mailových workflow",
+      "segmentace kontaktů",
+      "příprava a repurposing obsahu",
+      "AI zpracování marketingových podkladů",
+      "automatické předávání dat mezi marketingovými nástroji",
+      "personalizace komunikace",
+      "automatizace rutinních marketingových úkolů",
+    ],
+  },
+  {
+    title: "Reporting a analytika",
+    items: [
+      "automatický sběr dat z Google Ads, Meta Ads, GA4 a dalších zdrojů",
+      "propojení marketingových dat s CRM",
+      "pravidelné reporty",
+      "automatická aktualizace dashboardů",
+      "AI shrnutí výsledků",
+      "upozornění na významné změny ve výkonu",
+      "distribuce reportů e-mailem nebo do Slacku / Teams",
+    ],
+  },
+  {
+    title: "CRM a zákaznická data",
+    items: [
+      "automatické vytváření a aktualizace kontaktů",
+      "synchronizace dat mezi systémy",
+      "enrichment dat",
+      "změny stavů leadů podle událostí",
+      "automatické úkoly pro obchodní tým",
+      "deduplikace a strukturování dat",
+      "napojení CRM na web, e-mail a marketing",
+    ],
+  },
+  {
+    title: "Interní procesy",
+    items: [
+      "přenos dat mezi aplikacemi",
+      "zpracování příchozích e-mailů",
+      "zpracování dokumentů",
+      "extrakce informací pomocí AI",
+      "schvalovací workflow",
+      "automatické notifikace",
+      "práce s tabulkami a databázemi",
+      "administrativní workflow",
+      "automatizace opakovaných interních úkolů",
+    ],
+  },
+  {
+    title: "AI asistenti",
+    items: [
+      "interní AI asistent nad firemními informacemi",
+      "třídění a shrnutí informací",
+      "návrhy odpovědí",
+      "práce s dokumenty",
+      "kategorizace požadavků",
+      "analýza textových dat",
+      "příprava podkladů pro zaměstnance",
+      "AI jako součást většího automatizovaného workflow",
+    ],
+  },
+];
+
+const aiWorkflows = [
+  {
+    title: "Nová poptávka",
+    steps: [
+      "Webový formulář",
+      "AI vyhodnotí obsah poptávky",
+      "Lead se zapíše do CRM",
+      "Přiřadí se správné osobě",
+      "Obchodník dostane upozornění",
+      "Připraví se návrh odpovědi",
+    ],
+  },
+  {
+    title: "Marketingový reporting",
+    steps: [
+      "Google Ads + Meta Ads + GA4 + CRM",
+      "Automatický sběr dat",
+      "Spojení dat",
+      "Aktualizace dashboardu",
+      "AI shrnutí výsledků",
+      "Report dorazí odpovědné osobě",
+    ],
+  },
+  {
+    title: "Zpracování dokumentů",
+    steps: [
+      "E-mail / PDF / dokument",
+      "AI dokument zpracuje",
+      "Vytáhne potřebné informace",
+      "Data strukturuje",
+      "Uloží je do firemního systému",
+      "Spustí navazující workflow",
+    ],
+  },
+  {
+    title: "Interní AI asistent",
+    steps: [
+      "Dotaz zaměstnance",
+      "AI pracuje s dostupnými firemními podklady",
+      "Najde relevantní informace",
+      "Připraví odpověď nebo podklad",
+      "Člověk výsledek zkontroluje a použije",
+    ],
+  },
+];
+
 
 export const Route = createFileRoute("/sluzby/$slug")({
   loader: ({ params }) => {
@@ -170,7 +298,91 @@ function ServiceDetail() {
         </div>
       </section>
 
+      {/* Možnosti automatizace */}
+      {service.slug === "ai-automatizace" && (
+        <section id="moznosti-automatizace" className="section-padding pt-0">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Možnosti automatizace</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+              Co můžeme ve firmě automatizovat
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-10">
+              Od jednoduchého předávání dat mezi aplikacemi až po workflow propojující marketing, obchod, CRM a AI. Největší smysl mají automatizace u procesů, které se často opakují, zabírají lidem čas nebo zbytečně zpomalují práci s daty a zákazníky.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {aiAutomationAreas.map((area) => (
+                <div key={area.title} className="rounded-2xl border border-border bg-card p-6">
+                  <h3 className="text-base font-semibold mb-3">{area.title}</h3>
+                  <ul className="space-y-2">
+                    {area.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Příklady workflow */}
+      {service.slug === "ai-automatizace" && (
+        <section id="priklady-workflow" className="section-padding pt-0">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Příklady workflow</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+              Od ručního procesu k automatickému workflow
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {aiWorkflows.map((w) => (
+                <div key={w.title} className="rounded-2xl border border-border bg-card p-6">
+                  <h3 className="text-base font-semibold mb-4">{w.title}</h3>
+                  <div className="flex flex-col gap-2">
+                    {w.steps.map((step, i) => (
+                      <div key={i} className="flex flex-col items-center gap-2">
+                        <div className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground text-center leading-snug">
+                          {step}
+                        </div>
+                        {i < w.steps.length - 1 && (
+                          <ArrowDown className="w-4 h-4 text-primary shrink-0" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Začít můžeme jedním procesem */}
+      {service.slug === "ai-automatizace" && (
+        <section id="zacatek" className="section-padding pt-0">
+          <div className="max-w-5xl mx-auto rounded-2xl border border-primary/30 bg-card p-8 md:p-10 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-3">
+              Začít můžeme jedním procesem
+            </h2>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Automatizace nemusí znamenat velký transformační projekt. Často dává větší smysl začít jedním konkrétním workflow, které dnes zabírá zbytečně mnoho času. Po ověření přínosu můžeme řešení postupně rozšiřovat a propojovat s dalšími procesy.
+            </p>
+            <Link
+              to="/"
+              hash="kontakt"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              Probrat možnosti automatizace
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Approach */}
+
       <section id="postup" className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Jak to děláme</p>
@@ -208,6 +420,11 @@ function ServiceDetail() {
           <aside className="rounded-2xl border border-border bg-card p-8">
             <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Nástroje</p>
             <h2 className="text-xl font-semibold mb-4">Pracujeme s</h2>
+            {service.slug === "ai-automatizace" && (
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Technologii vybíráme podle konkrétního procesu. Automatizace stavíme v Make, n8n nebo přímo přes API a propojujeme je s AI modely a systémy, které už firma používá.
+              </p>
+            )}
             <ul className="flex flex-wrap gap-2">
               {service.tools.map((t) => (
                 <li key={t} className="text-xs text-muted-foreground border border-border rounded-full px-3 py-1">
