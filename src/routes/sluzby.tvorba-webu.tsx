@@ -435,7 +435,7 @@ function WebDevMicrosite() {
           <p className="text-muted-foreground max-w-3xl mb-10">
             Obojí umíme a obojí dává smysl — vždy podle toho, co váš byznys skutečně potřebuje.
           </p>
-          <div className="rounded-2xl border border-border overflow-hidden">
+          <div className="hidden md:block rounded-2xl border border-border overflow-hidden">
             <div className="grid md:grid-cols-[180px_1fr_1fr] bg-card border-b border-border">
               <div className="p-5 hidden md:block" />
               <div className="p-5 md:border-l border-border">
@@ -452,6 +452,35 @@ function WebDevMicrosite() {
                 <div className="p-5 text-sm text-muted-foreground leading-relaxed md:border-l border-border">{row.modern}</div>
               </div>
             ))}
+          </div>
+
+          <div className="md:hidden space-y-4">
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 font-semibold mb-4 pb-4 border-b border-border">
+                <Server className="w-4 h-4 text-primary" /> WordPress
+              </div>
+              <div className="space-y-4">
+                {comparison.map((row) => (
+                  <div key={row.label}>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{row.label}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{row.wp}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 font-semibold mb-4 pb-4 border-b border-border">
+                <Code2 className="w-4 h-4 text-primary" /> Moderní web (React / Cloud)
+              </div>
+              <div className="space-y-4">
+                {comparison.map((row) => (
+                  <div key={row.label}>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{row.label}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{row.modern}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <p className="text-xs text-muted-foreground mt-4">
             Na úvodní konzultaci doporučíme technologii, která sedí vašemu rozpočtu, týmu i plánům do budoucna.
