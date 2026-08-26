@@ -298,7 +298,91 @@ function ServiceDetail() {
         </div>
       </section>
 
+      {/* Možnosti automatizace */}
+      {service.slug === "ai-automatizace" && (
+        <section id="moznosti-automatizace" className="section-padding pt-0">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Možnosti automatizace</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+              Co můžeme ve firmě automatizovat
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-10">
+              Od jednoduchého předávání dat mezi aplikacemi až po workflow propojující marketing, obchod, CRM a AI. Největší smysl mají automatizace u procesů, které se často opakují, zabírají lidem čas nebo zbytečně zpomalují práci s daty a zákazníky.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {aiAutomationAreas.map((area) => (
+                <div key={area.title} className="rounded-2xl border border-border bg-card p-6">
+                  <h3 className="text-base font-semibold mb-3">{area.title}</h3>
+                  <ul className="space-y-2">
+                    {area.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Příklady workflow */}
+      {service.slug === "ai-automatizace" && (
+        <section id="priklady-workflow" className="section-padding pt-0">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Příklady workflow</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
+              Od ručního procesu k automatickému workflow
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {aiWorkflows.map((w) => (
+                <div key={w.title} className="rounded-2xl border border-border bg-card p-6">
+                  <h3 className="text-base font-semibold mb-4">{w.title}</h3>
+                  <div className="flex flex-col gap-2">
+                    {w.steps.map((step, i) => (
+                      <div key={i} className="flex flex-col items-center gap-2">
+                        <div className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground text-center leading-snug">
+                          {step}
+                        </div>
+                        {i < w.steps.length - 1 && (
+                          <ArrowDown className="w-4 h-4 text-primary shrink-0" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Začít můžeme jedním procesem */}
+      {service.slug === "ai-automatizace" && (
+        <section id="zacatek" className="section-padding pt-0">
+          <div className="max-w-5xl mx-auto rounded-2xl border border-primary/30 bg-card p-8 md:p-10 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-3">
+              Začít můžeme jedním procesem
+            </h2>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Automatizace nemusí znamenat velký transformační projekt. Často dává větší smysl začít jedním konkrétním workflow, které dnes zabírá zbytečně mnoho času. Po ověření přínosu můžeme řešení postupně rozšiřovat a propojovat s dalšími procesy.
+            </p>
+            <Link
+              to="/"
+              hash="kontakt"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              Probrat možnosti automatizace
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Approach */}
+
       <section id="postup" className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Jak to děláme</p>
