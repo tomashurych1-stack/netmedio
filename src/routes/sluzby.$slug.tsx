@@ -420,6 +420,11 @@ function ServiceDetail() {
           <aside className="rounded-2xl border border-border bg-card p-8">
             <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Nástroje</p>
             <h2 className="text-xl font-semibold mb-4">Pracujeme s</h2>
+            {service.slug === "ai-automatizace" && (
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Technologii vybíráme podle konkrétního procesu. Automatizace stavíme v Make, n8n nebo přímo přes API a propojujeme je s AI modely a systémy, které už firma používá.
+              </p>
+            )}
             <ul className="flex flex-wrap gap-2">
               {service.tools.map((t) => (
                 <li key={t} className="text-xs text-muted-foreground border border-border rounded-full px-3 py-1">
