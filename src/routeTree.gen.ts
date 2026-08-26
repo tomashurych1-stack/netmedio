@@ -23,6 +23,7 @@ import { Route as SluzbyRouteImport } from './routes/sluzby'
 import { Route as AuthorSplatRouteImport } from './routes/author.$'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BlogCenaTvorbyWebuRouteImport } from './routes/blog.cena-tvorby-webu'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as CategorySplatRouteImport } from './routes/category.$'
@@ -104,6 +105,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const BlogCenaTvorbyWebuRoute = BlogCenaTvorbyWebuRouteImport.update({
+  id: '/cena-tvorby-webu',
+  path: '/cena-tvorby-webu',
+  getParentRoute: () => BlogRoute,
+} as any)
 const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -165,6 +171,7 @@ export interface FileRoutesByFullPath {
   '/sluzby': typeof SluzbyRouteWithChildren
   '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
@@ -187,6 +194,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
@@ -213,6 +221,7 @@ export interface FileRoutesById {
   '/sluzby': typeof SluzbyRouteWithChildren
   '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
   '/sluzby/$slug': typeof SluzbySlugRoute
@@ -240,6 +249,7 @@ export interface FileRouteTypes {
     | '/sluzby'
     | '/author/$'
     | '/blog/$slug'
+    | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
     | '/sluzby/$slug'
@@ -262,6 +272,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/author/$'
     | '/blog/$slug'
+    | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
     | '/sluzby/$slug'
@@ -287,6 +298,7 @@ export interface FileRouteTypes {
     | '/sluzby'
     | '/author/$'
     | '/blog/$slug'
+    | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
     | '/sluzby/$slug'
@@ -416,6 +428,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/cena-tvorby-webu': {
+      id: '/blog/cena-tvorby-webu'
+      path: '/cena-tvorby-webu'
+      fullPath: '/blog/cena-tvorby-webu'
+      preLoaderRoute: typeof BlogCenaTvorbyWebuRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/case-studies/': {
       id: '/case-studies/'
       path: '/'
@@ -484,11 +503,13 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogCenaTvorbyWebuRoute: typeof BlogCenaTvorbyWebuRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogCenaTvorbyWebuRoute: BlogCenaTvorbyWebuRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 
