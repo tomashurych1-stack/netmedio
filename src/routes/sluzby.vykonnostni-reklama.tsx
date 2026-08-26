@@ -169,6 +169,16 @@ const featuredCases = caseSlugs
   .map((slug) => cases.find((c) => c.slug === slug))
   .filter((c): c is (typeof cases)[number] => Boolean(c));
 
+const ppcPostSlugs = [
+  "kolik-stoji-ppc-kampane-2026",
+  "google-ads-vs-sklik",
+  "jak-poznat-dobrou-ppc-agenturu",
+  "server-side-tracking-standard",
+];
+const ppcPosts = ppcPostSlugs
+  .map((slug) => posts.find((p) => p.slug === slug))
+  .filter((p): p is (typeof posts)[number] => Boolean(p));
+
 const process = [
   {
     title: "01 — Audit a měření",

@@ -30,6 +30,7 @@ import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
 import { Route as SluzbyPpcReklamyRouteImport } from './routes/sluzby.ppc-reklamy'
 import { Route as SluzbyTvorbaWebuRouteImport } from './routes/sluzby.tvorba-webu'
+import { Route as SluzbyVykonnostniReklamaRouteImport } from './routes/sluzby.vykonnostni-reklama'
 import { Route as YearMonthDaySlugRouteImport } from './routes/$year.$month.$day.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -138,6 +139,12 @@ const SluzbyTvorbaWebuRoute = SluzbyTvorbaWebuRouteImport.update({
   path: '/tvorba-webu',
   getParentRoute: () => SluzbyRoute,
 } as any)
+const SluzbyVykonnostniReklamaRoute =
+  SluzbyVykonnostniReklamaRouteImport.update({
+    id: '/vykonnostni-reklama',
+    path: '/vykonnostni-reklama',
+    getParentRoute: () => SluzbyRoute,
+  } as any)
 const YearMonthDaySlugRoute = YearMonthDaySlugRouteImport.update({
   id: '/$year/$month/$day/$slug',
   path: '/$year/$month/$day/$slug',
@@ -163,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
+  '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
@@ -184,6 +192,7 @@ export interface FileRoutesByTo {
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
+  '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/sluzby': typeof SluzbyIndexRoute
@@ -209,6 +218,7 @@ export interface FileRoutesById {
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
+  '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
@@ -235,6 +245,7 @@ export interface FileRouteTypes {
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
     | '/sluzby/tvorba-webu'
+    | '/sluzby/vykonnostni-reklama'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
@@ -256,6 +267,7 @@ export interface FileRouteTypes {
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
     | '/sluzby/tvorba-webu'
+    | '/sluzby/vykonnostni-reklama'
     | '/blog'
     | '/case-studies'
     | '/sluzby'
@@ -280,6 +292,7 @@ export interface FileRouteTypes {
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
     | '/sluzby/tvorba-webu'
+    | '/sluzby/vykonnostni-reklama'
     | '/blog/'
     | '/case-studies/'
     | '/sluzby/'
@@ -452,6 +465,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SluzbyTvorbaWebuRouteImport
       parentRoute: typeof SluzbyRoute
     }
+    '/sluzby/vykonnostni-reklama': {
+      id: '/sluzby/vykonnostni-reklama'
+      path: '/vykonnostni-reklama'
+      fullPath: '/sluzby/vykonnostni-reklama'
+      preLoaderRoute: typeof SluzbyVykonnostniReklamaRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
     '/$year/$month/$day/$slug': {
       id: '/$year/$month/$day/$slug'
       path: '/$year/$month/$day/$slug'
@@ -492,6 +512,7 @@ interface SluzbyRouteChildren {
   SluzbySlugRoute: typeof SluzbySlugRoute
   SluzbyPpcReklamyRoute: typeof SluzbyPpcReklamyRoute
   SluzbyTvorbaWebuRoute: typeof SluzbyTvorbaWebuRoute
+  SluzbyVykonnostniReklamaRoute: typeof SluzbyVykonnostniReklamaRoute
   SluzbyIndexRoute: typeof SluzbyIndexRoute
 }
 
@@ -499,6 +520,7 @@ const SluzbyRouteChildren: SluzbyRouteChildren = {
   SluzbySlugRoute: SluzbySlugRoute,
   SluzbyPpcReklamyRoute: SluzbyPpcReklamyRoute,
   SluzbyTvorbaWebuRoute: SluzbyTvorbaWebuRoute,
+  SluzbyVykonnostniReklamaRoute: SluzbyVykonnostniReklamaRoute,
   SluzbyIndexRoute: SluzbyIndexRoute,
 }
 
