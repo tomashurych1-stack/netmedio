@@ -6,6 +6,134 @@ import { posts } from "@/data/posts";
 
 const SITE = "https://www.netmedio.cz";
 
+const aiAutomationAreas = [
+  {
+    title: "Leady a obchod",
+    items: [
+      "automatické zpracování nových poptávek",
+      "AI kvalifikace leadů",
+      "zápis poptávky do CRM",
+      "doplnění a strukturování informací",
+      "přiřazení leadu správnému obchodníkovi",
+      "automatické upozornění týmu",
+      "follow-up komunikace",
+      "rezervace schůzek",
+      "příprava návrhu odpovědi pomocí AI",
+    ],
+  },
+  {
+    title: "Marketing",
+    items: [
+      "propojení webových formulářů s dalšími systémy",
+      "automatizace e-mailových workflow",
+      "segmentace kontaktů",
+      "příprava a repurposing obsahu",
+      "AI zpracování marketingových podkladů",
+      "automatické předávání dat mezi marketingovými nástroji",
+      "personalizace komunikace",
+      "automatizace rutinních marketingových úkolů",
+    ],
+  },
+  {
+    title: "Reporting a analytika",
+    items: [
+      "automatický sběr dat z Google Ads, Meta Ads, GA4 a dalších zdrojů",
+      "propojení marketingových dat s CRM",
+      "pravidelné reporty",
+      "automatická aktualizace dashboardů",
+      "AI shrnutí výsledků",
+      "upozornění na významné změny ve výkonu",
+      "distribuce reportů e-mailem nebo do Slacku / Teams",
+    ],
+  },
+  {
+    title: "CRM a zákaznická data",
+    items: [
+      "automatické vytváření a aktualizace kontaktů",
+      "synchronizace dat mezi systémy",
+      "enrichment dat",
+      "změny stavů leadů podle událostí",
+      "automatické úkoly pro obchodní tým",
+      "deduplikace a strukturování dat",
+      "napojení CRM na web, e-mail a marketing",
+    ],
+  },
+  {
+    title: "Interní procesy",
+    items: [
+      "přenos dat mezi aplikacemi",
+      "zpracování příchozích e-mailů",
+      "zpracování dokumentů",
+      "extrakce informací pomocí AI",
+      "schvalovací workflow",
+      "automatické notifikace",
+      "práce s tabulkami a databázemi",
+      "administrativní workflow",
+      "automatizace opakovaných interních úkolů",
+    ],
+  },
+  {
+    title: "AI asistenti",
+    items: [
+      "interní AI asistent nad firemními informacemi",
+      "třídění a shrnutí informací",
+      "návrhy odpovědí",
+      "práce s dokumenty",
+      "kategorizace požadavků",
+      "analýza textových dat",
+      "příprava podkladů pro zaměstnance",
+      "AI jako součást většího automatizovaného workflow",
+    ],
+  },
+];
+
+const aiWorkflows = [
+  {
+    title: "Nová poptávka",
+    steps: [
+      "Webový formulář",
+      "AI vyhodnotí obsah poptávky",
+      "Lead se zapíše do CRM",
+      "Přiřadí se správné osobě",
+      "Obchodník dostane upozornění",
+      "Připraví se návrh odpovědi",
+    ],
+  },
+  {
+    title: "Marketingový reporting",
+    steps: [
+      "Google Ads + Meta Ads + GA4 + CRM",
+      "Automatický sběr dat",
+      "Spojení dat",
+      "Aktualizace dashboardu",
+      "AI shrnutí výsledků",
+      "Report dorazí odpovědné osobě",
+    ],
+  },
+  {
+    title: "Zpracování dokumentů",
+    steps: [
+      "E-mail / PDF / dokument",
+      "AI dokument zpracuje",
+      "Vytáhne potřebné informace",
+      "Data strukturuje",
+      "Uloží je do firemního systému",
+      "Spustí navazující workflow",
+    ],
+  },
+  {
+    title: "Interní AI asistent",
+    steps: [
+      "Dotaz zaměstnance",
+      "AI pracuje s dostupnými firemními podklady",
+      "Najde relevantní informace",
+      "Připraví odpověď nebo podklad",
+      "Člověk výsledek zkontroluje a použije",
+    ],
+  },
+];
+
+
 export const Route = createFileRoute("/sluzby/$slug")({
   loader: ({ params }) => {
     const service = getServiceBySlug(params.slug);
