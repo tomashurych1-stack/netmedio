@@ -7,43 +7,23 @@ import {
 
 export const faqs = [
   {
-    q: "Kolik stojí správa Google Ads?",
-    a: "Cena vychází z rozsahu kampaní a obratu, který přes ně teče. Měsíční fee začíná typicky od 5 000 Kč za jeden reklamní systém (od 8 000 Kč při kombinaci více systémů) a vždy ji nastavujeme tak, aby se klientovi vrátila násobně.",
+    q: "Kolik stojí správa PPC kampaní?",
+    a: "Správa jednoho reklamního systému začíná od 5 000 Kč měsíčně. Při kombinaci více systémů (např. Google Ads + Sklik + Meta Ads) od 8 000 Kč. Cena vždy vychází z rozsahu kampaní a obratu, který přes ně teče.",
   },
   {
-    q: "Jak rychle uvidím první výsledky z PPC?",
-    a: "První signály jsou většinou do 2–4 týdnů. Stabilní výkon a optimalizovaný ROAS typicky budujeme 2–3 měsíce.",
+    q: "Děláte také tvorbu webových stránek?",
+    a: "Ano. Tvoříme moderní firemní weby, landing pages a e-commerce řešení. Postavíme je na WordPressu, nebo jako rychlé weby na React/Cloud. Využíváme AI při návrhu a vývoji, díky čemuž dokážeme dodat kvalitnější řešení rychleji. Ceny webů začínají na 20 000 Kč a 30 000 Kč dle rozsahu.",
   },
   {
-    q: "Děláte i tvorbu webů, nebo jen marketing?",
-    a: "Ano. Tvoříme moderní firemní weby, landing pages a e-commerce řešení – od WordPressu až po rychlé weby postavené na moderním cloudovém stacku. Využíváme také AI při návrhu a vývoji, díky čemuž dokážeme weby vytvářet rychleji a efektivněji. Web, analytiku i kampaně tak řešíte na jednom místě.",
-  },
-  {
-    q: "Co je marketingová automatizace a komu se vyplatí?",
-    a: "Automatizace nahrazuje opakovanou manuální práci — od reportingu po lead nurturing. Vyplatí se vždy, když tým tráví hodiny činnostmi, které lze popsat procesem.",
-  },
-  {
-    q: "Pracujete se SEO?",
+    q: "Nabízíte SEO a obsahový marketing?",
     a: "Ano. Řešíme on-page SEO, technické SEO, strukturovaná data a obsahovou strategii. SEO pro nás dává smysl jen v kombinaci s měřením a obchodními cíli.",
   },
   {
-    q: "Jak vypadá měření a reporting?",
-    a: "Standardem je GA4, Google Tag Manager a Looker Studio. U pokročilejších klientů nasazujeme server-side tracking pro přesná data nezávislá na cookies.",
+    q: "Je možná jednorázová i dlouhodobá spolupráce?",
+    a: "Obojí. Většina klientů s námi spolupracuje dlouhodobě, ale rádi uděláme i jednorázové projekty — audit účtu, nový web nebo nasazení měření.",
   },
   {
-    q: "Spolupracujete dlouhodobě, nebo na jednotlivé projekty?",
-    a: "Obojí. Většina klientů s námi spolupracuje roky, ale dělají i jednorázové projekty — audit účtu, nový web nebo nasazení měření.",
-  },
-  {
-    q: "Pracujete pouze s českými firmami?",
-    a: "Ne. Část klientů cílí z ČR na zahraniční trhy nebo působí přímo v EU. Vedeme projekty v češtině i v angličtině.",
-  },
-  {
-    q: "Jste Google Partner?",
-    a: "Ano, Netmedio je certifikovaný Google Partner — máme aktivní certifikace v Google Ads a Google Analytics 4.",
-  },
-  {
-    q: "Jak začíná spolupráce?",
+    q: "Jak probíhá začátek spolupráce?",
     a: "Krátkou nezávaznou konzultací (30 minut). Probereme cíle a stávající stav. Pokud dává smysl jít dál, navrhneme rozsah, harmonogram a cenu.",
   },
 ];
