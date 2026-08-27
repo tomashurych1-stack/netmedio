@@ -52,6 +52,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "yearly",
             priority: "0.6",
           },
+          { path: "/navody", changefreq: "monthly", priority: "0.7" },
+          {
+            path: "/navody/jak-pridat-pristup-google-analytics-4",
+            changefreq: "yearly",
+            priority: "0.6",
+          },
         ];
 
         const urls = entries
