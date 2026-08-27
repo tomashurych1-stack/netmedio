@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import SectionLink from "@/components/SectionLink";
 
 export default function Footer() {
@@ -16,6 +17,7 @@ export default function Footer() {
           <SectionLink section="sluzby" className="hover:text-foreground transition-colors">Služby</SectionLink>
           <SectionLink section="case-studies" className="hover:text-foreground transition-colors">Případové studie</SectionLink>
           <SectionLink section="faq" className="hover:text-foreground transition-colors">FAQ</SectionLink>
+          <Link to="/navody" className="hover:text-foreground transition-colors">Návody</Link>
           <SectionLink section="kontakt" className="hover:text-foreground transition-colors">Kontakt</SectionLink>
         </div>
       </div>

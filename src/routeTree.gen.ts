@@ -27,6 +27,8 @@ import { Route as BlogCenaTvorbyWebuRouteImport } from './routes/blog.cena-tvorb
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as CategorySplatRouteImport } from './routes/category.$'
+import { Route as NavodyIndexRouteImport } from './routes/navody.index'
+import { Route as NavodyJakPridatPristupGoogleAnalytics4RouteImport } from './routes/navody.jak-pridat-pristup-google-analytics-4'
 import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
 import { Route as SluzbyPpcReklamyRouteImport } from './routes/sluzby.ppc-reklamy'
@@ -125,6 +127,17 @@ const CategorySplatRoute = CategorySplatRouteImport.update({
   path: '/category/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NavodyIndexRoute = NavodyIndexRouteImport.update({
+  id: '/navody/',
+  path: '/navody/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NavodyJakPridatPristupGoogleAnalytics4Route =
+  NavodyJakPridatPristupGoogleAnalytics4RouteImport.update({
+    id: '/navody/jak-pridat-pristup-google-analytics-4',
+    path: '/navody/jak-pridat-pristup-google-analytics-4',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SluzbyIndexRoute = SluzbyIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -174,12 +187,14 @@ export interface FileRoutesByFullPath {
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
+  '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/navody/': typeof NavodyIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
   '/$year/$month/$day/$slug': typeof YearMonthDaySlugRoute
 }
@@ -197,12 +212,14 @@ export interface FileRoutesByTo {
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
+  '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
+  '/navody': typeof NavodyIndexRoute
   '/sluzby': typeof SluzbyIndexRoute
   '/$year/$month/$day/$slug': typeof YearMonthDaySlugRoute
 }
@@ -224,12 +241,14 @@ export interface FileRoutesById {
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
+  '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/navody/': typeof NavodyIndexRoute
   '/sluzby/': typeof SluzbyIndexRoute
   '/$year/$month/$day/$slug': typeof YearMonthDaySlugRoute
 }
@@ -252,12 +271,14 @@ export interface FileRouteTypes {
     | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
+    | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
     | '/sluzby/tvorba-webu'
     | '/sluzby/vykonnostni-reklama'
     | '/blog/'
     | '/case-studies/'
+    | '/navody/'
     | '/sluzby/'
     | '/$year/$month/$day/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -275,12 +296,14 @@ export interface FileRouteTypes {
     | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
+    | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
     | '/sluzby/tvorba-webu'
     | '/sluzby/vykonnostni-reklama'
     | '/blog'
     | '/case-studies'
+    | '/navody'
     | '/sluzby'
     | '/$year/$month/$day/$slug'
   id:
@@ -301,12 +324,14 @@ export interface FileRouteTypes {
     | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
+    | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
     | '/sluzby/tvorba-webu'
     | '/sluzby/vykonnostni-reklama'
     | '/blog/'
     | '/case-studies/'
+    | '/navody/'
     | '/sluzby/'
     | '/$year/$month/$day/$slug'
   fileRoutesById: FileRoutesById
@@ -325,6 +350,8 @@ export interface RootRouteChildren {
   SluzbyRoute: typeof SluzbyRouteWithChildren
   AuthorSplatRoute: typeof AuthorSplatRoute
   CategorySplatRoute: typeof CategorySplatRoute
+  NavodyJakPridatPristupGoogleAnalytics4Route: typeof NavodyJakPridatPristupGoogleAnalytics4Route
+  NavodyIndexRoute: typeof NavodyIndexRoute
   YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
 }
 
@@ -456,6 +483,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategorySplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/navody/': {
+      id: '/navody/'
+      path: '/navody'
+      fullPath: '/navody/'
+      preLoaderRoute: typeof NavodyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/navody/jak-pridat-pristup-google-analytics-4': {
+      id: '/navody/jak-pridat-pristup-google-analytics-4'
+      path: '/navody/jak-pridat-pristup-google-analytics-4'
+      fullPath: '/navody/jak-pridat-pristup-google-analytics-4'
+      preLoaderRoute: typeof NavodyJakPridatPristupGoogleAnalytics4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sluzby/': {
       id: '/sluzby/'
       path: '/'
@@ -563,6 +604,9 @@ const rootRouteChildren: RootRouteChildren = {
   SluzbyRoute: SluzbyRouteWithChildren,
   AuthorSplatRoute: AuthorSplatRoute,
   CategorySplatRoute: CategorySplatRoute,
+  NavodyJakPridatPristupGoogleAnalytics4Route:
+    NavodyJakPridatPristupGoogleAnalytics4Route,
+  NavodyIndexRoute: NavodyIndexRoute,
   YearMonthDaySlugRoute: YearMonthDaySlugRoute,
 }
 export const routeTree = rootRouteImport
