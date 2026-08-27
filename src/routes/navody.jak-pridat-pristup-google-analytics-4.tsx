@@ -10,7 +10,7 @@ const URL = `${SITE}/navody/jak-pridat-pristup-google-analytics-4`;
 const TITLE = "Jak přidat přístup do Google Analytics 4";
 const DESC =
   "Návod krok za krokem, jak udělit přístup do Google Analytics 4 (GA4) bez sdílení hesla. Doporučená role Editor, nastavení na úrovni služby.";
-const EMAIL = "tomas.hurych1@gmail.com";
+const EMAIL = "tomas@netmedio.cz";
 
 const breadcrumbLd = {
   "@context": "https://schema.org",
