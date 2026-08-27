@@ -20,6 +20,12 @@ export const guideCategories = [
           "Přidání platební metody, nastavení primární platby a dobrovolné ověření inzerenta.",
         to: "/navody-zadani-platebni-metody-google-ads-a-overeni-inzerenta",
       },
+      {
+        title: "Jak nasdílet přístup do Google Ads",
+        description:
+          "Pošlete nám ID svého Google Ads účtu a následně potvrďte žádost o propojení s naším správcovským účtem.",
+        to: "/navody/jak-nasdilet-pristup-google-ads",
+      },
     ],
   },
   {
