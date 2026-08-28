@@ -73,9 +73,9 @@ const portfolio = [
   },
   {
     img: shotMasaze,
-    name: "Masaze-Praha2.cz",
+    name: "Masaze-Praha2-Rehabilitace.cz",
     type: "Web služeb s rezervacemi",
-    url: "https://www.masaze-praha2.cz",
+    url: "https://www.masaze-praha2-rehabilitace.cz",
   },
   {
     img: shotPriprava,
