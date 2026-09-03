@@ -39,6 +39,17 @@ export const guideCategories = [
       },
     ],
   },
+  {
+    name: "Google Merchant Center",
+    guides: [
+      {
+        title: "Jak nasdílet přístup do Google Merchant Center",
+        description:
+          "Přidejte náš účet do Merchant Center a umožněte nám správu produktů, nastavení a propojených služeb.",
+        to: "/navody/jak-nasdilet-pristup-google-merchant-center",
+      },
+    ],
+  },
 ] as const;
 
 const breadcrumbLd = {

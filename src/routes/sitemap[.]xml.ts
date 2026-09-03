@@ -63,6 +63,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "yearly",
             priority: "0.6",
           },
+          {
+            path: "/navody/jak-nasdilet-pristup-google-merchant-center",
+            changefreq: "yearly",
+            priority: "0.6",
+          },
         ];
 
         const urls = entries

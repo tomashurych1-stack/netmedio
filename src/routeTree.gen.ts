@@ -29,6 +29,7 @@ import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug
 import { Route as CategorySplatRouteImport } from './routes/category.$'
 import { Route as NavodyIndexRouteImport } from './routes/navody.index'
 import { Route as NavodyJakNasdiletPristupGoogleAdsRouteImport } from './routes/navody.jak-nasdilet-pristup-google-ads'
+import { Route as NavodyJakNasdiletPristupGoogleMerchantCenterRouteImport } from './routes/navody.jak-nasdilet-pristup-google-merchant-center'
 import { Route as NavodyJakPridatPristupGoogleAnalytics4RouteImport } from './routes/navody.jak-pridat-pristup-google-analytics-4'
 import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
@@ -139,6 +140,12 @@ const NavodyJakNasdiletPristupGoogleAdsRoute =
     path: '/navody/jak-nasdilet-pristup-google-ads',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NavodyJakNasdiletPristupGoogleMerchantCenterRoute =
+  NavodyJakNasdiletPristupGoogleMerchantCenterRouteImport.update({
+    id: '/navody/jak-nasdilet-pristup-google-merchant-center',
+    path: '/navody/jak-nasdilet-pristup-google-merchant-center',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const NavodyJakPridatPristupGoogleAnalytics4Route =
   NavodyJakPridatPristupGoogleAnalytics4RouteImport.update({
     id: '/navody/jak-pridat-pristup-google-analytics-4',
@@ -195,6 +202,7 @@ export interface FileRoutesByFullPath {
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
   '/navody/jak-nasdilet-pristup-google-ads': typeof NavodyJakNasdiletPristupGoogleAdsRoute
+  '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
@@ -221,6 +229,7 @@ export interface FileRoutesByTo {
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
   '/navody/jak-nasdilet-pristup-google-ads': typeof NavodyJakNasdiletPristupGoogleAdsRoute
+  '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
@@ -251,6 +260,7 @@ export interface FileRoutesById {
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
   '/navody/jak-nasdilet-pristup-google-ads': typeof NavodyJakNasdiletPristupGoogleAdsRoute
+  '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
@@ -282,6 +292,7 @@ export interface FileRouteTypes {
     | '/case-studies/$slug'
     | '/category/$'
     | '/navody/jak-nasdilet-pristup-google-ads'
+    | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
@@ -308,6 +319,7 @@ export interface FileRouteTypes {
     | '/case-studies/$slug'
     | '/category/$'
     | '/navody/jak-nasdilet-pristup-google-ads'
+    | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
@@ -337,6 +349,7 @@ export interface FileRouteTypes {
     | '/case-studies/$slug'
     | '/category/$'
     | '/navody/jak-nasdilet-pristup-google-ads'
+    | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
     | '/sluzby/ppc-reklamy'
@@ -364,6 +377,7 @@ export interface RootRouteChildren {
   AuthorSplatRoute: typeof AuthorSplatRoute
   CategorySplatRoute: typeof CategorySplatRoute
   NavodyJakNasdiletPristupGoogleAdsRoute: typeof NavodyJakNasdiletPristupGoogleAdsRoute
+  NavodyJakNasdiletPristupGoogleMerchantCenterRoute: typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   NavodyJakPridatPristupGoogleAnalytics4Route: typeof NavodyJakPridatPristupGoogleAnalytics4Route
   NavodyIndexRoute: typeof NavodyIndexRoute
   YearMonthDaySlugRoute: typeof YearMonthDaySlugRoute
@@ -511,6 +525,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NavodyJakNasdiletPristupGoogleAdsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/navody/jak-nasdilet-pristup-google-merchant-center': {
+      id: '/navody/jak-nasdilet-pristup-google-merchant-center'
+      path: '/navody/jak-nasdilet-pristup-google-merchant-center'
+      fullPath: '/navody/jak-nasdilet-pristup-google-merchant-center'
+      preLoaderRoute: typeof NavodyJakNasdiletPristupGoogleMerchantCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/navody/jak-pridat-pristup-google-analytics-4': {
       id: '/navody/jak-pridat-pristup-google-analytics-4'
       path: '/navody/jak-pridat-pristup-google-analytics-4'
@@ -627,6 +648,8 @@ const rootRouteChildren: RootRouteChildren = {
   CategorySplatRoute: CategorySplatRoute,
   NavodyJakNasdiletPristupGoogleAdsRoute:
     NavodyJakNasdiletPristupGoogleAdsRoute,
+  NavodyJakNasdiletPristupGoogleMerchantCenterRoute:
+    NavodyJakNasdiletPristupGoogleMerchantCenterRoute,
   NavodyJakPridatPristupGoogleAnalytics4Route:
     NavodyJakPridatPristupGoogleAnalytics4Route,
   NavodyIndexRoute: NavodyIndexRoute,
