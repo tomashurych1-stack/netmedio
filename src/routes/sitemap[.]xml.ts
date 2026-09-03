@@ -68,6 +68,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "yearly",
             priority: "0.6",
           },
+          {
+            path: "/navody/jak-nasdilet-meta-business-manager",
+            changefreq: "yearly",
+            priority: "0.6",
+          },
         ];
 
         const urls = entries
