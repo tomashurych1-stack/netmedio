@@ -50,6 +50,17 @@ export const guideCategories = [
       },
     ],
   },
+  {
+    name: "Meta / Facebook",
+    guides: [
+      {
+        title: "Jak nasdílet Meta Business Manager",
+        description:
+          "Přidejte Netmedio jako partnera a bezpečně nasdílejte reklamní účet, Facebook stránku, Instagram a další potřebné prostředky.",
+        to: "/navody/jak-nasdilet-meta-business-manager",
+      },
+    ],
+  },
 ] as const;
 
 const breadcrumbLd = {

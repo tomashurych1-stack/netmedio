@@ -28,6 +28,7 @@ import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.inde
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as CategorySplatRouteImport } from './routes/category.$'
 import { Route as NavodyIndexRouteImport } from './routes/navody.index'
+import { Route as NavodyJakNasdiletMetaBusinessManagerRouteImport } from './routes/navody.jak-nasdilet-meta-business-manager'
 import { Route as NavodyJakNasdiletPristupGoogleAdsRouteImport } from './routes/navody.jak-nasdilet-pristup-google-ads'
 import { Route as NavodyJakNasdiletPristupGoogleMerchantCenterRouteImport } from './routes/navody.jak-nasdilet-pristup-google-merchant-center'
 import { Route as NavodyJakPridatPristupGoogleAnalytics4RouteImport } from './routes/navody.jak-pridat-pristup-google-analytics-4'
@@ -134,6 +135,12 @@ const NavodyIndexRoute = NavodyIndexRouteImport.update({
   path: '/navody/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NavodyJakNasdiletMetaBusinessManagerRoute =
+  NavodyJakNasdiletMetaBusinessManagerRouteImport.update({
+    id: '/navody/jak-nasdilet-meta-business-manager',
+    path: '/navody/jak-nasdilet-meta-business-manager',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const NavodyJakNasdiletPristupGoogleAdsRoute =
   NavodyJakNasdiletPristupGoogleAdsRouteImport.update({
     id: '/navody/jak-nasdilet-pristup-google-ads',
@@ -201,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
+  '/navody/jak-nasdilet-meta-business-manager': typeof NavodyJakNasdiletMetaBusinessManagerRoute
   '/navody/jak-nasdilet-pristup-google-ads': typeof NavodyJakNasdiletPristupGoogleAdsRoute
   '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
@@ -228,6 +236,7 @@ export interface FileRoutesByTo {
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
+  '/navody/jak-nasdilet-meta-business-manager': typeof NavodyJakNasdiletMetaBusinessManagerRoute
   '/navody/jak-nasdilet-pristup-google-ads': typeof NavodyJakNasdiletPristupGoogleAdsRoute
   '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
@@ -259,6 +268,7 @@ export interface FileRoutesById {
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/category/$': typeof CategorySplatRoute
+  '/navody/jak-nasdilet-meta-business-manager': typeof NavodyJakNasdiletMetaBusinessManagerRoute
   '/navody/jak-nasdilet-pristup-google-ads': typeof NavodyJakNasdiletPristupGoogleAdsRoute
   '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
+    | '/navody/jak-nasdilet-meta-business-manager'
     | '/navody/jak-nasdilet-pristup-google-ads'
     | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
@@ -318,6 +329,7 @@ export interface FileRouteTypes {
     | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
+    | '/navody/jak-nasdilet-meta-business-manager'
     | '/navody/jak-nasdilet-pristup-google-ads'
     | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
@@ -348,6 +360,7 @@ export interface FileRouteTypes {
     | '/blog/cena-tvorby-webu'
     | '/case-studies/$slug'
     | '/category/$'
+    | '/navody/jak-nasdilet-meta-business-manager'
     | '/navody/jak-nasdilet-pristup-google-ads'
     | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
@@ -376,6 +389,7 @@ export interface RootRouteChildren {
   SluzbyRoute: typeof SluzbyRouteWithChildren
   AuthorSplatRoute: typeof AuthorSplatRoute
   CategorySplatRoute: typeof CategorySplatRoute
+  NavodyJakNasdiletMetaBusinessManagerRoute: typeof NavodyJakNasdiletMetaBusinessManagerRoute
   NavodyJakNasdiletPristupGoogleAdsRoute: typeof NavodyJakNasdiletPristupGoogleAdsRoute
   NavodyJakNasdiletPristupGoogleMerchantCenterRoute: typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   NavodyJakPridatPristupGoogleAnalytics4Route: typeof NavodyJakPridatPristupGoogleAnalytics4Route
@@ -518,6 +532,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NavodyIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/navody/jak-nasdilet-meta-business-manager': {
+      id: '/navody/jak-nasdilet-meta-business-manager'
+      path: '/navody/jak-nasdilet-meta-business-manager'
+      fullPath: '/navody/jak-nasdilet-meta-business-manager'
+      preLoaderRoute: typeof NavodyJakNasdiletMetaBusinessManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/navody/jak-nasdilet-pristup-google-ads': {
       id: '/navody/jak-nasdilet-pristup-google-ads'
       path: '/navody/jak-nasdilet-pristup-google-ads'
@@ -646,6 +667,8 @@ const rootRouteChildren: RootRouteChildren = {
   SluzbyRoute: SluzbyRouteWithChildren,
   AuthorSplatRoute: AuthorSplatRoute,
   CategorySplatRoute: CategorySplatRoute,
+  NavodyJakNasdiletMetaBusinessManagerRoute:
+    NavodyJakNasdiletMetaBusinessManagerRoute,
   NavodyJakNasdiletPristupGoogleAdsRoute:
     NavodyJakNasdiletPristupGoogleAdsRoute,
   NavodyJakNasdiletPristupGoogleMerchantCenterRoute:
