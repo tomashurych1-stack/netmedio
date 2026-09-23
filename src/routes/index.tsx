@@ -93,14 +93,6 @@ const reviewLd = {
       reviewBody:
         "Tomáš je člověk na správném místě, který marketingu opravdu rozumí. Určitě chci dlouhodobou spolupráci — dobrého marketéra je dnes těžké najít.",
     },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Lucie P." },
-      publisher: { "@type": "Organization", name: "Verde" },
-      reviewBody:
-        "Doporučuji všem, kdo chtějí marketingového partnera, ne jen dodavatele. S Tomášem se opravdu táhne za jeden provaz.",
-    },
   ],
 };
 
