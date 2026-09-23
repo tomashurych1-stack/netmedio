@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import TrustBar from "@/components/TrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import AboutSection from "@/components/AboutSection";
 import ReferencesSection from "@/components/ReferencesSection";
-import ProjectCta from "@/components/ProjectCta";
 import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -182,12 +180,10 @@ function Index() {
       <Navbar />
       <main>
         <HeroSection />
-        <TrustBar />
         <ServicesSection />
         <WhyUsSection />
         <AboutSection />
         <ReferencesSection />
-        <ProjectCta />
         <FAQSection />
         <ContactSection />
       </main>

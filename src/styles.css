@@ -85,14 +85,14 @@
   --gold-soft: rgba(201, 168, 106, 0.12);
   --surface: #1A2233;
   --surface-2: #1F2937;
-  --contact-card: #F4EFE5;
-  --contact-card-border: rgba(201, 168, 106, 0.42);
-  --contact-foreground: #172033;
-  --contact-muted: #5F6470;
-  --contact-input: #EAE3D7;
-  --contact-input-focus: #FFFDF8;
-  --contact-input-border: rgba(23, 32, 51, 0.18);
-  --contact-placeholder: #77736B;
+  --contact-card: #1E2A40;
+  --contact-card-border: rgba(201, 168, 106, 0.22);
+  --contact-foreground: #E8EBF3;
+  --contact-muted: #A6AEBF;
+  --contact-input: #2A3752;
+  --contact-input-focus: #31405F;
+  --contact-input-border: rgba(255, 255, 255, 0.14);
+  --contact-placeholder: #7E879B;
 
   --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
