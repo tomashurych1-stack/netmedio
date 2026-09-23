@@ -5,6 +5,8 @@ import parentes from "@/assets/logo-parentes.png";
 import blomusDark from "@/assets/logo-blomus-dark.png";
 import blomusLight from "@/assets/logo-blomus-light.png";
 import dekorstudio from "@/assets/logo-dekorstudio.png";
+import { Quote } from "lucide-react";
+import { testimonials } from "@/components/TestimonialsSection";
 
 type Client = {
   name: string;
@@ -27,9 +29,9 @@ const clients: Client[] = [
 
 export default function ReferencesSection() {
   return (
-    <section id="reference" className="section-padding">
+    <section id="reference" className="section-padding bg-[var(--surface)]/40 border-y border-border">
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Reference</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
             Vybraní klienti
@@ -39,7 +41,7 @@ export default function ReferencesSection() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
+        <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {clients.map((c) => (
               <div
@@ -73,6 +75,29 @@ export default function ReferencesSection() {
                   />
                 )}
               </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 md:mt-16">
+          <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
+            Co říkají klienti
+          </h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            {testimonials.slice(0, 3).map((testimonial) => (
+              <figure
+                key={testimonial.name}
+                className="rounded-2xl border border-border bg-card p-6 md:p-7 flex flex-col"
+              >
+                <Quote className="w-5 h-5 text-primary mb-4" />
+                <blockquote className="text-sm leading-relaxed text-foreground/90 flex-1">
+                  „{testimonial.quote}“
+                </blockquote>
+                <figcaption className="mt-5 pt-5 border-t border-border">
+                  <p className="text-sm font-semibold">{testimonial.name}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{testimonial.company}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

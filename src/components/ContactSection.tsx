@@ -73,42 +73,42 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-8 space-y-5">
+        <form onSubmit={onSubmit} className="rounded-2xl border border-[var(--contact-card-border)] bg-[var(--contact-card)] p-6 md:p-8 space-y-5 shadow-2xl shadow-background/20 text-[var(--contact-foreground)]">
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Jméno</label>
+            <label className="text-xs uppercase tracking-wider text-[var(--contact-muted)] font-medium">Jméno</label>
             <input
               required
               name="name"
               placeholder="Vaše jméno"
-              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all"
+              className="mt-2 min-h-12 w-full bg-[var(--contact-input)] border border-[var(--contact-input-border)] focus:bg-[var(--contact-input-focus)] focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-md outline-none px-3 py-2.5 text-[var(--contact-foreground)] placeholder:text-[var(--contact-placeholder)] transition-all"
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Email</label>
+            <label className="text-xs uppercase tracking-wider text-[var(--contact-muted)] font-medium">E-mail</label>
             <input
               required
               type="email"
               name="email"
               placeholder="vas@email.cz"
-              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all"
+              className="mt-2 min-h-12 w-full bg-[var(--contact-input)] border border-[var(--contact-input-border)] focus:bg-[var(--contact-input-focus)] focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-md outline-none px-3 py-2.5 text-[var(--contact-foreground)] placeholder:text-[var(--contact-placeholder)] transition-all"
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Telefon</label>
+            <label className="text-xs uppercase tracking-wider text-[var(--contact-muted)] font-medium">Telefon (nepovinné)</label>
             <input
               name="phone"
               placeholder="+420"
-              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all"
+              className="mt-2 min-h-12 w-full bg-[var(--contact-input)] border border-[var(--contact-input-border)] focus:bg-[var(--contact-input-focus)] focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-md outline-none px-3 py-2.5 text-[var(--contact-foreground)] placeholder:text-[var(--contact-placeholder)] transition-all"
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground/90 font-medium">Zpráva</label>
+            <label className="text-xs uppercase tracking-wider text-[var(--contact-muted)] font-medium">Zpráva</label>
             <textarea
               required
               name="message"
               rows={4}
               placeholder="Stručně napište, s čím vám můžeme pomoci…"
-              className="mt-2 w-full bg-[var(--surface-2)]/60 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md outline-none px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 transition-all resize-none"
+              className="mt-2 w-full bg-[var(--contact-input)] border border-[var(--contact-input-border)] focus:bg-[var(--contact-input-focus)] focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-md outline-none px-3 py-3 text-[var(--contact-foreground)] placeholder:text-[var(--contact-placeholder)] transition-all resize-none"
             />
           </div>
 
