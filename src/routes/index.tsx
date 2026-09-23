@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import AboutSection from "@/components/AboutSection";
 import ReferencesSection from "@/components/ReferencesSection";
+import BlogSection from "@/components/BlogSection";
 import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -184,6 +185,7 @@ function Index() {
         <WhyUsSection />
         <AboutSection />
         <ReferencesSection />
+        <BlogSection />
         <FAQSection />
         <ContactSection />
       </main>
