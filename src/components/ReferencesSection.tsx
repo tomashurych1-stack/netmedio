@@ -19,12 +19,12 @@ type Client = {
 };
 
 const clients: Client[] = [
-  { name: "Nemocnice Mělník", logo: melnik, scale: "max-h-9 md:max-h-10" },
-  { name: "Mediestetik", logo: mediestetik, scale: "max-h-10 md:max-h-11" },
-  { name: "CenterNet", logo: centernet, scale: "max-h-9 md:max-h-10" },
-  { name: "Dekorstudio", logo: dekorstudio, scale: "max-h-9 md:max-h-10" },
-  { name: "Parentes", logo: parentes, scale: "max-h-8 md:max-h-9" },
-  { name: "Blomus", logo: blomusDark, logoDark: blomusLight, scale: "max-h-7 md:max-h-8" },
+  { name: "Nemocnice Mělník", logo: melnik, scale: "max-h-11 md:max-h-14" },
+  { name: "Mediestetik", logo: mediestetik, scale: "max-h-12 md:max-h-14" },
+  { name: "CenterNet", logo: centernet, scale: "max-h-11 md:max-h-14" },
+  { name: "Dekorstudio", logo: dekorstudio, scale: "max-h-11 md:max-h-14" },
+  { name: "Parentes", logo: parentes, scale: "max-h-10 md:max-h-12" },
+  { name: "Blomus", logo: blomusDark, logoDark: blomusLight, scale: "max-h-9 md:max-h-11" },
 ];
 
 export default function ReferencesSection() {
@@ -34,55 +34,50 @@ export default function ReferencesSection() {
         <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Reference</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
-            Vybraní klienti
+            Klienti a jejich zkušenosti.
           </h2>
           <p className="text-muted-foreground text-lg">
             Firmy, kterým dlouhodobě pomáháme s marketingem, weby, analytikou a automatizací.
           </p>
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border rounded-xl overflow-hidden border border-border">
-            {clients.map((c) => (
-              <div
-                key={c.name}
-                className="bg-card aspect-[3/2] flex items-center justify-center p-6 group"
-                title={c.name}
-              >
-                {c.logoDark ? (
-                  <>
-                    {/* Light theme: dark logo */}
-                    <img
-                      src={c.logo}
-                      alt={`${c.name} – klient Netmedio`}
-                      loading="lazy"
-                      className={`hidden ${c.scale ?? "max-h-10"} w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 [.light_&]:block`}
-                    />
-                    {/* Dark theme: light logo */}
-                    <img
-                      src={c.logoDark}
-                      alt={`${c.name} – klient Netmedio`}
-                      loading="lazy"
-                      className={`block ${c.scale ?? "max-h-10"} w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity duration-300 [.light_&]:hidden`}
-                    />
-                  </>
-                ) : (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          {clients.map((c) => (
+            <div
+              key={c.name}
+              className="aspect-[4/3] rounded-xl border border-border bg-card flex items-center justify-center px-4 py-3 group"
+              title={c.name}
+            >
+              {c.logoDark ? (
+                <>
+                  {/* Light theme: dark logo */}
                   <img
                     src={c.logo}
                     alt={`${c.name} – klient Netmedio`}
                     loading="lazy"
-                    className={`${c.scale ?? "max-h-10"} w-auto object-contain opacity-75 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300`}
+                    className={`hidden ${c.scale ?? "max-h-12"} w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 [.light_&]:block`}
                   />
-                )}
-              </div>
-            ))}
-          </div>
+                  {/* Dark theme: light logo */}
+                  <img
+                    src={c.logoDark}
+                    alt={`${c.name} – klient Netmedio`}
+                    loading="lazy"
+                    className={`block ${c.scale ?? "max-h-12"} w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity duration-300 [.light_&]:hidden`}
+                  />
+                </>
+              ) : (
+                <img
+                  src={c.logo}
+                  alt={`${c.name} – klient Netmedio`}
+                  loading="lazy"
+                  className={`${c.scale ?? "max-h-12"} w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
+                />
+              )}
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12 md:mt-16">
-          <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
-            Co říkají klienti
-          </h3>
+        <div className="mt-10 md:mt-12">
           <div className="grid md:grid-cols-3 gap-4">
             {testimonials.slice(0, 3).map((testimonial) => (
               <figure

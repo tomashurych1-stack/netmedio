@@ -8,9 +8,7 @@ const links = [
   { label: "Služby", to: "/sluzby" },
   { label: "Proč Netmedio", section: "proc-nas" },
   { label: "O nás", section: "o-nas" },
-  { label: "Případové studie", section: "case-studies" },
-  { label: "Blog", to: "/blog" },
-  { label: "FAQ", section: "faq" },
+  { label: "Reference", section: "reference" },
   { label: "Kontakt", section: "kontakt" },
 ];
 
