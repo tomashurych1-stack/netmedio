@@ -10,7 +10,7 @@ const trust = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 px-6 lg:px-8">
+    <section className="relative overflow-hidden pt-32 pb-6 md:pt-44 md:pb-8 px-6 lg:px-8">
       <div className="absolute inset-0 grid-fade pointer-events-none" />
       <div
         className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
