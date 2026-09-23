@@ -23,7 +23,7 @@ export default function BlogSection() {
               params={{ slug: p.slug }}
               className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors flex flex-col"
             >
-              <div className="aspect-[16/10] overflow-hidden border-b border-border">
+              <div className="aspect-[2/1] overflow-hidden border-b border-border">
                 <img
                   src={p.image}
                   alt={p.title}
@@ -33,8 +33,8 @@ export default function BlogSection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-8 flex flex-col flex-1">
-                <div className="flex items-center justify-between mb-3 text-xs text-muted-foreground">
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-2 text-xs text-muted-foreground">
                   <span className="uppercase tracking-wider">{p.category}</span>
                   <span>{p.readingTime} min</span>
                 </div>
@@ -42,7 +42,7 @@ export default function BlogSection() {
                   {p.title}
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">{p.excerpt}</p>
-                <div className="mt-6 inline-flex items-center gap-1.5 text-sm text-primary">
+                <div className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary">
                   Číst článek
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
@@ -51,12 +51,12 @@ export default function BlogSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline underline-offset-4 transition-colors"
           >
-            Zobrazit všechny články
+            Všechny články
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
