@@ -5,10 +5,8 @@ import TrustBar from "@/components/TrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import AboutSection from "@/components/AboutSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ReferencesSection from "@/components/ReferencesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import BlogSection from "@/components/BlogSection";
+import ProjectCta from "@/components/ProjectCta";
 import FAQSection, { faqs } from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -94,14 +92,6 @@ const reviewLd = {
       publisher: { "@type": "Organization", name: "KMGHair" },
       reviewBody:
         "Tomáš je člověk na správném místě, který marketingu opravdu rozumí. Určitě chci dlouhodobou spolupráci — dobrého marketéra je dnes těžké najít.",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Lucie P." },
-      publisher: { "@type": "Organization", name: "Verde" },
-      reviewBody:
-        "Doporučuji všem, kdo chtějí marketingového partnera, ne jen dodavatele. S Tomášem se opravdu táhne za jeden provaz.",
     },
   ],
 };
@@ -196,10 +186,8 @@ function Index() {
         <ServicesSection />
         <WhyUsSection />
         <AboutSection />
-        <CaseStudiesSection />
         <ReferencesSection />
-        <TestimonialsSection />
-        <BlogSection />
+        <ProjectCta />
         <FAQSection />
         <ContactSection />
       </main>
