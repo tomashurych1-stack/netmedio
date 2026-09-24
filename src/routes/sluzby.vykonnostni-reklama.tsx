@@ -744,7 +744,7 @@ function PpcMicrosite() {
           <p className="text-xs text-muted-foreground mt-4 max-w-2xl">
             Konkrétní cena závisí na rozsahu kampaní, počtu reklamních systémů, velikosti účtu
             a požadovaném rozsahu práce. Úvodní konzultace a základní posouzení současného stavu
-            je zdarma.
+            je zdarma. Reklamní rozpočet se hradí zvlášť přímo reklamním platformám.
           </p>
         </div>
       </section>
