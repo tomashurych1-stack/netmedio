@@ -108,30 +108,19 @@ export const googleAds: PpcPlatform = {
     "Pravidelnou kontrolu vyhledávacích dotazů a vylučování nerelevantních hledání",
     "Řízení rozpočtu mezi kampaněmi, produkty a obdobími",
     "Testování reklam, podkladů a cílových stránek",
-    "Kontrolu konverzí, Merchant Center a technických upozornění",
+    "Kontrolu konverzí (GA4 i Google Ads), Consent Mode, Merchant Center a technických upozornění",
     "Srozumitelný reporting, doporučení a průběžnou komunikaci",
   ],
   existingAccount:
     "Ano — stávající účet převezmeme přes partnerský přístup a nejdříve ho auditujeme. Zachováme funkční kampaně, historii i nasbíraná data; není nutné účet rušit ani vše stavět znovu. Návrh změn dostanete s vysvětlením priorit.",
-  price: "Správa Google Ads začíná od 5 000 Kč měsíčně. Při kombinaci více reklamních systémů od 8 000 Kč měsíčně. Mediální rozpočet se hradí přímo Googlu a není součástí ceny správy.",
-  measureTitle: "Optimalizujeme na obchodní výsledky, ne na prokliky",
-  measureIntro:
-    "Automatické strategie Google Ads jsou jen tak dobré, jak dobrá data dostávají. Proto řešíme měření stejně pečlivě jako samotné kampaně.",
-  measure: [
-    "Konverze v GA4 a Google Ads včetně hodnoty objednávky",
-    "Enhanced Conversions a Consent Mode v2",
-    "Import offline konverzí z CRM pro B2B",
-    "Sledování CPA, ROAS, podílu zobrazení a marže",
-    "Kontrola duplicitních a chybně započítaných konverzí",
-    "Srozumitelný reporting s doporučenými kroky",
-  ],
+  price: "Správa jednoho reklamního systému začíná od 4 000 Kč měsíčně, při kombinaci více systémů od 7 000 Kč měsíčně. Konkrétní cena závisí na rozsahu účtu, počtu kampaní a reklamních systémech. Reklamní rozpočet se hradí zvlášť přímo reklamním platformám.",
   related: [
     { label: "Sklik & Seznam", desc: "Doplnění Google Ads o český vyhledávač a síť Seznamu.", to: "/sluzby/sklik" },
     { label: "Produktové srovnávače", desc: "Heureka, Zboží.cz a feedy pro e-shopy.", to: "/sluzby/produktove-srovnavace" },
     analytics,
   ],
   faq: [
-    { q: "Kolik stojí správa Google Ads?", a: "Správa jednoho reklamního systému začíná od 5 000 Kč měsíčně, při kombinaci více systémů od 8 000 Kč. Rozpočet na reklamu platíte přímo Googlu a je oddělený od ceny správy." },
+    { q: "Kolik stojí správa Google Ads?", a: "Správa jednoho reklamního systému začíná od 4 000 Kč měsíčně, při kombinaci více systémů od 7 000 Kč. Konkrétní cena závisí na rozsahu účtu a počtu kampaní. Rozpočet na reklamu platíte přímo Googlu a je oddělený od ceny správy." },
     { q: "Jaký rozpočet na Google Ads potřebuji?", a: "Záleží na oboru, konkurenci a ceně za proklik. Rozpočet by měl stačit na dostatek kliknutí a konverzí, aby se kampaně mohly učit. Konkrétní doporučení dáme po analýze klíčových slov." },
     { q: "Je Performance Max vhodný pro každého?", a: "Ne. Pro e-shopy s kvalitním feedem a funkčním měřením bývá silný, pro malé B2B účty s málo konverzemi často méně vhodný než klasické vyhledávací kampaně." },
     { q: "Komu patří účet Google Ads?", a: "Vždy vám. Do účtu vstupujeme přes náš manažerský účet (MCC) a po ukončení spolupráce vám zůstane včetně historie." },
@@ -203,27 +192,16 @@ export const sklik: PpcPlatform = {
   ],
   existingAccount:
     "Pokud už Sklik používáte, účet převezmeme a provedeme audit kampaní, měření i historie změn. Dobře fungující části ponecháme a upravíme jen to, co omezuje výkon nebo zbytečně spotřebovává rozpočet. Začínat od nuly není nutné.",
-  price: "Správa Skliku začíná od 5 000 Kč měsíčně. Při kombinaci s Google Ads nebo Meta Ads od 8 000 Kč měsíčně. Rozpočet na reklamu se hradí přímo provozovateli systému.",
-  measureTitle: "Sklik vyhodnocujeme v kontextu celého marketingu",
-  measureIntro:
-    "Sklik a Google Ads si často připisují stejné konverze. Díky jednotnému měření v GA4 vidíme skutečný přínos Skliku a rozpočet podle toho rozdělujeme.",
-  measure: [
-    "Konverzní a retargetingový kód Skliku přes GTM",
-    "Porovnání výkonu Skliku a Google Ads v GA4",
-    "UTM parametry a čisté přiřazení zdrojů",
-    "Sledování ceny za konverzi a podílu na obratu",
-    "Kontrola umístění v obsahové síti",
-    "Pravidelný report s doporučením k rozpočtu",
-  ],
+  price: "Správa jednoho reklamního systému začíná od 4 000 Kč měsíčně, při kombinaci více systémů od 7 000 Kč měsíčně. Konkrétní cena závisí na rozsahu účtu, počtu kampaní a reklamních systémech. Reklamní rozpočet se hradí zvlášť přímo reklamním platformám.",
   related: [
     { label: "Google Ads", desc: "Hlavní vyhledávací kanál pro většinu firem.", to: "/sluzby/google-ads" },
     { label: "Produktové srovnávače", desc: "Zboží.cz a Heureka pro e-shopy.", to: "/sluzby/produktove-srovnavace" },
-    ppc,
+    analytics,
   ],
   faq: [
     { q: "Má Sklik v dnešní době ještě smysl?", a: "Pro řadu českých firem ano, hlavně jako doplněk Google Ads. Jestli se vyplatí právě vám, ověříme podle oboru, cílové skupiny a dat z měření." },
     { q: "Můžu mít jen Sklik bez Google Ads?", a: "Můžete, ale pro většinu firem doporučujeme začít Google Ads a Sklik přidat jako rozšíření. Výjimkou jsou obory, kde je publikum Seznamu mimořádně silné." },
-    { q: "Kolik stojí správa Skliku?", a: "Správa jednoho systému začíná od 5 000 Kč měsíčně. Při kombinaci se Google Ads nebo Meta Ads od 8 000 Kč měsíčně." },
+    { q: "Kolik stojí správa Skliku?", a: "Správa jednoho systému začíná od 4 000 Kč měsíčně, při kombinaci více systémů od 7 000 Kč. Konkrétní cena závisí na rozsahu účtu a počtu kampaní." },
     { q: "Stačí zkopírovat kampaně z Google Ads?", a: "Import je dobrý začátek, ale Sklik má jiné typy shody, jinou obsahovou síť i chování uživatelů. Kampaně je potřeba upravit." },
     { q: "Jak souvisí Sklik se Zboží.cz?", a: "Zboží.cz je srovnávač Seznamu. Produktové kampaně se Zboží.cz propojují s účtem Sklik, takže je vhodné řešit je společně." },
   ],
@@ -292,25 +270,14 @@ export const metaAds: PpcPlatform = {
   ],
   existingAccount:
     "Stávající reklamní účet i Business Manager můžeme převzít přes partnerský přístup. Nejprve zkontrolujeme oprávnění, historii, kampaně, pixel a Conversions API. Fungující data a publika zachováme; nový účet zakládáme jen tehdy, když je k tomu skutečný důvod.",
-  price: "Správa Meta Ads samostatně začíná od 4 900 Kč měsíčně, v kombinaci s dalšími reklamními systémy od 8 000 Kč měsíčně. Rozpočet na reklamu platíte přímo společnosti Meta.",
-  measureTitle: "Spolehlivé měření je u Meta Ads zásadní",
-  measureIntro:
-    "Kvůli blokování cookies a omezením v prohlížečích ztrácí samotný pixel část dat. Conversions API a čisté nastavení událostí pomáhají algoritmu optimalizovat správným směrem.",
-  measure: [
-    "Meta Pixel a Conversions API (server-side)",
-    "Deduplikace událostí mezi pixelem a serverem",
-    "Ověření domény a priorita událostí",
-    "Porovnání dat z Meta s GA4",
-    "Sledování CPA, ROAS a frekvence zobrazení",
-    "Vyhodnocení kreativ podle výkonu",
-  ],
+  price: "Správa Meta Ads samostatně začíná od 4 000 Kč měsíčně, v kombinaci s dalšími reklamními systémy od 7 000 Kč měsíčně. Konkrétní cena závisí na rozsahu účtu, počtu kampaní a reklamních systémech. Reklamní rozpočet se hradí zvlášť přímo reklamním platformám.",
   related: [
     { label: "Google Ads", desc: "Zachycení poptávky, kterou Meta Ads pomáhá vytvořit.", to: "/sluzby/google-ads" },
     analytics,
     web,
   ],
   faq: [
-    { q: "Kolik stojí správa Meta Ads?", a: "Správa samostatně začíná od 4 900 Kč měsíčně, v kombinaci s dalšími reklamními systémy od 8 000 Kč. Rozpočet na reklamu platíte přímo Meta." },
+    { q: "Kolik stojí správa Meta Ads?", a: "Správa jednoho reklamního systému začíná od 4 000 Kč měsíčně, v kombinaci s dalšími systémy od 7 000 Kč. Konkrétní cena závisí na rozsahu účtu a počtu kampaní. Rozpočet na reklamu platíte přímo Meta." },
     { q: "Připravujete i kreativu?", a: "Navrhujeme koncepty, texty a jednoduché grafické a video formáty. U náročnější produkce spolupracujeme s vaším grafikem nebo dodanými materiály." },
     { q: "Je lepší Meta Ads nebo Google Ads?", a: "Mají jinou roli. Google Ads zachytává existující poptávku, Meta Ads ji vytváří. Často fungují nejlépe společně." },
     { q: "Co je Conversions API?", a: "Způsob, jak posílat konverze do Meta přímo ze serveru. Doplňuje pixel a zmenšuje ztrátu dat kvůli blokování cookies." },
@@ -374,24 +341,13 @@ export const srovnavace: PpcPlatform = {
   management: [
     "Pravidelnou kontrolu chyb, párování, cen a dostupnosti ve feedu",
     "Řízení nabídek a rozpočtu podle kategorií, produktů a marže",
-    "Kontrolu nákladů, objednávek a podílu nákladů na obratu",
+    "Kontrolu konverzí (Heureka, Zboží.cz), nákladů, objednávek a podílu nákladů na obratu (PNO)",
     "Doporučení k názvům, parametrům, cenám a sortimentu",
     "Srozumitelný reporting a koordinaci s e-shopem nebo vývojářem",
   ],
   existingAccount:
     "Pokud už máte Heureku, Zboží.cz, Glami nebo feed manager nastavený, navážeme na současné účty. Auditem zjistíme chyby v datech, párování i měření a zachováme funkční historii. Není nutné znovu registrovat obchod ani vytvářet nový feed bez důvodu.",
-  price: "Správa jednoho systému začíná od 5 000 Kč měsíčně, v kombinaci s dalšími kanály od 8 000 Kč měsíčně. Náklady za prokliky platíte přímo jednotlivým srovnávačům.",
-  measureTitle: "Měříme náklady a obrat až na úroveň produktů",
-  measureIntro:
-    "Srovnávač může přivádět hodně návštěv, ale bez měření na úrovni kategorií a produktů snadno prodělává. Vyhodnocujeme proto náklady proti skutečnému obratu a marži.",
-  measure: [
-    "Konverzní kódy Heureky a Zboží.cz",
-    "Vyhodnocení podílu nákladů na obratu (PNO)",
-    "Výkon po kategoriích a produktech",
-    "Porovnání srovnávačů s Google Shopping v GA4",
-    "Hlídání chyb a výpadků feedu",
-    "Pravidelné doporučení k sortimentu a cenám",
-  ],
+  price: "Správa jednoho reklamního systému začíná od 4 000 Kč měsíčně, při kombinaci více systémů od 7 000 Kč měsíčně. Konkrétní cena závisí na rozsahu účtu, počtu kampaní a reklamních systémech. Reklamní rozpočet se hradí zvlášť přímo reklamním platformám.",
   related: [
     { label: "Google Ads", desc: "Shopping a Performance Max nad stejným feedem.", to: "/sluzby/google-ads" },
     { label: "Sklik & Seznam", desc: "Produktové kampaně a retargeting v síti Seznamu.", to: "/sluzby/sklik" },
@@ -399,7 +355,7 @@ export const srovnavace: PpcPlatform = {
   ],
   faq: [
     { q: "Který srovnávač je pro můj e-shop nejlepší?", a: "Záleží na sortimentu. Heureka a Zboží.cz jsou univerzální, Glami je zaměřené na módu. Obvykle začínáme tam, kde je v kategorii největší poptávka, a výkon pak porovnáváme." },
-    { q: "Kolik stojí správa srovnávačů?", a: "Správa jednoho systému začíná od 5 000 Kč měsíčně, v kombinaci s dalšími kanály od 8 000 Kč. Náklady za prokliky platíte přímo srovnávačům." },
+    { q: "Kolik stojí správa srovnávačů?", a: "Správa jednoho systému začíná od 4 000 Kč měsíčně, v kombinaci s dalšími kanály od 7 000 Kč. Konkrétní cena závisí na rozsahu feedu a počtu srovnávačů. Náklady za prokliky platíte přímo srovnávačům." },
     { q: "Umíte upravit náš produktový feed?", a: "Ano. Feed upravujeme přes feed manager nebo ve spolupráci s vývojářem e-shopu, případně přímo, pokud máme k e-shopu přístup." },
     { q: "Proč jsou moje produkty na Heurece nespárované?", a: "Nejčastěji kvůli chybějícímu EAN, nepřesnému názvu nebo špatné kategorii. Po auditu feedu navrhneme konkrétní opravy." },
     { q: "Pomůže feed i pro Google Shopping?", a: "Ano. Kvalitní produktová data zlepšují výkon na srovnávačích i v Google Shopping a Performance Max." },
