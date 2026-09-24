@@ -112,6 +112,17 @@ export default function PlatformServicePage({ p }: { p: PpcPlatform }) {
         </div>
       </header>
 
+      {/* Vysvětlení */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-14 items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Jak služba funguje</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">{p.explanationTitle}</h2>
+          </div>
+          <p className="text-muted-foreground leading-relaxed text-base md:text-lg">{p.explanation}</p>
+        </div>
+      </section>
+
       {/* Pro koho */}
       <section className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
@@ -123,6 +134,10 @@ export default function PlatformServicePage({ p }: { p: PpcPlatform }) {
                 <p className="text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-5 border-l-2 border-primary/40 pl-5 py-1 max-w-3xl">
+            <h3 className="font-semibold mb-2">Kdy služba nemusí být vhodná</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{p.notSuitable}</p>
           </div>
         </div>
       </section>
@@ -142,6 +157,21 @@ export default function PlatformServicePage({ p }: { p: PpcPlatform }) {
         </div>
       </section>
 
+      {/* Očekávání */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto">
+          <SectionHead eyebrow="Co očekávat" title={p.expectationsTitle} intro={p.expectationsIntro} />
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+            {p.expectations.map((item) => (
+              <li key={item} className="flex gap-3 text-sm text-foreground/90">
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Přístup */}
       <section id="pristup" className="section-padding pt-0 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
@@ -157,6 +187,46 @@ export default function PlatformServicePage({ p }: { p: PpcPlatform }) {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Průběžné CTA */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto border-y border-border py-8 md:py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2">Nevíte, zda je {p.name} správný kanál?</h2>
+            <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">Projdeme vaši nabídku, současný marketing a možnosti měření. Doporučíme další krok bez závazku.</p>
+          </div>
+          <div className="shrink-0"><PrimaryCta /></div>
+        </div>
+      </section>
+
+      {/* Rozsah správy */}
+      <section className="section-padding pt-0">
+        <div className="max-w-5xl mx-auto">
+          <SectionHead eyebrow="Pravidelná správa" title={p.managementTitle} intro={p.managementIntro} />
+          <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-4">
+            <div className="rounded-2xl border border-border bg-card p-7 md:p-8">
+              <ul className="grid gap-4">
+                {p.management.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-foreground/90">
+                    <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-7 md:p-8">
+              <h3 className="text-lg font-semibold mb-3">Máte už existující účet?</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.existingAccount}</p>
+            </div>
+          </div>
+          {p.price && (
+            <div className="mt-4 rounded-2xl border border-primary/30 bg-card p-6 md:px-8 flex gap-4 items-start">
+              <span className="text-primary font-semibold shrink-0">Cena</span>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.price}</p>
+            </div>
+          )}
         </div>
       </section>
 

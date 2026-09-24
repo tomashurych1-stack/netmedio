@@ -10,14 +10,25 @@ export type PpcPlatform = {
   h1: string;
   lead: string;
   chips: string[];
+  explanationTitle: string;
+  explanation: string;
   audienceTitle: string;
   audienceIntro: string;
   audiences: Item[];
+  notSuitable: string;
+  expectationsTitle: string;
+  expectationsIntro: string;
+  expectations: string[];
   scopeTitle: string;
   scopeIntro: string;
   scope: Item[];
   processTitle: string;
   process: Item[];
+  managementTitle: string;
+  managementIntro: string;
+  management: string[];
+  existingAccount: string;
+  price?: string;
   measureTitle: string;
   measureIntro: string;
   measure: string[];
@@ -55,6 +66,9 @@ export const googleAds: PpcPlatform = {
   lead:
     "Google Ads zachytí zákazníky ve chvíli, kdy aktivně hledají, co nabízíte. Nastavíme strukturu účtu, cílení a měření tak, aby rozpočet šel do dotazů a produktů, které skutečně přinášejí poptávky a objednávky.",
   chips: ["Search", "Performance Max", "Shopping", "Demand Gen", "YouTube", "Remarketing"],
+  explanationTitle: "Co jsou Google Ads a jak fungují",
+  explanation:
+    "Google Ads je reklamní systém, ve kterém se vaše nabídka může zobrazit ve vyhledávání Google, u produktů, na YouTube nebo na partnerských webech. Neplatíte za pevnou pozici: kampaně vstupují do aukce a systém při každém zobrazení zohledňuje nabídku, relevanci reklamy i kvalitu cílové stránky. Cílem správy je propojit správný dotaz nebo publikum s vhodnou nabídkou a měřit, zda návštěva skončila poptávkou či objednávkou.",
   audienceTitle: "Pro koho Google Ads dává smysl",
   audienceIntro:
     "Google Ads je nejsilnější, když lidé o vašem produktu nebo službě už vědí a hledají ho. Hodí se proto pro většinu firem s ověřenou poptávkou.",
@@ -62,6 +76,17 @@ export const googleAds: PpcPlatform = {
     { title: "E-shopy", desc: "Shopping a Performance Max nad produktovým feedem, řízení podle marže, ROAS a výkonu jednotlivých kategorií." },
     { title: "Poskytovatelé služeb", desc: "Vyhledávací kampaně na konkrétní dotazy, lokální cílení a měření telefonátů i formulářů." },
     { title: "B2B firmy", desc: "Delší rozhodovací proces, menší objem dotazů a důraz na kvalitu leadů — ideálně s propojením na CRM." },
+  ],
+  notSuitable:
+    "Google Ads nemusí být vhodný, pokud lidé vaši nabídku zatím nehledají, web neumí návštěvníka přesvědčit nebo rozpočet nestačí na získání reprezentativních dat. V takové situaci nejdříve doporučíme upravit nabídku, web či měření, případně zvolit kanál pro budování poptávky.",
+  expectationsTitle: "Co můžete od Google Ads očekávat",
+  expectationsIntro:
+    "Kampaně mohou přivádět relevantní návštěvníky ve chvíli, kdy hledají konkrétní řešení. Výsledek ale ovlivňuje konkurence, nabídka, web i obchodní proces — proto neslibujeme pevný počet poptávek ani okamžitou návratnost.",
+  expectations: [
+    "Poptávky nebo objednávky zachycené ve chvíli aktivního zájmu",
+    "Jasný přehled o tom, které dotazy, produkty a kampaně přinášejí hodnotu",
+    "Postupné přesouvání rozpočtu k výkonnějším oblastem",
+    "Průběžné učení kampaní na základě kvalitně měřených konverzí",
   ],
   scopeTitle: "Co v Google Ads spravujeme",
   scopeIntro: "Každý typ kampaně má v účtu jinou roli. Rozhodujeme podle dat, ne podle toho, co Google zrovna doporučuje.",
@@ -80,6 +105,18 @@ export const googleAds: PpcPlatform = {
     { title: "Spuštění a učení", desc: "Kampaně spouštíme postupně, aby automatické strategie nabídek měly dostatek kvalitních dat." },
     { title: "Pravidelná optimalizace", desc: "Vyhledávací dotazy, nabídky, reklamy, publika a rozpočty upravujeme průběžně podle výsledků." },
   ],
+  managementTitle: "Co získáte v rámci správy Google Ads",
+  managementIntro: "Nejde jen o jednorázové nastavení. Účet průběžně kontrolujeme a změny vysvětlujeme v souvislosti s vašimi obchodními cíli.",
+  management: [
+    "Pravidelnou kontrolu vyhledávacích dotazů a vylučování nerelevantních hledání",
+    "Řízení rozpočtu mezi kampaněmi, produkty a obdobími",
+    "Testování reklam, podkladů a cílových stránek",
+    "Kontrolu konverzí, Merchant Center a technických upozornění",
+    "Srozumitelný reporting, doporučení a průběžnou komunikaci",
+  ],
+  existingAccount:
+    "Ano — stávající účet převezmeme přes partnerský přístup a nejdříve ho auditujeme. Zachováme funkční kampaně, historii i nasbíraná data; není nutné účet rušit ani vše stavět znovu. Návrh změn dostanete s vysvětlením priorit.",
+  price: "Správa Google Ads začíná od 5 000 Kč měsíčně. Při kombinaci více reklamních systémů od 8 000 Kč měsíčně. Mediální rozpočet se hradí přímo Googlu a není součástí ceny správy.",
   measureTitle: "Optimalizujeme na obchodní výsledky, ne na prokliky",
   measureIntro:
     "Automatické strategie Google Ads jsou jen tak dobré, jak dobrá data dostávají. Proto řešíme měření stejně pečlivě jako samotné kampaně.",
@@ -119,6 +156,9 @@ export const sklik: PpcPlatform = {
   lead:
     "Sklik je reklamní systém Seznamu. Oslovíte přes něj uživatele českého vyhledávače a velké obsahové sítě Seznamu včetně zpravodajských webů. Pro řadu českých firem je vhodným doplňkem Google Ads.",
   chips: ["Vyhledávání Seznam", "Obsahová síť", "Remarketing", "Dynamický retargeting", "Zboží.cz"],
+  explanationTitle: "Co je Sklik a jak funguje",
+  explanation:
+    "Sklik je reklamní systém českého Seznamu. Reklamy se zobrazují lidem při hledání na Seznam.cz a také na obsahových webech jeho sítě. Ve vyhledávání reagujete na konkrétní dotaz, v obsahové síti oslovujete vybrané publikum bannery nebo kombinovanou reklamou. Platíte zpravidla za návštěvu a rozpočet lze průběžně upravovat.",
   audienceTitle: "Kdy má Sklik smysl",
   audienceIntro:
     "Sklik cílí výhradně na český trh. Jeho přínos se liší podle oboru a cílové skupiny, proto ho vždy vyhodnocujeme v porovnání s ostatními kanály.",
@@ -126,6 +166,17 @@ export const sklik: PpcPlatform = {
     { title: "Firmy zaměřené na ČR", desc: "Lokální služby, řemesla, zdravotnictví či vzdělávání, kde je publikum Seznamu relevantní." },
     { title: "E-shopy na českém trhu", desc: "Produktové kampaně napojené na Zboží.cz a dynamický retargeting nad produktovým feedem." },
     { title: "Firmy s Google Ads", desc: "Rozšíření zásahu o uživatele, kteří Google nepoužívají, bez nutnosti stavět strategii od nuly." },
+  ],
+  notSuitable:
+    "Sklik obvykle není první volbou pro firmy zaměřené převážně na zahraničí. Nemusí být efektivní ani tam, kde je na Seznamu velmi malá hledanost nebo omezený rozpočet dává větší smysl soustředit nejprve do jednoho silnějšího kanálu.",
+  expectationsTitle: "Co můžete od Skliku očekávat",
+  expectationsIntro:
+    "Sklik může doplnit poptávky a objednávky z Google Ads o české publikum Seznamu. Jeho přínos posuzujeme samostatně i v kontextu ostatních kanálů, nikoli podle počtu prokliků.",
+  expectations: [
+    "Další zásah ve vyhledávání na českém trhu",
+    "Návrat návštěvníků pomocí remarketingu a dynamických produktů",
+    "Kontrolované testování obsahové sítě Seznamu",
+    "Přesun rozpočtu podle ceny a kvality skutečných konverzí",
   ],
   scopeTitle: "Co v Skliku řešíme",
   scopeIntro: "Sklik se v nastavení i chování liší od Google Ads. Kampaně proto nekopírujeme 1:1, ale upravujeme pro prostředí Seznamu.",
@@ -144,6 +195,18 @@ export const sklik: PpcPlatform = {
     { title: "Spuštění kampaní", desc: "Začínáme vyhledáváním a retargetingem, obsahovou síť přidáváme podle výsledků." },
     { title: "Průběžná optimalizace", desc: "Upravujeme nabídky, klíčová slova, umístění a rozpočet mezi Sklikem a ostatními kanály." },
   ],
+  managementTitle: "Co získáte v rámci správy Skliku",
+  managementIntro: "Sklik spravujeme podle jeho vlastních dat a možností, ne jako automatickou kopii Google Ads.",
+  management: [
+    "Pravidelnou kontrolu dotazů, klíčových slov a vylučujících výrazů",
+    "Kontrolu webů, na kterých se reklama v obsahové síti zobrazuje",
+    "Úpravy nabídek a rozpočtu podle výkonu kampaní",
+    "Kontrolu měřicích kódů, produktového feedu a retargetingu",
+    "Reporting v kontextu Google Ads a doporučení dalšího postupu",
+  ],
+  existingAccount:
+    "Pokud už Sklik používáte, účet převezmeme a provedeme audit kampaní, měření i historie změn. Dobře fungující části ponecháme a upravíme jen to, co omezuje výkon nebo zbytečně spotřebovává rozpočet. Začínat od nuly není nutné.",
+  price: "Správa Skliku začíná od 5 000 Kč měsíčně. Při kombinaci s Google Ads nebo Meta Ads od 8 000 Kč měsíčně. Rozpočet na reklamu se hradí přímo provozovateli systému.",
   measureTitle: "Sklik vyhodnocujeme v kontextu celého marketingu",
   measureIntro:
     "Sklik a Google Ads si často připisují stejné konverze. Díky jednotnému měření v GA4 vidíme skutečný přínos Skliku a rozpočet podle toho rozdělujeme.",
@@ -182,6 +245,9 @@ export const metaAds: PpcPlatform = {
   lead:
     "Meta Ads oslovuje lidi, kteří váš produkt zatím aktivně nehledají. Poptávku tedy spíš vytváří, než zachytává. Rozhoduje kvalita kreativy, správně zvolený cíl kampaně a spolehlivé měření.",
   chips: ["Facebook", "Instagram", "Akvizice", "Remarketing", "Katalogové kampaně", "Conversions API"],
+  explanationTitle: "Co jsou Meta Ads a jak fungují",
+  explanation:
+    "Meta Ads jsou placené reklamy na Facebooku a Instagramu. Na rozdíl od vyhledávání většinou oslovují lidi dříve, než začnou aktivně hledat konkrétní produkt. Systém se podle zvoleného cíle učí, kdo s největší pravděpodobností nakoupí, odešle formulář nebo provede jinou důležitou akci. K tomu potřebuje kvalitní kreativu a spolehlivá data z webu.",
   audienceTitle: "Pro koho je Meta Ads vhodná",
   audienceIntro:
     "Meta Ads funguje nejlépe u produktů, které se dají dobře ukázat vizuálně nebo příběhem, a tam, kde chcete oslovit nové zákazníky.",
@@ -189,6 +255,17 @@ export const metaAds: PpcPlatform = {
     { title: "E-shopy", desc: "Katalogové kampaně s dynamickými produkty, Advantage+ nákupní kampaně a remarketing opuštěných košíků." },
     { title: "Lokální a spotřebitelské služby", desc: "Oslovení lidí v okolí, sběr poptávek přes formuláře a podpora nových nabídek." },
     { title: "Značky s novým produktem", desc: "Když poptávka ve vyhledávání zatím neexistuje, Meta pomáhá produkt dostat k relevantním lidem." },
+  ],
+  notSuitable:
+    "Meta Ads nemusí být vhodná pro nabídku, kterou nelze srozumitelně ukázat nebo vysvětlit, bez podkladů pro pravidelnou tvorbu reklam či s příliš malým rozpočtem na testování. U části B2B služeb s úzkou cílovou skupinou bývá vhodnější nejdříve zachytit existující poptávku ve vyhledávání.",
+  expectationsTitle: "Co můžete od Meta Ads očekávat",
+  expectationsIntro:
+    "Meta může vytvářet nový zájem, přivádět objednávky nebo sbírat poptávky. Výkon se mění podle nabídky, sezóny a kreativy, proto kampaně stavíme na průběžném testování, ne na jednom neměnném banneru.",
+  expectations: [
+    "Oslovení nových lidí podle jejich pravděpodobného zájmu a chování",
+    "Poptávky, objednávky nebo návraty návštěvníků podle zvoleného cíle",
+    "Porovnání různých sdělení, formátů a kreativních konceptů",
+    "Postupné řízení rozpočtu podle kvality konverzí a obchodního přínosu",
   ],
   scopeTitle: "Co v Meta Ads řešíme",
   scopeIntro: "Na Facebooku a Instagramu dnes rozhoduje hlavně kreativa a data. Cílení je z velké části automatizované.",
@@ -207,6 +284,18 @@ export const metaAds: PpcPlatform = {
     { title: "Testování", desc: "Kreativy a sdělení porovnáváme s dostatečným rozpočtem, aby výsledky byly průkazné." },
     { title: "Škálování a obnova kreativy", desc: "Funkční reklamy postupně škálujeme a kreativu pravidelně obměňujeme, aby publikum neunavila." },
   ],
+  managementTitle: "Co získáte v rámci správy Meta Ads",
+  managementIntro: "Správa spojuje práci s účtem, kreativou a měřením. Bez pravidelné obměny reklam a kontroly dat výkon obvykle postupně slábne.",
+  management: [
+    "Pravidelnou kontrolu rozpočtu, frekvence a výsledků jednotlivých kampaní",
+    "Testování publik, sdělení, formátů a kreativních variant",
+    "Doporučení k novým podkladům a obměnu unavených reklam",
+    "Kontrolu Meta Pixelu, Conversions API a katalogu produktů",
+    "Srozumitelný reporting a konzultace dalších kroků",
+  ],
+  existingAccount:
+    "Stávající reklamní účet i Business Manager můžeme převzít přes partnerský přístup. Nejprve zkontrolujeme oprávnění, historii, kampaně, pixel a Conversions API. Fungující data a publika zachováme; nový účet zakládáme jen tehdy, když je k tomu skutečný důvod.",
+  price: "Správa Meta Ads samostatně začíná od 4 900 Kč měsíčně, v kombinaci s dalšími reklamními systémy od 8 000 Kč měsíčně. Rozpočet na reklamu platíte přímo společnosti Meta.",
   measureTitle: "Spolehlivé měření je u Meta Ads zásadní",
   measureIntro:
     "Kvůli blokování cookies a omezením v prohlížečích ztrácí samotný pixel část dat. Conversions API a čisté nastavení událostí pomáhají algoritmu optimalizovat správným směrem.",
@@ -245,12 +334,26 @@ export const srovnavace: PpcPlatform = {
   lead:
     "Na srovnávačích zákazníci porovnávají ceny a obchody těsně před nákupem. Aby tam byl e-shop vidět za rozumnou cenu, potřebuje kvalitní produktový feed a nabídky řízené podle marže.",
   chips: ["Heureka.cz", "Zboží.cz", "Glami", "Google Merchant Center", "XML feedy"],
+  explanationTitle: "Co jsou produktové srovnávače a jak fungují",
+  explanation:
+    "Produktové srovnávače shromažďují nabídky více e-shopů na jednom místě. Zákazník porovnává cenu, dostupnost, dopravu i hodnocení obchodu a poté přechází na vybraný e-shop. Informace se předávají pomocí produktového feedu — pravidelně aktualizovaného datového souboru s názvy, cenami, skladovostí a dalšími údaji. Kvalita těchto dat přímo ovlivňuje, zda se produkt správně zobrazí a spáruje.",
   audienceTitle: "Pro koho je správa srovnávačů",
   audienceIntro: "Tato služba je určená výhradně e-shopům. Její přínos roste se šíří sortimentu a konkurencí v kategorii.",
   audiences: [
     { title: "E-shopy s širokým sortimentem", desc: "Stovky až tisíce produktů, kde ruční správa nabídek není reálná a rozhoduje segmentace." },
     { title: "Obchody v konkurenčních kategoriích", desc: "Elektronika, domácnost, kosmetika či móda, kde zákazník srovnává cenu a hodnocení obchodů." },
     { title: "E-shopy s problémy ve feedu", desc: "Zamítnuté produkty, chybné kategorie nebo neaktuální ceny a dostupnost." },
+  ],
+  notSuitable:
+    "Srovnávače nejsou určené pro firmy bez e-shopu. Omezený přínos mohou mít také u unikátního zboží, které zákazníci běžně neporovnávají, nebo u produktů s marží, která nepokryje placené návštěvy. V takovém případě doporučíme vhodnější akviziční kanál.",
+  expectationsTitle: "Co můžete od srovnávačů očekávat",
+  expectationsIntro:
+    "Srovnávače přivádějí zákazníky blízko nákupnímu rozhodnutí, ale zároveň vás staví vedle konkurence. Výsledek proto neurčuje jen cena za proklik, ale také cena produktu, doprava, dostupnost, hodnocení obchodu a kvalita feedu.",
+  expectations: [
+    "Objednávky od návštěvníků, kteří už porovnávají konkrétní produkt",
+    "Lepší viditelnost správně zařazených a spárovaných položek",
+    "Přehled o nákladech a obratu na úrovni kategorií či produktů",
+    "Omezení investic do položek, které se nevyplácejí propagovat",
   ],
   scopeTitle: "Co na srovnávačích spravujeme",
   scopeIntro: "Srovnávače stojí na produktových datech. Proto začínáme feedem, teprve pak řešíme nabídky a rozpočet.",
@@ -269,6 +372,18 @@ export const srovnavace: PpcPlatform = {
     { title: "Nastavení nabídek", desc: "Nabídky nastavíme podle marže a výkonu kategorií, ne plošně pro celý obchod." },
     { title: "Průběžné řízení", desc: "Sledujeme náklady a obrat po kategoriích i produktech a nabídky pravidelně upravujeme." },
   ],
+  managementTitle: "Co získáte v rámci správy srovnávačů",
+  managementIntro: "Hlídáme jak samotné kampaně, tak datový základ, bez kterého se produkty nemohou správně zobrazovat.",
+  management: [
+    "Pravidelnou kontrolu chyb, párování, cen a dostupnosti ve feedu",
+    "Řízení nabídek a rozpočtu podle kategorií, produktů a marže",
+    "Kontrolu nákladů, objednávek a podílu nákladů na obratu",
+    "Doporučení k názvům, parametrům, cenám a sortimentu",
+    "Srozumitelný reporting a koordinaci s e-shopem nebo vývojářem",
+  ],
+  existingAccount:
+    "Pokud už máte Heureku, Zboží.cz, Glami nebo feed manager nastavený, navážeme na současné účty. Auditem zjistíme chyby v datech, párování i měření a zachováme funkční historii. Není nutné znovu registrovat obchod ani vytvářet nový feed bez důvodu.",
+  price: "Správa jednoho systému začíná od 5 000 Kč měsíčně, v kombinaci s dalšími kanály od 8 000 Kč měsíčně. Náklady za prokliky platíte přímo jednotlivým srovnávačům.",
   measureTitle: "Měříme náklady a obrat až na úroveň produktů",
   measureIntro:
     "Srovnávač může přivádět hodně návštěv, ale bez měření na úrovni kategorií a produktů snadno prodělává. Vyhodnocujeme proto náklady proti skutečnému obratu a marži.",
