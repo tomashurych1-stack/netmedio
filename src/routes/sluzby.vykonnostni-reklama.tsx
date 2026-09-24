@@ -20,7 +20,7 @@ import partnerBadge from "@/assets/google-partner-badge.png";
 const URL = `${SITE}/sluzby/vykonnostni-reklama`;
 const TITLE = "PPC reklama a správa kampaní | Google Ads, Sklik, Meta Ads | Netmedio";
 const DESCRIPTION =
-  "Správa PPC kampaní pod jednou střechou: Google Ads, Sklik, Meta Ads, Performance Max, Heureka.cz i produktové feedy. Reklamu propojujeme s webem, měřením a daty. Správa od 5 000 Kč / měsíc.";
+  "Správa PPC kampaní pod jednou střechou: Google Ads, Sklik, Meta Ads, Performance Max, Heureka.cz i produktové feedy. Reklamu propojujeme s webem, měřením a daty. Správa od 4 000 Kč / měsíc.";
 
 const channels = [
   {
@@ -215,7 +215,7 @@ const measurementTech = [
 const faq = [
   {
     q: "Kolik stojí správa PPC kampaní?",
-    a: "Správa jednoho reklamního systému (např. Google Ads nebo Sklik) začíná od 5 000 Kč měsíčně, kombinace více systémů od 8 000 Kč měsíčně. Finální cena závisí na rozsahu kampaní a velikosti účtu — po úvodní konzultaci dostanete konkrétní nabídku.",
+    a: "Správa jednoho reklamního systému (např. Google Ads nebo Sklik) začíná od 4 000 Kč měsíčně, kombinace více systémů od 7 000 Kč měsíčně. Finální cena závisí na rozsahu kampaní a velikosti účtu — po úvodní konzultaci dostanete konkrétní nabídku.",
   },
   {
     q: "Jaký rozpočet na reklamu potřebuji?",
@@ -301,7 +301,7 @@ export const Route = createFileRoute("/sluzby/vykonnostni-reklama")({
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "CZK",
-        lowPrice: "5000",
+        lowPrice: "4000",
         offerCount: "3",
       },
     };
@@ -718,7 +718,7 @@ function PpcMicrosite() {
           <div className="grid md:grid-cols-3 gap-4">
             <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Jeden reklamní systém</p>
-              <p className="text-2xl font-semibold text-primary mb-3">od 5 000 Kč / měsíc</p>
+              <p className="text-2xl font-semibold text-primary mb-3">od 4 000 Kč / měsíc</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Například Google Ads nebo Sklik. Pravidelná optimalizace, kontrola výkonu
                 a základní reporting.
@@ -726,7 +726,7 @@ function PpcMicrosite() {
             </div>
             <div className="rounded-2xl border border-primary/40 bg-card p-6 flex flex-col">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Více reklamních systémů</p>
-              <p className="text-2xl font-semibold text-primary mb-3">od 8 000 Kč / měsíc</p>
+              <p className="text-2xl font-semibold text-primary mb-3">od 7 000 Kč / měsíc</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Například Google Ads + Sklik nebo kombinace s Meta Ads. Společná strategie
                 a vyhodnocování napříč kanály.
