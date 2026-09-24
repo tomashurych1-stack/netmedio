@@ -8,7 +8,7 @@ import {
 export const faqs = [
   {
     q: "Kolik stojí správa PPC kampaní?",
-    a: "Správa jednoho reklamního systému začíná od 5 000 Kč měsíčně. Při kombinaci více systémů (např. Google Ads + Sklik + Meta Ads) od 8 000 Kč. Cena vždy vychází z rozsahu kampaní a obratu, který přes ně teče.",
+    a: "Správa jednoho reklamního systému začíná od 4 000 Kč měsíčně. Při kombinaci více systémů (např. Google Ads + Sklik + Meta Ads) od 7 000 Kč. Cena vždy vychází z rozsahu kampaní a obratu, který přes ně teče.",
   },
   {
     q: "Děláte také tvorbu webových stránek?",

@@ -121,8 +121,8 @@ export const services: Service[] = [
       { kpi: "Pokrytí konverzí (server-side)", value: "+15 až +35 %" },
     ],
     pricing: [
-      { tier: "Jeden reklamní systém", range: "od 5 000 Kč / měsíc", note: "Například Google Ads nebo Sklik. Pravidelná optimalizace, kontrola výkonu a základní reporting." },
-      { tier: "Více reklamních systémů", range: "od 8 000 Kč / měsíc", note: "Například Google Ads + Sklik nebo kombinace s Meta Ads. Společná strategie a vyhodnocování napříč kanály." },
+      { tier: "Jeden reklamní systém", range: "od 4 000 Kč / měsíc", note: "Například Google Ads nebo Sklik. Pravidelná optimalizace, kontrola výkonu a základní reporting." },
+      { tier: "Více reklamních systémů", range: "od 7 000 Kč / měsíc", note: "Například Google Ads + Sklik nebo kombinace s Meta Ads. Společná strategie a vyhodnocování napříč kanály." },
       { tier: "Komplexní výkonnostní marketing", range: "individuální nabídka", note: "Pro větší účty, e-commerce a projekty kombinující více reklamních systémů, feedy, analytiku nebo technické řešení." },
     ],
     pricingNote:
