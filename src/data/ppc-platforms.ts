@@ -29,9 +29,6 @@ export type PpcPlatform = {
   management: string[];
   existingAccount: string;
   price?: string;
-  measureTitle: string;
-  measureIntro: string;
-  measure: string[];
   related: Related[];
   faq: { q: string; a: string }[];
   ctaTitle: string;
