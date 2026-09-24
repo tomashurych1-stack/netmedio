@@ -228,7 +228,7 @@ export const metaAds: PpcPlatform = {
     { q: "Připravujete i kreativu?", a: "Navrhujeme koncepty, texty a jednoduché grafické a video formáty. U náročnější produkce spolupracujeme s vaším grafikem nebo dodanými materiály." },
     { q: "Je lepší Meta Ads nebo Google Ads?", a: "Mají jinou roli. Google Ads zachytává existující poptávku, Meta Ads ji vytváří. Často fungují nejlépe společně." },
     { q: "Co je Conversions API?", a: "Způsob, jak posílat konverze do Meta přímo ze serveru. Doplňuje pixel a zmenšuje ztrátu dat kvůli blokování cookies." },
-    { q: "Spravujete i organické příspěvky?", a: "Zaměřujeme se na placenou reklamu. Organickou správu sociálních sítí běžně nedělamé, ale umíme se napojit na vašeho správce obsahu." },
+    { q: "Spravujete i organické příspěvky?", a: "Zaměřujeme se na placenou reklamu. Organickou správu sociálních sítí běžně neděláme, ale umíme se napojit na vašeho správce obsahu." },
   ],
   ctaTitle: "Chcete oslovit nové zákazníky na Facebooku a Instagramu?",
   ctaText: "Probereme váš produkt, cílovou skupinu a měření a navrhneme, jak by kampaně mohly vypadat.",
