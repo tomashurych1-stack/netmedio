@@ -27,33 +27,34 @@ const channels = [
     title: "Google Ads",
     chips: ["Search", "Performance Max", "Shopping", "Demand Gen", "YouTube", "Remarketing"],
     desc: "Od zachycení existující poptávky ve vyhledávání až po akvizici nových zákazníků a produktové kampaně pro e-shopy.",
-    // budoucí landing page: /sluzby/google-ads
+    to: "/sluzby/google-ads",
   },
   {
     title: "Sklik & Seznam",
     chips: ["Search", "Obsahová síť", "Remarketing", "Dynamický retargeting", "Zboží.cz"],
     desc: "Výkonnostní kampaně v českém ekosystému Seznamu jako doplněk Google Ads nebo samostatný akviziční kanál.",
-    // budoucí landing page: /sluzby/sklik
+    to: "/sluzby/sklik",
   },
   {
     title: "Meta Ads",
     chips: ["Facebook", "Instagram", "Akvizice", "Remarketing", "Katalogové kampaně"],
     desc: "Meta Ads používáme pro získávání nové poptávky, podporu e-commerce i opětovné oslovení návštěvníků.",
-    // budoucí landing page: /sluzby/meta-ads
+    to: "/sluzby/meta-ads",
   },
   {
     title: "Produktové srovnávače",
     chips: ["Heureka.cz", "Zboží.cz", "Glami", "Produktové feedy"],
     desc: "Správa produktové inzerce, feedů a srovnávačů tak, aby e-shop využíval celý svůj výkonnostní potenciál.",
-    // budoucí landing page: /sluzby/produktove-srovnavace
+    to: "/sluzby/produktove-srovnavace",
   },
   {
     title: "Měření & analytika",
     chips: ["GA4", "Google Tag Manager", "Consent Mode", "Enhanced Conversions", "Server-side tracking"],
     desc: "Bez kvalitních dat nelze kampaně správně optimalizovat. Proto řešíme také technickou stránku měření.",
+    to: "/sluzby/$slug",
     slug: "analytika-reporting",
   },
-];
+] as const;
 
 const audiences = [
   {
@@ -432,9 +433,7 @@ function PpcMicrosite() {
                 <>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold">{ch.title}</h3>
-                    {ch.slug && (
-                      <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                    )}
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {ch.chips.map((c) => (
@@ -444,26 +443,22 @@ function PpcMicrosite() {
                     ))}
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{ch.desc}</p>
-                  {ch.slug && (
+                  {"slug" in ch && (
                     <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary/90 group-hover:text-primary">
                       Více o analytice <ArrowUpRight className="w-4 h-4" />
                     </span>
                   )}
                 </>
               );
-              return ch.slug ? (
+              return (
                 <Link
                   key={ch.title}
-                  to="/sluzby/$slug"
-                  params={{ slug: ch.slug }}
+                  to={ch.to}
+                  params={"slug" in ch ? { slug: ch.slug } : (undefined as never)}
                   className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-colors"
                 >
                   {inner}
                 </Link>
-              ) : (
-                <div key={ch.title} className="group rounded-2xl border border-border bg-card p-6">
-                  {inner}
-                </div>
               );
             })}
           </div>

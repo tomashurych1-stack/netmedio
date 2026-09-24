@@ -34,7 +34,11 @@ import { Route as NavodyJakNasdiletPristupGoogleMerchantCenterRouteImport } from
 import { Route as NavodyJakPridatPristupGoogleAnalytics4RouteImport } from './routes/navody.jak-pridat-pristup-google-analytics-4'
 import { Route as SluzbyIndexRouteImport } from './routes/sluzby.index'
 import { Route as SluzbySlugRouteImport } from './routes/sluzby.$slug'
+import { Route as SluzbyGoogleAdsRouteImport } from './routes/sluzby.google-ads'
+import { Route as SluzbyMetaAdsRouteImport } from './routes/sluzby.meta-ads'
 import { Route as SluzbyPpcReklamyRouteImport } from './routes/sluzby.ppc-reklamy'
+import { Route as SluzbyProduktoveSrovnavaceRouteImport } from './routes/sluzby.produktove-srovnavace'
+import { Route as SluzbySklikRouteImport } from './routes/sluzby.sklik'
 import { Route as SluzbyTvorbaWebuRouteImport } from './routes/sluzby.tvorba-webu'
 import { Route as SluzbyVykonnostniReklamaRouteImport } from './routes/sluzby.vykonnostni-reklama'
 import { Route as YearMonthDaySlugRouteImport } from './routes/$year.$month.$day.$slug'
@@ -169,9 +173,30 @@ const SluzbySlugRoute = SluzbySlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => SluzbyRoute,
 } as any)
+const SluzbyGoogleAdsRoute = SluzbyGoogleAdsRouteImport.update({
+  id: '/google-ads',
+  path: '/google-ads',
+  getParentRoute: () => SluzbyRoute,
+} as any)
+const SluzbyMetaAdsRoute = SluzbyMetaAdsRouteImport.update({
+  id: '/meta-ads',
+  path: '/meta-ads',
+  getParentRoute: () => SluzbyRoute,
+} as any)
 const SluzbyPpcReklamyRoute = SluzbyPpcReklamyRouteImport.update({
   id: '/ppc-reklamy',
   path: '/ppc-reklamy',
+  getParentRoute: () => SluzbyRoute,
+} as any)
+const SluzbyProduktoveSrovnavaceRoute =
+  SluzbyProduktoveSrovnavaceRouteImport.update({
+    id: '/produktove-srovnavace',
+    path: '/produktove-srovnavace',
+    getParentRoute: () => SluzbyRoute,
+  } as any)
+const SluzbySklikRoute = SluzbySklikRouteImport.update({
+  id: '/sklik',
+  path: '/sklik',
   getParentRoute: () => SluzbyRoute,
 } as any)
 const SluzbyTvorbaWebuRoute = SluzbyTvorbaWebuRouteImport.update({
@@ -213,7 +238,11 @@ export interface FileRoutesByFullPath {
   '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/google-ads': typeof SluzbyGoogleAdsRoute
+  '/sluzby/meta-ads': typeof SluzbyMetaAdsRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
+  '/sluzby/produktove-srovnavace': typeof SluzbyProduktoveSrovnavaceRoute
+  '/sluzby/sklik': typeof SluzbySklikRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog/': typeof BlogIndexRoute
@@ -241,7 +270,11 @@ export interface FileRoutesByTo {
   '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/google-ads': typeof SluzbyGoogleAdsRoute
+  '/sluzby/meta-ads': typeof SluzbyMetaAdsRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
+  '/sluzby/produktove-srovnavace': typeof SluzbyProduktoveSrovnavaceRoute
+  '/sluzby/sklik': typeof SluzbySklikRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog': typeof BlogIndexRoute
@@ -273,7 +306,11 @@ export interface FileRoutesById {
   '/navody/jak-nasdilet-pristup-google-merchant-center': typeof NavodyJakNasdiletPristupGoogleMerchantCenterRoute
   '/navody/jak-pridat-pristup-google-analytics-4': typeof NavodyJakPridatPristupGoogleAnalytics4Route
   '/sluzby/$slug': typeof SluzbySlugRoute
+  '/sluzby/google-ads': typeof SluzbyGoogleAdsRoute
+  '/sluzby/meta-ads': typeof SluzbyMetaAdsRoute
   '/sluzby/ppc-reklamy': typeof SluzbyPpcReklamyRoute
+  '/sluzby/produktove-srovnavace': typeof SluzbyProduktoveSrovnavaceRoute
+  '/sluzby/sklik': typeof SluzbySklikRoute
   '/sluzby/tvorba-webu': typeof SluzbyTvorbaWebuRoute
   '/sluzby/vykonnostni-reklama': typeof SluzbyVykonnostniReklamaRoute
   '/blog/': typeof BlogIndexRoute
@@ -306,7 +343,11 @@ export interface FileRouteTypes {
     | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
+    | '/sluzby/google-ads'
+    | '/sluzby/meta-ads'
     | '/sluzby/ppc-reklamy'
+    | '/sluzby/produktove-srovnavace'
+    | '/sluzby/sklik'
     | '/sluzby/tvorba-webu'
     | '/sluzby/vykonnostni-reklama'
     | '/blog/'
@@ -334,7 +375,11 @@ export interface FileRouteTypes {
     | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
+    | '/sluzby/google-ads'
+    | '/sluzby/meta-ads'
     | '/sluzby/ppc-reklamy'
+    | '/sluzby/produktove-srovnavace'
+    | '/sluzby/sklik'
     | '/sluzby/tvorba-webu'
     | '/sluzby/vykonnostni-reklama'
     | '/blog'
@@ -365,7 +410,11 @@ export interface FileRouteTypes {
     | '/navody/jak-nasdilet-pristup-google-merchant-center'
     | '/navody/jak-pridat-pristup-google-analytics-4'
     | '/sluzby/$slug'
+    | '/sluzby/google-ads'
+    | '/sluzby/meta-ads'
     | '/sluzby/ppc-reklamy'
+    | '/sluzby/produktove-srovnavace'
+    | '/sluzby/sklik'
     | '/sluzby/tvorba-webu'
     | '/sluzby/vykonnostni-reklama'
     | '/blog/'
@@ -574,11 +623,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SluzbySlugRouteImport
       parentRoute: typeof SluzbyRoute
     }
+    '/sluzby/google-ads': {
+      id: '/sluzby/google-ads'
+      path: '/google-ads'
+      fullPath: '/sluzby/google-ads'
+      preLoaderRoute: typeof SluzbyGoogleAdsRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
+    '/sluzby/meta-ads': {
+      id: '/sluzby/meta-ads'
+      path: '/meta-ads'
+      fullPath: '/sluzby/meta-ads'
+      preLoaderRoute: typeof SluzbyMetaAdsRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
     '/sluzby/ppc-reklamy': {
       id: '/sluzby/ppc-reklamy'
       path: '/ppc-reklamy'
       fullPath: '/sluzby/ppc-reklamy'
       preLoaderRoute: typeof SluzbyPpcReklamyRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
+    '/sluzby/produktove-srovnavace': {
+      id: '/sluzby/produktove-srovnavace'
+      path: '/produktove-srovnavace'
+      fullPath: '/sluzby/produktove-srovnavace'
+      preLoaderRoute: typeof SluzbyProduktoveSrovnavaceRouteImport
+      parentRoute: typeof SluzbyRoute
+    }
+    '/sluzby/sklik': {
+      id: '/sluzby/sklik'
+      path: '/sklik'
+      fullPath: '/sluzby/sklik'
+      preLoaderRoute: typeof SluzbySklikRouteImport
       parentRoute: typeof SluzbyRoute
     }
     '/sluzby/tvorba-webu': {
@@ -635,7 +712,11 @@ const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
 
 interface SluzbyRouteChildren {
   SluzbySlugRoute: typeof SluzbySlugRoute
+  SluzbyGoogleAdsRoute: typeof SluzbyGoogleAdsRoute
+  SluzbyMetaAdsRoute: typeof SluzbyMetaAdsRoute
   SluzbyPpcReklamyRoute: typeof SluzbyPpcReklamyRoute
+  SluzbyProduktoveSrovnavaceRoute: typeof SluzbyProduktoveSrovnavaceRoute
+  SluzbySklikRoute: typeof SluzbySklikRoute
   SluzbyTvorbaWebuRoute: typeof SluzbyTvorbaWebuRoute
   SluzbyVykonnostniReklamaRoute: typeof SluzbyVykonnostniReklamaRoute
   SluzbyIndexRoute: typeof SluzbyIndexRoute
@@ -643,7 +724,11 @@ interface SluzbyRouteChildren {
 
 const SluzbyRouteChildren: SluzbyRouteChildren = {
   SluzbySlugRoute: SluzbySlugRoute,
+  SluzbyGoogleAdsRoute: SluzbyGoogleAdsRoute,
+  SluzbyMetaAdsRoute: SluzbyMetaAdsRoute,
   SluzbyPpcReklamyRoute: SluzbyPpcReklamyRoute,
+  SluzbyProduktoveSrovnavaceRoute: SluzbyProduktoveSrovnavaceRoute,
+  SluzbySklikRoute: SluzbySklikRoute,
   SluzbyTvorbaWebuRoute: SluzbyTvorbaWebuRoute,
   SluzbyVykonnostniReklamaRoute: SluzbyVykonnostniReklamaRoute,
   SluzbyIndexRoute: SluzbyIndexRoute,

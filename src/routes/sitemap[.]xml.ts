@@ -52,6 +52,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "yearly",
             priority: "0.6",
           },
+          ...["google-ads", "sklik", "meta-ads", "produktove-srovnavace"].map((s) => ({
+            path: `/sluzby/${s}`,
+            changefreq: "monthly",
+            priority: "0.8",
+          })),
           { path: "/navody", changefreq: "monthly", priority: "0.7" },
           {
             path: "/navody/jak-pridat-pristup-google-analytics-4",
