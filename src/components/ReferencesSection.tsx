@@ -20,7 +20,7 @@ type Client = {
 
 const clients: Client[] = [
   { name: "Nemocnice Mělník", logo: melnik, scale: "max-h-11 md:max-h-14" },
-  { name: "Mediestetik", logo: mediestetik, scale: "max-h-12 md:max-h-14" },
+  { name: "Mediestetik", logo: mediestetik, scale: "max-h-11 md:max-h-14" },
   { name: "CenterNet", logo: centernet, scale: "max-h-11 md:max-h-14" },
   { name: "Dekorstudio", logo: dekorstudio, scale: "max-h-11 md:max-h-14" },
   { name: "Parentes", logo: parentes, scale: "max-h-10 md:max-h-12" },
