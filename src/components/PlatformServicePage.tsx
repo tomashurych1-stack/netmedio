@@ -230,30 +230,6 @@ export default function PlatformServicePage({ p }: { p: PpcPlatform }) {
         </div>
       </section>
 
-      {/* Měření */}
-      <section className="section-padding pt-0">
-        <div className="max-w-5xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-4">Měření a optimalizace</p>
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">{p.measureTitle}</h2>
-          <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">{p.measureIntro}</p>
-          <ul className="grid sm:grid-cols-2 gap-3">
-            {p.measure.map((m) => (
-              <li key={m} className="flex gap-2 text-sm text-foreground/90">
-                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>{m}</span>
-              </li>
-            ))}
-          </ul>
-          <Link
-            to="/sluzby/$slug"
-            params={{ slug: "analytika-reporting" }}
-            className="mt-6 inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
-          >
-            Více o měření a analytice <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
-
       {/* Související */}
       <section className="section-padding pt-0">
         <div className="max-w-5xl mx-auto">
