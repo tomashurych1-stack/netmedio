@@ -143,11 +143,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Netmedio – Digitální agentura | PPC, Weby, Automatizace od 2010" },
+      { title: "Netmedio | Digitální marketing a weby od roku 2010" },
       {
         name: "description",
         content:
-          "Netmedio je digitální growth partner od roku 2010. Výkonnostní marketing, tvorba webů, marketingová automatizace a analytika. Vede Ing. Tomáš Hurych.",
+          "Pomáháme firmám růst pomocí PPC kampaní, moderních webů, SEO, analytiky, e-mailingu a automatizace. Netmedio působí od roku 2010.",
       },
       { property: "og:title", content: "Netmedio – Digitální agentura od roku 2010" },
       {
