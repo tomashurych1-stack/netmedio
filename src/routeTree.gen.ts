@@ -20,6 +20,7 @@ import { Route as ONasRouteImport } from './routes/o-nas'
 import { Route as ReferenceRouteImport } from './routes/reference'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SluzbyRouteImport } from './routes/sluzby'
+import { Route as ZasadyOchranyOsobnichUdajuRouteImport } from './routes/zasady-ochrany-osobnich-udaju'
 import { Route as AuthorSplatRouteImport } from './routes/author.$'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -99,6 +100,12 @@ const SluzbyRoute = SluzbyRouteImport.update({
   path: '/sluzby',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZasadyOchranyOsobnichUdajuRoute =
+  ZasadyOchranyOsobnichUdajuRouteImport.update({
+    id: '/zasady-ochrany-osobnich-udaju',
+    path: '/zasady-ochrany-osobnich-udaju',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AuthorSplatRoute = AuthorSplatRouteImport.update({
   id: '/author/$',
   path: '/author/$',
@@ -228,6 +235,7 @@ export interface FileRoutesByFullPath {
   '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
+  '/zasady-ochrany-osobnich-udaju': typeof ZasadyOchranyOsobnichUdajuRoute
   '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
@@ -260,6 +268,7 @@ export interface FileRoutesByTo {
   '/o-nas': typeof ONasRoute
   '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/zasady-ochrany-osobnich-udaju': typeof ZasadyOchranyOsobnichUdajuRoute
   '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
@@ -296,6 +305,7 @@ export interface FileRoutesById {
   '/reference': typeof ReferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sluzby': typeof SluzbyRouteWithChildren
+  '/zasady-ochrany-osobnich-udaju': typeof ZasadyOchranyOsobnichUdajuRoute
   '/author/$': typeof AuthorSplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/cena-tvorby-webu': typeof BlogCenaTvorbyWebuRoute
@@ -333,6 +343,7 @@ export interface FileRouteTypes {
     | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
+    | '/zasady-ochrany-osobnich-udaju'
     | '/author/$'
     | '/blog/$slug'
     | '/blog/cena-tvorby-webu'
@@ -365,6 +376,7 @@ export interface FileRouteTypes {
     | '/o-nas'
     | '/reference'
     | '/sitemap.xml'
+    | '/zasady-ochrany-osobnich-udaju'
     | '/author/$'
     | '/blog/$slug'
     | '/blog/cena-tvorby-webu'
@@ -400,6 +412,7 @@ export interface FileRouteTypes {
     | '/reference'
     | '/sitemap.xml'
     | '/sluzby'
+    | '/zasady-ochrany-osobnich-udaju'
     | '/author/$'
     | '/blog/$slug'
     | '/blog/cena-tvorby-webu'
@@ -436,6 +449,7 @@ export interface RootRouteChildren {
   ReferenceRoute: typeof ReferenceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SluzbyRoute: typeof SluzbyRouteWithChildren
+  ZasadyOchranyOsobnichUdajuRoute: typeof ZasadyOchranyOsobnichUdajuRoute
   AuthorSplatRoute: typeof AuthorSplatRoute
   CategorySplatRoute: typeof CategorySplatRoute
   NavodyJakNasdiletMetaBusinessManagerRoute: typeof NavodyJakNasdiletMetaBusinessManagerRoute
@@ -523,6 +537,13 @@ declare module '@tanstack/react-router' {
       path: '/sluzby'
       fullPath: '/sluzby'
       preLoaderRoute: typeof SluzbyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zasady-ochrany-osobnich-udaju': {
+      id: '/zasady-ochrany-osobnich-udaju'
+      path: '/zasady-ochrany-osobnich-udaju'
+      fullPath: '/zasady-ochrany-osobnich-udaju'
+      preLoaderRoute: typeof ZasadyOchranyOsobnichUdajuRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/author/$': {
@@ -750,6 +771,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReferenceRoute: ReferenceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SluzbyRoute: SluzbyRouteWithChildren,
+  ZasadyOchranyOsobnichUdajuRoute: ZasadyOchranyOsobnichUdajuRoute,
   AuthorSplatRoute: AuthorSplatRoute,
   CategorySplatRoute: CategorySplatRoute,
   NavodyJakNasdiletMetaBusinessManagerRoute:

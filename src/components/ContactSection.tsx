@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
 import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
 import { trackEmailClick, trackLead, trackPhoneClick } from "@/lib/gtm";
@@ -120,6 +121,14 @@ export default function ContactSection() {
             {status === "sending" ? "Odesílám…" : "Odeslat poptávku"}
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
+
+          <p className="text-xs leading-relaxed text-[var(--contact-muted)]">
+            Odesláním souhlasíte se zpracováním údajů za účelem vyřízení poptávky. Více v{" "}
+            <Link to="/zasady-ochrany-osobnich-udaju" className="underline underline-offset-4 transition-colors hover:text-[var(--contact-foreground)]">
+              zásadách ochrany osobních údajů
+            </Link>
+            .
+          </p>
 
           {status === "ok" && (
             <p className="text-sm text-emerald-400">Děkujeme, ozveme se do 24 hodin.</p>

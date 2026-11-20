@@ -18,6 +18,7 @@ export default function Footer() {
           <Link to="/case-studies" className="hover:text-foreground transition-colors">Případové studie</Link>
           <SectionLink section="faq" className="hover:text-foreground transition-colors">FAQ</SectionLink>
           <Link to="/navody" className="hover:text-foreground transition-colors">Návody</Link>
+          <Link to="/zasady-ochrany-osobnich-udaju" className="hover:text-foreground transition-colors">Zásady ochrany osobních údajů</Link>
           <SectionLink section="kontakt" className="hover:text-foreground transition-colors">Kontakt</SectionLink>
         </div>
       </div>

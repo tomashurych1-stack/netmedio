@@ -78,6 +78,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "yearly",
             priority: "0.6",
           },
+          {
+            path: "/zasady-ochrany-osobnich-udaju",
+            changefreq: "yearly",
+            priority: "0.4",
+          },
         ];
 
         const urls = entries
