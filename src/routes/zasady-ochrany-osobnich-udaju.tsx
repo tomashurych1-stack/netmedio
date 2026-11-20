@@ -66,7 +66,7 @@ function PrivacyPolicy() {
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
               Zásady ochrany osobních údajů
             </h1>
-            <p className="mt-6 text-sm font-medium text-primary">Účinné od [DATUM]</p>
+            <p className="mt-6 text-sm font-medium text-primary">Účinné od 20. 11. 2026</p>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Na ochraně vašich osobních údajů nám záleží. Na této stránce vysvětlujeme, jaké údaje
               zpracováváme, proč, jak dlouho a jaká máte práva.
@@ -92,8 +92,8 @@ function PrivacyPolicy() {
             <article className="mt-14 space-y-14">
               <Section id="spravce" title="1. Kdo je správcem údajů">
                 <p>
-                  Správcem osobních údajů je [Ing. Tomáš Hurych], IČO [DOPLNIT], se sídlem [DOPLNIT
-                  ADRESU] (dále „Netmedio“ nebo „my“).
+                  Správcem osobních údajů je Tomáš Hurych, IČO: 07714181, se sídlem Tlumačovská 2766/26a,
+                  155 00 Praha 5 – Stodůlky, Česká republika (dále „Netmedio“ nebo „my“).
                 </p>
                 <p>
                   Kontakt pro otázky ochrany osobních údajů:{" "}
@@ -178,8 +178,10 @@ function PrivacyPolicy() {
                 <div className="pt-6">
                   <h3 className="text-xl font-semibold text-foreground">2.4 Cookies a analytika</h3>
                   <p className="mt-4">
-                    [DOPLNIT podle skutečně používaných nástrojů, např. Google Analytics 4, Google Ads,
-                    Sklik, Meta Pixel.]
+                    Prostřednictvím Google Tag Manageru web načítá Google Analytics 4 (měření návštěvnosti a
+                    chování na webu) a Google Ads (měření konverzí a remarketing). Tyto nástroje mohou ukládat
+                    cookies do vašeho prohlížeče a zpracovávat online identifikátory, technické údaje o zařízení
+                    a informace o návštěvě. Poskytovatelem je Google Ireland Limited.
                   </p>
                   <p>
                     Web používá Google Tag Manager od společnosti Google pro správu měřicích a marketingových
@@ -229,9 +231,8 @@ function PrivacyPolicy() {
                   <li>Cloudflare, Inc. – hosting, zabezpečení a ochrana proti robotům</li>
                   <li>Resend – doručování e-mailů s poptávkami</li>
                   <li>Formspree – přijímání a doručování poptávek z kontaktního formuláře</li>
-                  <li>Google – provoz Google Tag Manageru a podle nastavení měřicích a reklamních značek</li>
+                  <li>Google Ireland Limited – provoz Google Tag Manageru, Google Analytics 4 a Google Ads</li>
                   <li>Lovable – měření návštěvnosti webu</li>
-                  <li>[DOPLNIT: poskytovatel e-mailu, hostingu webu, analytických nástrojů, účetní apod.]</li>
                 </List>
                 <p>
                   Někteří poskytovatelé mohou zpracovávat údaje mimo EU (zejména v USA). V takovém případě je
